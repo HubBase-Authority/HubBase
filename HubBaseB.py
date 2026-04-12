@@ -385,6 +385,11 @@ def Code():
                                                 pass
                                             else:
                                                 Programm14()
+                                                CTNP()
+                                                if Stop == 1:
+                                                    pass
+                                                else:
+                                                    Programm14()
     else:
         pass
     print("")  #(16.03.2026)

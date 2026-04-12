@@ -2,12 +2,12 @@ import time  #(16.03.2026)
 import random
 
 def Enter():  #(13.03.2026)
-    VN = "a8.3.0"
+    VN = "a8.3.1"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 12 2026, 10:00:36) ---")
+    print("--- HubBase "+VN+" (default, Apr 12 2026, 10:42:57) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -259,9 +259,7 @@ def Programm14():  #(12.04.2026)
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alphabet = alphabet * 2
     STE = input("The string that you want to encrypt -- ").upper()
-    Key = int(input("Enter a number between 1 and 25 -- "))
-    if Key < 0:
-        p = int("p")
+    Key = int(input("Enter a number between -25 and 25 -- "))
     ES = ""
     for x in STE:
         pos = alphabet.find(x)

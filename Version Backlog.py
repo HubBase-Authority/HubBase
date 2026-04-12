@@ -89,7 +89,7 @@ if D1 == "a8":
             else:
                 print("Such release does not exist or isn`t documented")
         elif D3 == "1":
-            print("This release is not complete, it is only a plan!(Might change!)")
+            print("--- HubBase a8.3.1 (default, Apr 12 2026, 10:42:57) ---")
             print("Bugfix №3!")
             print("Changes:")
             print("    - Fixed 'Programm14()' not working for Decrypt mode")

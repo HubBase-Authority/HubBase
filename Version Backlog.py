@@ -105,6 +105,12 @@ elif D1 == "a9":
                 print("The first big update!!")
                 print("Planned addition:")
                 print("    - Added 'Turtle' programm №1!(Bugtest not complete!)")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")

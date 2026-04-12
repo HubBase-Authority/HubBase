@@ -1,13 +1,14 @@
 import time  #(16.03.2026)
 import random
+from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a8.3.0B"
+    VN = "a9.0.0B"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 12 2026, 9:30:29) ---")
+    print("--- HubBase "+VN+" (default, Apr 12 2026, 21:17:18) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -77,7 +78,7 @@ def Programm5():  #(15.03.2026)
         global VipAccess
         if VipAccess == "T":
             print("--Vip level access taken--")
-        VipAccess = "F" 
+        VipAccess = "F"
     elif User_reply == "M":
         print("Make up your mind, human")
     else:
@@ -123,7 +124,7 @@ def Programm7():  #(17.03.2026)
     aliens = 2
     APass = "ALIENS"
     print("Aliens are invading the earth!")
-    print("Activate the defence platform!")  
+    print("Activate the defence platform!")
     print("")
     print("------------------------------------------")
     print("           The defence platform           ")
@@ -233,7 +234,7 @@ def Programm12():  #(24.03.2026)
     for Cyc5 in List1:
         print(Cyc5)
 
-def Programm13():
+def Programm13():  #(11.04.2026)
     print("Create a list with 2 elements and 2 keys")
     print("")
     El1 = input("Element 1 -- ")
@@ -255,17 +256,31 @@ def Programm13():
     for Cyc6 in List1:
         print(Cyc6)
 
-def Programm14():
+def Programm14():  #(12.04.2026)
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alphabet = alphabet * 2
     STE = input("The string that you want to encrypt -- ").upper()
-    Key = int(input("Enter a number between 1 and 25 -- "))
+    Key = int(input("Enter a number between -25 and 25 -- "))
     ES = ""
     for x in STE:
         pos = alphabet.find(x)
         NewPos = pos + Key
-        ES = ES + str(NewPos)
-    print("The message is:",ES)
+        if x in alphabet:
+            ES = ES + alphabet[NewPos]
+        else:
+            ES = ES + x
+    print("The message is:", ES)
+
+def Programm15():
+    color("blue")
+    shape("turtle")
+    speed(10)
+    pensize(4)
+    NoA = int(input("How many sides do you want? -- "))
+    Angle = 360 / NoA
+    for Cyc7 in range(NoA):
+        forward(50)
+        right(Angle)
 
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
@@ -339,33 +354,33 @@ def Code():
                                         EPstate = input("Skip programms 9-11[Y/N] -- ").upper()
                                     if EPstate != "Y":
                                         CTNP()
-                                        if Stop == 1:  
+                                        if Stop == 1:
                                             pass
                                         else:
                                             Programm9()
                                             CTNP()
-                                            if Stop == 1:  
+                                            if Stop == 1:
                                                 pass
                                             else:
                                                 Programm10()
                                                 CTNP()
-                                                if Stop == 1:  
+                                                if Stop == 1:
                                                     pass
                                                 else:
                                                     Programm11()
                                     else:
                                         pass
                                     CTNP()  #(24.03.2026)
-                                    if Stop == 1:  
+                                    if Stop == 1:
                                         pass
                                     else:
                                         Programm12()
-                                        CTNP()  #(11.03.2026)
+                                        CTNP()  #(11.04.2026)
                                         if Stop == 1:
                                             pass
                                         else:
                                             Programm13()
-                                            CTNP()  #(12.03.2026)
+                                            CTNP()  # (12.04.2026)
                                             if Stop == 1:
                                                 pass
                                             else:
@@ -401,6 +416,9 @@ def Restart():  #(16.03.2026)
             PrStart = input("What programm to start at? -- ")
             if PrStart == "14":
                 Programm14()
+                Restart()
+            elif PrStart == "15":
+                Programm15()
                 Restart()
             else:
                 Code()

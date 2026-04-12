@@ -1,12 +1,12 @@
-print("--- Version Backlog a8-a8.3.1 (default, Apr 12 2026) ---")
-print("V`s available are a8.0.0 - a8.3.1(in plans)")
-print("Newest - a8(a9 in plans), start - a8")
+print("--- Version Backlog a8-a9B (default, Apr 12 2026) ---")
+print("V`s available are a8.0.0 - a9.0.0B")
+print("Newest - a9 (in beta), start - a8")
 D1 = input("The Main part -- ").lower()
 print("1,2,3 and so on")
 D2 = input("The addition -- ")
 print("1,2,3 and so on")
 D3 = input("The fix -- ")
-print("B - for betas, R - for releases")
+print("B - for betas, D - for demos, R - for releases")
 D4 = input("Access to Version -- ").upper()
 print("")
 if D1 == "a8":
@@ -98,7 +98,13 @@ if D1 == "a8":
     else:
         print("Such release does not exist or isn`t documented")
 elif D1 == "a9":
-    print("This release is not complete, it is only a plan!(Might change!)")
+    if D2 == "0":
+        if D3 == "0":
+            if D4 == "B":
+                print("This release is not complete, it is only a beta!(Probably won`t change!)")
+                print("The first big update!!")
+                print("Planned addition:")
+                print("    - Added 'Turtle' programm №1!(Bugtest not complete!)")
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")

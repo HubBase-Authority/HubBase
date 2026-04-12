@@ -102,8 +102,9 @@ elif D1 == "a9":
         if D3 == "0":
             if D4 == "B":
                 print("This release is not complete, it is only a beta!(Probably won`t change!)")
+                print("--- HubBase a9.0.0B (default, Apr 12 2026, 21:17:18) ---")
                 print("The first big update!!")
-                print("Planned addition:")
+                print("Addition:")
                 print("    - Added 'Turtle' programm №1!(Bugtest not complete!)")
             else:
                 print("Such release does not exist or isn`t documented")

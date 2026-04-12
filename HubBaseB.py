@@ -2,12 +2,12 @@ import time  #(16.03.2026)
 import random
 
 def Enter():  #(13.03.2026)
-    VN = "a8.2.0B"
+    VN = "a8.3.0B"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 11 2026, 14:40:24) ---")
+    print("--- HubBase "+VN+" (default, Apr 12 2026, 9:30:29) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -234,7 +234,38 @@ def Programm12():  #(24.03.2026)
         print(Cyc5)
 
 def Programm13():
-    print("This programm isn`t complete")
+    print("Create a list with 2 elements and 2 keys")
+    print("")
+    El1 = input("Element 1 -- ")
+    El2 = input("Element 2 -- ")
+    Key1 = input("Key 1 -- ")
+    Key2 = input("Key 2 -- ")
+    print("")
+    print("The list will now change")
+    List1 = {Key1: El1, Key2: El2}
+    List1E = {Key1: El1, Key2: El2}
+    print(List1)
+    List1["Change?"] = "Change!"
+    print(List1)
+    del List1[Key1]
+    print(List1)
+    List1[Key2] = "Changeful!"
+    print(List1)
+    print('')
+    for Cyc6 in List1:
+        print(Cyc6)
+
+def Programm14():
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    alphabet = alphabet * 2
+    STE = input("The string that you want to encrypt -- ").upper()
+    Key = int(input("Enter a number between 1 and 25 -- "))
+    ES = ""
+    for x in STE:
+        pos = alphabet.find(x)
+        NewPos = pos + Key
+        ES = ES + str(NewPos)
+    print("The message is:",ES)
 
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
@@ -329,6 +360,16 @@ def Code():
                                         pass
                                     else:
                                         Programm12()
+                                        CTNP()  #(11.03.2026)
+                                        if Stop == 1:
+                                            pass
+                                        else:
+                                            Programm13()
+                                            CTNP()  #(12.03.2026)
+                                            if Stop == 1:
+                                                pass
+                                            else:
+                                                Programm14()
     else:
         pass
     print("")  #(16.03.2026)
@@ -357,7 +398,12 @@ def Restart():  #(16.03.2026)
     else:
         Exit_Chioce = E_C = input("Do you want to exit the programm?[Y/N] -- ").upper()
         if E_C == "N":
-            Code()
+            PrStart = input("What programm to start at? -- ")
+            if PrStart == "14":
+                Programm14()
+                Restart()
+            else:
+                Code()
         else:
             pass
 

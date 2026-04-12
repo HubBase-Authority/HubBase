@@ -74,8 +74,31 @@ if D1 == "a8":
                 print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
+    elif D2 == "3":
+        if D3 == "0":
+            if D4 == "B":
+                print("--- HubBase a8.3.0B (default, Apr 12 2026, 9:30:29) ---")
+                print("Addition №3!(in beta)")
+                print("Changes:")
+                print("    - Added 'Programm14()'(with bugs)")
+            elif D4 == "R":
+                print("--- HubBase a8.3.0 (default, Apr 12 2026, 10:00:36) ---")
+                print("Addition №3!")
+                print("Changes:")
+                print("    - Added 'Programm14()' fully")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "1":
+            print("This release is not complete, it is only a plan!(Might change!)")
+            print("Bugfix №3!")
+            print("Changes:")
+            print("    - Fixed 'Programm14()' not working for Decrypt mode")
+        else:
+            print("Such release does not exist or isn`t documented")
     else:
         print("Such release does not exist or isn`t documented")
+elif D1 == "a9":
+    print("This release is not complete, it is only a plan!(Might change!)")
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")

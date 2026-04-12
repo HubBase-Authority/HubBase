@@ -2,12 +2,12 @@ import time  #(16.03.2026)
 import random
 
 def Enter():  #(13.03.2026)
-    VN = "a8.2.1"
+    VN = "a8.3.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 11 2026, 19:33:34) ---")
+    print("--- HubBase "+VN+" (default, Apr 12 2026, 10:00:36) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -255,6 +255,23 @@ def Programm13():  #(11.04.2026)
     for Cyc6 in List1:
         print(Cyc6)
 
+def Programm14():  #(12.04.2026)
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    alphabet = alphabet * 2
+    STE = input("The string that you want to encrypt -- ").upper()
+    Key = int(input("Enter a number between 1 and 25 -- "))
+    if Key < 0:
+        p = int("p")
+    ES = ""
+    for x in STE:
+        pos = alphabet.find(x)
+        NewPos = pos + Key
+        if x in alphabet:
+            ES = ES + alphabet[NewPos]
+        else:
+            ES = ES + x
+    print("The message is:", ES)
+
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -353,6 +370,11 @@ def Code():
                                             pass
                                         else:
                                             Programm13()
+                                            CTNP()  # (12.04.2026)
+                                            if Stop == 1:
+                                                pass
+                                            else:
+                                                Programm14()
     else:
         pass
     print("")  #(16.03.2026)
@@ -381,7 +403,12 @@ def Restart():  #(16.03.2026)
     else:
         Exit_Chioce = E_C = input("Do you want to exit the programm?[Y/N] -- ").upper()
         if E_C == "N":
-            Code()
+            PrStart = input("What programm to start at? -- ")
+            if PrStart == "14":
+                Programm14()
+                Restart()
+            else:
+                Code()
         else:
             pass
 

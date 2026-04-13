@@ -6,7 +6,7 @@ print("1,2,3 and so on")
 D2 = input("The addition -- ")
 print("1,2,3 and so on")
 D3 = input("The fix -- ")
-print("B - for betas, D - for demos, R - for releases")
+print("B - for betas, D - for deluxe editions, R - for releases")
 D4 = input("Access to Version -- ").upper()
 print("")
 if D1 == "a8":
@@ -105,7 +105,12 @@ elif D1 == "a9":
                 print("--- HubBase a9.0.0B (default, Apr 12 2026, 21:17:18) ---")
                 print("The first big update!!")
                 print("Addition:")
-                print("    - Added 'Turtle' programm №1!(Bugtest not complete!)")
+                print("    - Added 'Turtle' programm №1(Pr15)!")
+            elif D4 == "R":
+                print("This release is not complete, it is only a plan!")
+                print("The first big update!!")
+                print("Addition(Plan):")
+                print("    - Added 'Turtle' programm №2(Pr16)!")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

@@ -1,13 +1,14 @@
 import time  #(16.03.2026)
 import random
+from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a8.3.1"
+    VN = "a9.0.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 12 2026, 10:42:57) ---")
+    print("--- HubBase "+VN+" (default, Apr 13 2026, 10:42:57) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -269,6 +270,28 @@ def Programm14():  #(12.04.2026)
         else:
             ES = ES + x
     print("The message is:", ES)
+
+def Programm15():
+    color("blue")
+    shape("turtle")
+    speed(10)
+    pensize(4)
+    NoA = int(input("How many sides do you want? -- "))
+    Angle = 360 / NoA
+    for Cyc7 in range(NoA):
+        forward(50)
+        right(Angle)
+
+def Programm16():
+    color("blue")
+    shape("turtle")
+    speed(10)
+    pensize(4)
+    NoA = int(input("How many arms do you want? -- "))
+    Angle = 360 / NoA
+    for Cyc7 in range(NoA):
+        forward(50)
+        right(Angle)
 
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()

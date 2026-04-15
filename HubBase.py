@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.0.0PR"
+    VN = "a9.0.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 15 2026, 19:49:17) ---")
+    print("--- HubBase "+VN+" (default, Apr 15 2026, 21:09:07) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -284,32 +284,45 @@ def Programm15():  #(13.04.2026)
 
 def Programm16():  #(15.04.2026)
 
-    def VShape():
+    def VShape(size):
         right(25)
-        forward(50)
-        backward(50)
+        forward(size)
+        backward(size)
         left(50)
-        forward(50)
-        backward(50)
+        forward(size)
+        backward(size)
         right(25)
 
-    def SnowflakeArm():
+    def SnowflakeArm(size):
         for Cyc8 in  range(4):
-            forward(30)
-            VShape()
-        backward(120)
+            forward(size)
+            VShape(size)
+        backward(size*4)
 
-    pencolor("white")
+    def Snowflake(size):
+        for Cyc7 in range(NoA):
+            color(random.choice(colors))
+            SnowflakeArm(size)
+            right(Angle)
+
+    colors = ["white","blue","cyan","purple","green","white","white"]
+    goto(0,0)
     shape("turtle")
     speed(10)
     pensize(6)
     Screen().bgcolor("turquoise")
     clear()
     NoA = int(input("How many arms do you want? -- "))
+    NoS = int(input("How many snowflakes do you want? -- "))
     Angle = 360 / NoA
-    for Cyc7 in range(NoA):
-        SnowflakeArm()
-        right(Angle)
+    for Cyc9 in range(NoS):
+        size = random.randint(5,30)
+        x = random.randint(-400, 400)
+        y = random.randint(-400, 400)
+        penup()
+        goto(x,y)
+        pendown()
+        Snowflake(size)
 
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()

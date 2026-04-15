@@ -1,5 +1,7 @@
-print("--- Version Backlog a8-a9 (default, Apr 12 2026) ---")
+print("--- Version Backlog a8-a9 (default, Apr 15 2026) ---")
 print("V`s available are a8.0.0 - a9.0.0")
+print("Exceptions:")
+print("a0.1.0, a0.1.1")
 print("Newest - a9, start - a8")
 D1 = input("The Main part -- ").lower()
 print("1,2,3 and so on")
@@ -111,10 +113,34 @@ elif D1 == "a9":
                 print("Addition:")
                 print("    - Added 'Turtle' programm №2(Pr16)(Pt1)!")
             elif D4 == "R":
-                print("This release is not complete, it is only a plan!")
+                print("--- HubBase a9.0.0 (default, Apr 15 2026, 21:09:07) ---")
                 print("The first big update!!")
                 print("Addition:")
                 print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
+elif D1 == "a0":
+    if D2 == "1":
+        if D3 == "0":
+            if D4 == "R":
+                print("The code:")
+                print("Num = input('Number = ')")
+                print("Num2 = input('Number2 = ')")
+                print("print(Num + Num2)")
+            else:
+                print("Such release does not exist or isn`t documented")
+        if D3 == "1":
+            if D4 == "R":
+                print("The code:")
+                print("Num = input('Number = ')")
+                print("Num2 = input('Number2 = ')")
+                print("num = int(Num)")
+                print("num2 = int(Num2)")
+                print("print(num + num2)")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

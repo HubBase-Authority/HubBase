@@ -1,12 +1,12 @@
-print("--- Version Backlog a8-a9B (default, Apr 12 2026) ---")
-print("V`s available are a8.0.0 - a9.0.0B")
-print("Newest - a9 (in beta), start - a8")
+print("--- Version Backlog a8-a9 (default, Apr 12 2026) ---")
+print("V`s available are a8.0.0 - a9.0.0")
+print("Newest - a9, start - a8")
 D1 = input("The Main part -- ").lower()
 print("1,2,3 and so on")
 D2 = input("The addition -- ")
 print("1,2,3 and so on")
 D3 = input("The fix -- ")
-print("B - for betas, D - for deluxe editions, R - for releases")
+print("B - for betas, PR - for prereleases, R - for releases")
 D4 = input("Access to Version -- ").upper()
 print("")
 if D1 == "a8":
@@ -101,16 +101,20 @@ elif D1 == "a9":
     if D2 == "0":
         if D3 == "0":
             if D4 == "B":
-                print("This release is not complete, it is only a beta!(Probably won`t change!)")
                 print("--- HubBase a9.0.0B (default, Apr 12 2026, 21:17:18) ---")
-                print("The first big update!!")
+                print("The first big update!!(Beta!)")
                 print("Addition:")
                 print("    - Added 'Turtle' programm №1(Pr15)!")
+            elif D4 == "PR":
+                print("--- HubBase a9.0.0PR (default, Apr 15 2026, 19:49:17) ---")
+                print("The first big update!!(Not done!)")
+                print("Addition:")
+                print("    - Added 'Turtle' programm №2(Pr16)(Pt1)!")
             elif D4 == "R":
                 print("This release is not complete, it is only a plan!")
                 print("The first big update!!")
-                print("Addition(Plan):")
-                print("    - Added 'Turtle' programm №2(Pr16)!")
+                print("Addition:")
+                print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

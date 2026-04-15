@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.0.0"
+    VN = "a9.0.0PR"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 13 2026, 10:42:57) ---")
+    print("--- HubBase "+VN+" (default, Apr 15 2026, 19:49:17) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -271,7 +271,7 @@ def Programm14():  #(12.04.2026)
             ES = ES + x
     print("The message is:", ES)
 
-def Programm15():
+def Programm15():  #(13.04.2026)
     color("blue")
     shape("turtle")
     speed(10)
@@ -282,15 +282,33 @@ def Programm15():
         forward(50)
         right(Angle)
 
-def Programm16():
-    color("blue")
+def Programm16():  #(15.04.2026)
+
+    def VShape():
+        right(25)
+        forward(50)
+        backward(50)
+        left(50)
+        forward(50)
+        backward(50)
+        right(25)
+
+    def SnowflakeArm():
+        for Cyc8 in  range(4):
+            forward(30)
+            VShape()
+        backward(120)
+
+    pencolor("white")
     shape("turtle")
     speed(10)
-    pensize(4)
+    pensize(6)
+    Screen().bgcolor("turquoise")
+    clear()
     NoA = int(input("How many arms do you want? -- "))
     Angle = 360 / NoA
     for Cyc7 in range(NoA):
-        forward(50)
+        SnowflakeArm()
         right(Angle)
 
 def CTNP():  #(15.03.2026)
@@ -391,11 +409,21 @@ def Code():
                                             pass
                                         else:
                                             Programm13()
-                                            CTNP()  # (12.04.2026)
+                                            CTNP()  #(12.04.2026)
                                             if Stop == 1:
                                                 pass
                                             else:
                                                 Programm14()
+                                                CTNP()  #(15.04.2026)
+                                                if Stop == 1:
+                                                    pass
+                                                else:
+                                                    Programm15()
+                                                    CTNP()
+                                                    if Stop == 1:
+                                                        pass
+                                                    else:
+                                                        Programm16()
     else:
         pass
     print("")  #(16.03.2026)
@@ -425,8 +453,17 @@ def Restart():  #(16.03.2026)
         Exit_Chioce = E_C = input("Do you want to exit the programm?[Y/N] -- ").upper()
         if E_C == "N":
             PrStart = input("What programm to start at? -- ")
-            if PrStart == "14":
+            if PrStart == "2":
+                Programm2()
+                Restart()
+            elif PrStart == "14":
                 Programm14()
+                Restart()
+            elif PrStart == "15":
+                Programm15()
+                Restart()
+            elif PrStart == "16":
+                Programm16()
                 Restart()
             else:
                 Code()

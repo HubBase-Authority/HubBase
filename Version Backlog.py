@@ -133,7 +133,7 @@ elif D1 == "a0":
                 print("print(Num + Num2)")
             else:
                 print("Such release does not exist or isn`t documented")
-        if D3 == "1":
+        elif D3 == "1":
             if D4 == "R":
                 print("The code:")
                 print("Num = input('Number = ')")

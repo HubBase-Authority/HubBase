@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.0.1"
+    VN = "a9.0.2"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 19 2026, 10:31:44) ---")
+    print("--- HubBase "+VN+" (default, Apr 19 2026, 18:41:07) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -468,6 +468,39 @@ def Restart():  #(16.03.2026)
             PrStart = input("What programm to start at? -- ")
             if PrStart == "2":
                 Programm2()
+                Restart()
+            elif PrStart == "3":
+                Programm3()
+                Restart()
+            elif PrStart == "4":
+                Programm4()
+                Restart()
+            elif PrStart == "5":
+                Programm5()
+                Restart()
+            elif PrStart == "6":
+                Programm6()
+                Restart()
+            elif PrStart == "7":
+                Programm7()
+                Restart()
+            elif PrStart == "8":
+                Programm8()
+                Restart()
+            elif PrStart == "9":
+                Programm9()
+                Restart()
+            elif PrStart == "10":
+                Programm10()
+                Restart()
+            elif PrStart == "11":
+                Programm11()
+                Restart()
+            elif PrStart == "12":
+                Programm12()
+                Restart()
+            elif PrStart == "13":
+                Programm13()
                 Restart()
             elif PrStart == "14":
                 Programm14()

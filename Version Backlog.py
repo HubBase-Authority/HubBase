@@ -127,6 +127,14 @@ elif D1 == "a9":
                 print("    - Fixed 'Programm16()' funky snowflakes bug")
             else:
                 print("Such release does not exist or isn`t documented")
+        if D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a9.0.2 (default, Apr 19 2026, 18:41:07) ---")
+                print("Bugfix №5!")
+                print("Changes:")
+                print("    - Fixed 'Pr-start' tracking only 2 and 14-16")
+            else:
+                print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
     else:

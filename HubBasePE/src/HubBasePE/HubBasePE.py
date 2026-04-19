@@ -119,5 +119,3 @@ def Start():
         pass
     else:
         ProgrammP2()
-
-Start()

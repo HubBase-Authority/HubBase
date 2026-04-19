@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.0.0"
+    VN = "a9.0.1"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 15 2026, 21:09:07) ---")
+    print("--- HubBase "+VN+" (default, Apr 19 2026, 10:31:44) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -300,8 +300,8 @@ def Programm16():  #(15.04.2026)
         backward(size*4)
 
     def Snowflake(size):
+        color(random.choice(colors))
         for Cyc7 in range(NoA):
-            color(random.choice(colors))
             SnowflakeArm(size)
             right(Angle)
 

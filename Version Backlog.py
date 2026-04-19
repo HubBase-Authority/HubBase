@@ -119,6 +119,14 @@ elif D1 == "a9":
                 print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
             else:
                 print("Such release does not exist or isn`t documented")
+        if D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a9.0.1 (default, Apr 19 2026, 10:31:44) ---")
+                print("Bugfix №4!")
+                print("Changes:")
+                print("    - Fixed 'Programm16()' funky snowflakes bug")
+            else:
+                print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
     else:

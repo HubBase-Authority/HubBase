@@ -8,7 +8,7 @@ def Enter():  #(13.03.2026)
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 19 2026, 18:41:07) ---")
+    print("--- HubBase (base - "+VN+") (plus, Apr 21 2026, 19:00:44) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -325,7 +325,6 @@ def Programm16():  #(15.04.2026)
         Snowflake(size)
 
 def ProgrammP1():  #T1
-    import random  #(19.03.2026)
 
     def Drift():  #(19.03.2026)
         global x, y, z, a
@@ -556,14 +555,10 @@ def Code():
     else:
         print("VipAccess = 'F'")
         print("You shall not pass")
-        Pass = random.randint(1,20)
-        if Pass <= 19:
-            global RA
-            RestartAttempt = RestAtt = RA = int(RA) + 1
-            print("Restart №"+str(RA),"initialaizing")
-            Restart()
-        else:
-            print("A bug has occured!")
+        global RA
+        RestartAttempt = RestAtt = RA = int(RA) + 1
+        print("Restart №"+str(RA),"initialaizing")
+        Restart()
 
 def Restart():  #(16.03.2026)
     global E_C

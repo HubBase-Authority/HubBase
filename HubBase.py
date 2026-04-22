@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.0.2"
+    VN = "a9.1.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 19 2026, 18:41:07) ---")
+    print("--- HubBase "+VN+" (default, Apr 22 2026, 18:29:45) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -350,7 +350,10 @@ def PStop():  #(15.03.2026)
 
 #CodeBase
 def Code():
-    global Stop, VipAccess
+    global Stop, VipAccess, PlPr
+    PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1b2)[Y/N] -- ").upper()
+    if PlPr == "Y":
+        import HubBasePE
     TAEstate = "N"  #(15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
@@ -437,6 +440,18 @@ def Code():
                                                         pass
                                                     else:
                                                         Programm16()
+        CTNP()
+        print("PE programms next! (If you chose N then they won`t load!)")
+        if Stop == 1:
+            pass
+        else:
+            if PlPr == "Y":
+                HubBasePE.Main.ProgrammP1()
+                CTNP()  #(22.04.2026)
+                if Stop == 1:
+                    pass
+                else:
+                    HubBasePE.Main.ProgrammP2()
     else:
         pass
     print("")  #(16.03.2026)
@@ -459,6 +474,9 @@ def Code():
         Restart()
 
 def Restart():  #(16.03.2026)
+    global PlPr
+    if PlPr == "Y":
+        import HubBasePE
     global E_C
     if VipAccess == "F":
         Code()
@@ -510,6 +528,12 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "16":
                 Programm16()
+                Restart()
+            elif PrStart == "P1":
+                HubBasePE.Main.ProgrammP1()
+                Restart()
+            elif PrStart == "P2":
+                HubBasePE.Main.ProgrammP2()
                 Restart()
             else:
                 Code()

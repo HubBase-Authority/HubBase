@@ -1,5 +1,5 @@
-print("--- Version Backlog a8-a9.1 (default, Apr 22 2026) ---")
-print("V`s available are a8.0.0 - a9.1.0")
+print("--- Version Backlog a8-a9.1.1 (default, Apr 22 2026) ---")
+print("V`s available are a8.0.0 - a9.1.1")
 print("Exceptions:")
 print("a0.1.0, a0.1.1")
 print("Newest - a9, start - a8")
@@ -119,7 +119,7 @@ elif D1 == "a9":
                 print("    - Added 'Turtle' programm №2(Pr16)(Pt2)!")
             else:
                 print("Such release does not exist or isn`t documented")
-        if D3 == "1":
+        elif D3 == "1":
             if D4 == "R":
                 print("--- HubBase a9.0.1 (default, Apr 19 2026, 10:31:44) ---")
                 print("Bugfix №4!")
@@ -127,7 +127,7 @@ elif D1 == "a9":
                 print("    - Fixed 'Programm16()' funky snowflakes bug")
             else:
                 print("Such release does not exist or isn`t documented")
-        if D3 == "2":
+        elif D3 == "2":
             if D4 == "R":
                 print("--- HubBase a9.0.2 (default, Apr 19 2026, 18:41:07) ---")
                 print("Bugfix №5!")
@@ -144,6 +144,14 @@ elif D1 == "a9":
                 print("Addition №4!")
                 print("Changes:")
                 print("    - Added HubBasePE integration")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a9.1.1 (default, Apr 22 2026, 19:35:59) ---")
+                print("Bugfix №6!")
+                print("Changes:")
+                print("    - Fixed HubBasePE integration not working")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

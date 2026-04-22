@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.1.0"
+    VN = "a9.1.1"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 22 2026, 18:29:45) ---")
+    print("--- HubBase "+VN+" (default, Apr 22 2026, 19:35:59) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -353,7 +353,7 @@ def Code():
     global Stop, VipAccess, PlPr
     PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1b2)[Y/N] -- ").upper()
     if PlPr == "Y":
-        import HubBasePE
+        from HubBasePE import Main
     TAEstate = "N"  #(15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
@@ -446,12 +446,12 @@ def Code():
             pass
         else:
             if PlPr == "Y":
-                HubBasePE.Main.ProgrammP1()
+                Main.ProgrammP1()
                 CTNP()  #(22.04.2026)
                 if Stop == 1:
                     pass
                 else:
-                    HubBasePE.Main.ProgrammP2()
+                    Main.ProgrammP2()
     else:
         pass
     print("")  #(16.03.2026)
@@ -476,7 +476,7 @@ def Code():
 def Restart():  #(16.03.2026)
     global PlPr
     if PlPr == "Y":
-        import HubBasePE
+        from HubBasePE import Main
     global E_C
     if VipAccess == "F":
         Code()
@@ -530,10 +530,10 @@ def Restart():  #(16.03.2026)
                 Programm16()
                 Restart()
             elif PrStart == "P1":
-                HubBasePE.Main.ProgrammP1()
+                Main.ProgrammP1()
                 Restart()
             elif PrStart == "P2":
-                HubBasePE.Main.ProgrammP2()
+                Main.ProgrammP2()
                 Restart()
             else:
                 Code()

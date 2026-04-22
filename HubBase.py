@@ -3,12 +3,12 @@ import random
 from turtle import *
 
 def Enter():  #(13.03.2026)
-    VN = "a9.1.1"
+    VN = "a9.1.2"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 22 2026, 19:35:59) ---")
+    print("--- HubBase "+VN+" (default, Apr 22 2026, 20:07:09) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -440,18 +440,18 @@ def Code():
                                                         pass
                                                     else:
                                                         Programm16()
-        CTNP()
-        print("PE programms next! (If you chose N then they won`t load!)")
-        if Stop == 1:
-            pass
-        else:
-            if PlPr == "Y":
-                Main.ProgrammP1()
-                CTNP()  #(22.04.2026)
-                if Stop == 1:
-                    pass
-                else:
-                    Main.ProgrammP2()
+                                                        CTNP()
+                                                        print("PE programms next! (If you chose N then they won`t load!)")
+                                                        if Stop == 1:
+                                                            pass
+                                                        else:
+                                                            if PlPr == "Y":
+                                                                Main.ProgrammP1()
+                                                                CTNP()  #(22.04.2026)
+                                                                if Stop == 1:
+                                                                    pass
+                                                                else:
+                                                                    Main.ProgrammP2()
     else:
         pass
     print("")  #(16.03.2026)

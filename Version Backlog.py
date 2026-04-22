@@ -1,5 +1,5 @@
-print("--- Version Backlog a8-a9.1.1 (default, Apr 22 2026) ---")
-print("V`s available are a8.0.0 - a9.1.1")
+print("--- Version Backlog a8-a9.1.2 (default, Apr 22 2026) ---")
+print("V`s available are a8.0.0 - a9.1.2")
 print("Exceptions:")
 print("a0.1.0, a0.1.1")
 print("Newest - a9, start - a8")
@@ -152,6 +152,14 @@ elif D1 == "a9":
                 print("Bugfix №6!")
                 print("Changes:")
                 print("    - Fixed HubBasePE integration not working")
+            else:
+                print("Such release does not exist or isn`t documented")
+        elif D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a9.1.2 (default, Apr 22 2026, 20:07:09) ---")
+                print("Bugfix №7!")
+                print("Changes:")
+                print("    - Fixed PE programm order!")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

@@ -228,10 +228,21 @@ elif D1 == "a10":
                 print("Such release does not exist or isn`t documented")
         if D3 == "1":
             if D4 == "R":
-                print("--- HubBase a10.0.1 (default, Apr 25 2026, 13:24:32) ---")
-                print("The second big update!!(Not done!)")
-                print("Addition:")
+                print("--- HubBase a10.0.1 (default, Apr 29 2026, 20:26:45) ---")
+                print("Bugfix №8!")
+                print("Changes:")
                 print("    - Added HubBasePE v0.0.1rc2.post2 support!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        if D3 == "2":
+            if D4 == "R":
+                print("--- HubBase a10.0.2 (default, Apr ?? 2026, ??:??:??) ---")
+                print("Bugfix №9!")
+                print("Changes:")
+                print("    - [Plan] Update(d) V-B to a new formula.")
+                print("    - [Plan] Fix(ed) ??? bug")
+            else:
+                print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
     else:

@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.1rc2.post1-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.1rc2.post1.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="V a10.0.1 + HBPE 0.0.1rc2.post2">
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +29,7 @@
     "Python.HubBase.executor": "Run",
     "Python.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master"
   }
@@ -58,6 +49,15 @@
       <option name="presentableId" value="Default" />
       <updated>1777483355917</updated>
     </task>
+    <task id="LOCAL-00001" summary="V a10.0.1 + HBPE 0.0.1rc2.post2">
+      <option name="closed" value="true" />
+      <created>1777484937068</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777484937068</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -70,5 +70,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V a10.0.1 + HBPE 0.0.1rc2.post2" />
+    <option name="LAST_COMMIT_MESSAGE" value="V a10.0.1 + HBPE 0.0.1rc2.post2" />
   </component>
 </project>

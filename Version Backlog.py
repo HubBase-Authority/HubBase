@@ -1,8 +1,8 @@
-print("--- Version Backlog a8-a9.1.2 (default, Apr 22 2026) ---")
-print("V`s available are a8.0.0 - a9.1.2")
+print("--- Version Backlog a8-a10 (default, Apr 27 2026) ---")
+print("V`s available are a8.0.0 - a10.0.0")
 print("Exceptions:")
-print("a0.1.0, a0.1.1")
-print("Newest - a9, start - a8")
+print("a0.1.0, a0.1.1, a2.7.19")
+print("Newest - a10, start - a8")
 D1 = input("The Main part -- ").lower()
 print("1,2,3 and so on")
 D2 = input("The addition -- ")
@@ -10,6 +10,7 @@ print("1,2,3 and so on")
 D3 = input("The fix -- ")
 print("B - for betas, PR - for prereleases, R - for releases")
 D4 = input("Access to Version -- ").upper()
+print("The security updates are exclusive to the wiki!")
 print("")
 if D1 == "a8":
     if D2 == "0":
@@ -190,6 +191,46 @@ elif D1 == "a0":
             print("Such release does not exist or isn`t documented")
     else:
         print("Such release does not exist or isn`t documented")
+elif D1 == "a2":
+    if D2 == "7":
+        if D3 == "19":
+            if D4 == "R":
+                print("Release №1 with version number")
+                print("Featuring:")
+                print("    - 4 programms! (and the 5`th as a launchable)")
+                print("    - The name - №2!")
+                print("    - Vip`s!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
+elif D1 == "a10":
+    if D2 == "0":
+        if D3 == "0":
+            if D4 == "B":
+                print("--- HubBase a10.0.0B (base - a9.1.2) (default, Apr 24 2026, 12:11:14) ---")
+                print("The second big update!!(Beta!)")
+                print("Addition:")
+                print("    - Added 'Tkinter' programm №1(Pr17)!")
+            elif D4 == "PR":
+                print("--- HubBase a10.0.0PR (default, Apr 25 2026, 13:24:32) ---")
+                print("The second big update!!(Not done!)")
+                print("Addition:")
+                print("    - Added HubBasePE v0.0.1rc1.post1 support!")
+            elif D4 == "R":
+                print("--- HubBase a10.0.0 (default, Apr 26 2026, 11:51:41) ---")
+                print("The second big update!!")
+                print("Addition:")
+                print("    - Added 'Tkinter' programm №1(Pr17)!")
+            else:
+                print("Such release does not exist or isn`t documented")
+        else:
+            print("Such release does not exist or isn`t documented")
+    else:
+        print("Such release does not exist or isn`t documented")
 else:
     print("Such release does not exist or isn`t documented")
 s = input("")
+

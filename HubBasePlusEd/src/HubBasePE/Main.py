@@ -1,14 +1,15 @@
 import time  #(16.03.2026)
 import random
 from turtle import *
+import tkinter
 
 def Enter():  #(13.03.2026)
-    VN = "a9.1.1"
+    VN = "a10.0.0"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase (base - "+VN+") (plus, Apr 22 2026, 19:36:54) ---")
+    print("--- HubBase (base - "+VN+") (plus, Apr 27 2026, 12:13:14) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -324,6 +325,81 @@ def Programm16():  #(15.04.2026)
         pendown()
         Snowflake(size)
 
+def Programm17():  #(24.04.2026)
+    window1 = tkr.Tk()
+    button1 = tkr.Button(window1, text="Do not press this button", width=40)
+    button1.pack(padx=10, pady=10)
+    global clicks1
+    clicks1 = 0
+
+    def onClick(event):
+        global clicks1
+        clicks1 = clicks1 + 1
+        if clicks1 == 1:
+            button1.configure(text="Seriously? Do. Not. Press. It.")
+        elif clicks1 == 2:
+            button1.configure(text="Gah! Next next time no-no-no more butt-utt-on-on")
+        elif clicks1 == 3:
+            time.sleep(1.0)
+            button1.configure(text="Opps. I said 'Next next time'")
+        else:
+            button1.pack_forget()
+
+    button1.bind("<ButtonRelease-1>", onClick)
+    window1.mainloop()
+
+def Programm18():  #(27.04.2026)
+    print("To draw, use LMB.")
+    window2 = tkr.Tk()
+    canvas1 = tkr.Canvas(window2, bg="white", width=750, height=500)
+    canvas1.pack()
+    global lastX, lastY
+    lastX, lastY = 0,0
+    global Scolor
+    Scolor = "black"
+    width = int(input("How wide do you want your pencil? -- "))
+    red_id = canvas1.create_rectangle(10,10,30,30, fill="red")
+    blue_id = canvas1.create_rectangle(10,35,30,55, fill="blue")
+    black_id = canvas1.create_rectangle(10,60,30,80, fill="black")
+    white_id = canvas1.create_rectangle(10,85,30,105, fill="white")
+    
+    def StoreNewPos(event):
+        global lastX, lastY
+        lastX = event.x
+        lastY = event.y
+
+    def onClick(event):
+        StoreNewPos(event)
+
+    def onDrag(event):
+        global Scolor
+        canvas1.create_line(lastX, lastY, event.x, event.y, fill=Scolor,width=width)
+        StoreNewPos(event)
+
+    def CCTR(event):
+        global Scolor
+        Scolor = "red"
+
+    def CCTB(event):
+        global Scolor
+        Scolor = "blue"
+
+    def CCTb(event):
+        global Scolor
+        Scolor = "black"
+
+    def CCTW(event):
+        global Scolor
+        Scolor = "white"
+
+    canvas1.bind("<Button-1>", onClick)
+    canvas1.bind("<B1-Motion>", onDrag)
+    canvas1.tag_bind(red_id, "<Button-1>", CCTR)
+    canvas1.tag_bind(blue_id, "<Button-1>", CCTB)
+    canvas1.tag_bind(black_id, "<Button-1>", CCTb)
+    canvas1.tag_bind(white_id, "<Button-1>", CCTW)
+    window2.mainloop()
+        
 def ProgrammP1():  #T1
 
     def Drift():  #(19.03.2026)
@@ -412,6 +488,52 @@ def ProgrammP2():  #T3
     for l in CES:
         CESP = CESP + l + " "
     print(CESP)
+
+def ProgrammP3():  #T4
+    window = tkinter.Tk()
+    button1 = tkinter.Button(window, text="Do not press this button", width=40)
+    button1.pack(padx=50, pady=20)
+    global clicks1
+    clicks1 = 0
+    
+    def onClick(event):
+        global clicks1
+        clicks1 = clicks1 + 1
+        shape("turtle")
+        speed(10)
+        pensize(6)
+        Screen().bgcolor("turquoise")
+        def VShape(size):
+            right(25)
+            forward(size)
+            backward(size)
+            left(50)
+            forward(size)
+            backward(size)
+            right(25)
+
+        def SnowflakeArm(size):
+            for Cyc8 in  range(4):
+                forward(size)
+                VShape(size)
+            backward(size*4)
+
+        def Snowflake(size):
+            color('white')
+            for Cyc7 in range(4):
+                SnowflakeArm(size)
+                right(90)
+        Snowflake(20)
+        if clicks1 < 20:
+            button1.pack_forget()
+            print("Fail")
+        else:
+            button1.configure(text="You outsmarted me!")
+            print("Success")
+            
+
+    button1.bind("<ButtonRelease-1>", onClick)
+    window.mainloop()
 
 def CTNP():  #Mainline
     Cstate = input("Continue[Y/N]").upper()
@@ -534,12 +656,31 @@ def Code():
                                                         pass
                                                     else:
                                                         Programm16()
-        ProgrammP1()
-        CTNP()
-        if Stop == 1:
-            pass
-        else:
-            ProgrammP2()
+                                                        CTNP()
+                                                        if Stop == 1:
+                                                            pass
+                                                        else:
+                                                            Programm17()
+                                                            CTNP()
+                                                            if Stop == 1:
+                                                                pass
+                                                            else:
+                                                                Programm18()
+                                                                CTNP()
+                                                                if Stop == 1:
+                                                                    pass
+                                                                else:
+                                                                    ProgrammP1()
+                                                                    CTNP()
+                                                                    if Stop == 1:
+                                                                        pass
+                                                                    else:
+                                                                        ProgrammP2()
+                                                                        CTNP()
+                                                                        if Stop == 1:
+                                                                            pass
+                                                                        else:
+                                                                            ProgrammP3()
     else:
         pass
     print("")  #(16.03.2026)
@@ -614,11 +755,20 @@ def Restart():  #(16.03.2026)
             elif PrStart == "16":
                 Programm16()
                 Restart()
+            elif PrStart == "17":
+                Programm17()
+                Restart()
+            elif PrStart == "18":
+                Programm18()
+                Restart()
             elif PrStart == "P1":
                 ProgrammP1()
                 Restart()
             elif PrStart == "P2":
                 ProgrammP2()
+                Restart()
+            elif PrStart == "P3":
+                ProgrammP3()
                 Restart()
             else:
                 Code()

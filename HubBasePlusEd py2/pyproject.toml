@@ -1,14 +1,14 @@
 [project]
-name = "HubBasePE"
-version = "0.0.1rc2.post1"
+name = "HubBasePE-py2"
+version = "0.0.1rc2"
 authors = [
   { name="Voice659", email="E.R.Fahretdinov@yandex.ru" },
 ]
 description = "HubBasePE – 3 new programs + all the original!!"
 readme = "README.md"
-requires-python = ">=3.5, != 3.5.0"
+requires-python = ">=2.7"
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 2",
     "Operating System :: OS Independent",
 ]
 license = "MIT"

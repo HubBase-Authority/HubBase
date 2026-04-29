@@ -4,12 +4,12 @@ from turtle import *
 import tkinter
 
 def Enter():  #(13.03.2026)
-    VN = "a10.0.0"
+    VN = "a10.0.1"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase (base - "+VN+") (plus, Apr 27 2026, 12:13:14) ---")
+    print("--- HubBase (base - "+VN+") (plus, Apr 29 2026, 20:45:57) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -495,7 +495,30 @@ def ProgrammP3():  #T4
     button1.pack(padx=50, pady=20)
     global clicks1
     clicks1 = 0
-    
+    print("Please do not close the window before the turtle finishes!")
+    print("It may cause bugs.")
+
+    def VShape(size):
+        right(25)
+        forward(size)
+        backward(size)
+        left(50)
+        forward(size)
+        backward(size)
+        right(25)
+
+    def SnowflakeArm(size):
+        for Cyc8 in range(4):
+            forward(size)
+            VShape(size)
+        backward(size * 4)
+
+    def Snowflake(size):
+        color('white')
+        for Cyc7 in range(4):
+            SnowflakeArm(size)
+            right(90)
+
     def onClick(event):
         global clicks1
         clicks1 = clicks1 + 1
@@ -503,34 +526,20 @@ def ProgrammP3():  #T4
         speed(10)
         pensize(6)
         Screen().bgcolor("turquoise")
-        def VShape(size):
-            right(25)
-            forward(size)
-            backward(size)
-            left(50)
-            forward(size)
-            backward(size)
-            right(25)
-
-        def SnowflakeArm(size):
-            for Cyc8 in  range(4):
-                forward(size)
-                VShape(size)
-            backward(size*4)
-
-        def Snowflake(size):
-            color('white')
-            for Cyc7 in range(4):
-                SnowflakeArm(size)
-                right(90)
-        Snowflake(20)
         if clicks1 < 20:
-            button1.pack_forget()
-            print("Fail")
+            Snowflake(20)
+            if clicks1 < 20:
+                button1.pack_forget()
+                print("Fail")
+                Terminator()
         else:
             button1.configure(text="You outsmarted me!")
             print("Success")
-            
+            speed(100000)
+            Terminator()
+            time.sleep(1)
+            button1.pack_forget()
+            Terminator()
 
     button1.bind("<ButtonRelease-1>", onClick)
     window.mainloop()

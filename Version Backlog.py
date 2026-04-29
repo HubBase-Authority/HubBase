@@ -223,9 +223,15 @@ elif D1 == "a10":
                 print("--- HubBase a10.0.0 (default, Apr 26 2026, 11:51:41) ---")
                 print("The second big update!!")
                 print("Addition:")
-                print("    - Added 'Tkinter' programm №1(Pr17)!")
+                print("    - Added 'Tkinter' programm №2(Pr18)!")
             else:
                 print("Such release does not exist or isn`t documented")
+        if D3 == "1":
+            if D4 == "R":
+                print("--- HubBase a10.0.1 (default, Apr 25 2026, 13:24:32) ---")
+                print("The second big update!!(Not done!)")
+                print("Addition:")
+                print("    - Added HubBasePE v0.0.1rc2.post2 support!")
         else:
             print("Such release does not exist or isn`t documented")
     else:

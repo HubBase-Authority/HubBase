@@ -264,15 +264,15 @@ elif LogVersion == "1.5":
     time.sleep(0.8)
     print("Complete")
     time.sleep(0.2)
-    print("--- Version Backlog a8-a10.0.2 (default, Apr 30 2026) ---")
+    print("--- Version Backlog a8-0.0.1b4 (default, Apr 30 2026) ---")
     print("V`s available are a8.0.0 - a10.0.2")
     print("Exceptions:")
     print("a0.1.0, a0.1.1, a2.7.19")
-    print("Newest - a10, start - a8")
+    print("Newest - 0, start - a8")
     D1 = input("The Main part -- ").lower()
-    print("1,2,3 and so on")
+    print("0,1,2,3 and so on")
     D2 = input("The addition -- ")
-    print("1,2,3 and so on")
+    print("0,1,2,3 and so on")
     D3 = input("The fix -- ")
     print("b(n) - for betas, rc(n) - for prereleases, r - for releases")
     D4 = input("Access to Version -- ").lower()
@@ -516,6 +516,29 @@ elif LogVersion == "1.5":
                 print("Such release does not exist or isn`t documented")
         else:
             print("Such release does not exist or isn`t documented")
+    elif D1 == "0":
+        if D2 == "0":
+            if D3 == "1":
+                if D4 == "b1":
+                    print("--- HubBase 0.0.1b1 (default, Apr 30 2026, 20:06:58) ---")
+                    print("The first GIGANTIC update!!")
+                    print("Addition:")
+                    print("    - Added 'Minesweeper'(Pr19)(Pt1)!")
+                elif D4 == "b2":
+                    print("--- HubBase 0.0.1b2 (default, Apr 30 2026, 20:29:47) ---")
+                    print("The first GIGANTIC update(in beta)!!")
+                    print("Addition:")
+                    print("    - Added 'Minesweeper'(Pr19)(Pt2)!")
+                elif D4 == "b3":
+                    print("--- HubBase 0.0.1b3 (default, Apr 30 2026, 20:41:24) ---")
+                    print("The first GIGANTIC update(in beta)!!")
+                    print("Addition:")
+                    print("    - Added 'Minesweeper'(Pr19)(Pt3)!")
+                elif D4 == "b4":
+                    print("--- HubBase 0.0.1b4 (default, Apr 30 2026, 20:46:45) ---")
+                    print("The first GIGANTIC update(in beta)!!")
+                    print("Addition:")
+                    print("    - Fixed 'Minesweeper'(Pr19)(Pt2+3)!")
     else:
         print("Such release does not exist or isn`t documented")
 else:

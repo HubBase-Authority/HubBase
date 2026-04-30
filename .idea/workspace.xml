@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="V a10.0.1 + HBPE 0.0.1rc2.post2">
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
     </list>
@@ -74,7 +73,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777485495107</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1">
+      <option name="closed" value="true" />
+      <created>1777568788710</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777568788710</updated>
+    </task>
+    <task id="LOCAL-00004" summary="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5">
+      <option name="closed" value="true" />
+      <created>1777568880207</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777568880207</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +105,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="V a10.0.1 + HBPE 0.0.1rc2.post2" />
-    <option name="LAST_COMMIT_MESSAGE" value="V a10.0.1 + HBPE 0.0.1rc2.post2" />
+    <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1" />
+    <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5" />
   </component>
 </project>

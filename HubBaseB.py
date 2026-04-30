@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "0.0.1b1"
+    VN = "0.0.1b4"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 29 2026, 22:23:58) ---")
+    print("--- HubBase "+VN+" (default, Apr 30 2026, 20:41:24) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -408,28 +408,49 @@ def Programm19():  #(29.04.2026)
         squaresLeft = 0
         minefield = []
 
-    def printfield():
-        global minefield
+    def printfield(minefield):
         for rowList in minefield:
             print(rowList)
 
-    def create_minefield():
-        global squaresLeft, minefield
-        for row in range(10):
-            rowList = []
-            for column in range(10):
-                BombRN = random.randint(1,100)
-                if BombRN <= 20:
-                    rowList.append(1)
-                else:
-                    rowList.append(0)
-                    squaresLeft = squaresLeft + 1
-            minefield.append(rowList)
+    def create_minefield(minefield, window):
+
+        def generate_minefield(minefield):
+            global squaresLeft
+            for row in range(10):
+                rowList = []
+                for column in range(10):
+                    BombRN = random.randint(1,100)
+                    if BombRN <= 20:
+                        rowList.append(1)
+                    else:
+                        rowList.append(0)
+                        squaresLeft = squaresLeft + 1
+                minefield.append(rowList)
+
+        def layout_minefield(window, minefield):
+            global VipAccess
+            for rowNumber, rowList in enumerate(minefield):
+                for columnNumber, columnEntry in enumerate(rowList):
+                    RSC = random.randint(1,100)
+                    if RSC < 25:
+                        square = tkr.Label(window, text="    ", bg= "darkgreen")
+                    if RSC > 75:
+                        square = tkr.Label(window, text="    ", bg= "seagreen")
+                    else:
+                        square = tkr.Label(window, text="    ", bg= "green")
+                    square.grid(row= rowNumber, column= columnNumber)
+
+        generate_minefield(minefield)
+        layout_minefield(window, minefield)
 
     def Play_minesweeper():
-        create_minefield()
-        printfield()
+        global VipAccess, minefield
         window3 = tkr.Tk()
+        create_minefield(minefield, window3)
+        if VipAccess == "T":
+            PFQ = input("Do you want a cheat?[Y/N] -- ").upper()
+            if PFQ == "Y":
+                printfield(minefield)
         window3.mainloop()
 
     Setup_minesweeper()

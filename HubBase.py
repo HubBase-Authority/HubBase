@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "a10.0.1"
+    VN = "a10.0.2"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 29 2026, 20:26:45) ---")
+    print("--- HubBase "+VN+" (default, Apr 30 2026, 19:41:54) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -400,6 +400,20 @@ def Programm18():  #(27.04.2026)
     canvas1.tag_bind(white_id, "<Button-1>", CCTW)
     window2.mainloop()
 
+def Programm19():  #(29.04.2026)
+    def Setup_minesweeper():
+        global gameOver, score, squaresLeft, minefield
+        gameOver = False
+        score = 0
+        squaresLeft = 0
+        minefield = []
+
+    def Play_minesweeper():
+        pass
+
+    Setup_minesweeper()
+    Play_minesweeper()
+
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -625,6 +639,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "18":
                 Programm18()
+                Restart()
+            elif PrStart == "19":
+                print("Ha! You thought there was a leak!")
                 Restart()
             elif PrStart == "P1":
                 Main.ProgrammP1()

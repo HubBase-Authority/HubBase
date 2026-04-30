@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="V a10.0.1 + HBPE 0.0.1rc2.post2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +16,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="8e2ffe43cfa942ca8fde52a33eda241833608cc6" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="3D2bxAhsQiS0eDpaRLs9gkmVWhX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,6 +35,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.HubBase.executor": "Run",
+    "Python.HubBaseB.executor": "Run",
     "Python.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -57,7 +66,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777484937068</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="V a10.0.1 + HBPE 0.0.1rc2.post2">
+      <option name="closed" value="true" />
+      <created>1777485495107</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777485495107</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

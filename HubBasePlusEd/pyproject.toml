@@ -1,6 +1,6 @@
 [project]
 name = "HubBasePE"
-version = "0.0.1rc2.post2"
+version = "0.0.1.0.00"
 authors = [
   { name="Voice659", email="E.R.Fahretdinov@yandex.ru" },
 ]

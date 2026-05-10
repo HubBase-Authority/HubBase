@@ -1,15 +1,15 @@
 import time  #(16.03.2026)
 import random
 from turtle import *
-import tkinter
+import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "a10.0.1"
+    VN = "0.0.1.0.00"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase (base - "+VN+") (plus, Apr 29 2026, 20:45:57) ---")
+    print("--- HubBase (base - "+VN+") (plus, Apr 10 2026, 16:27:52) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -399,6 +399,123 @@ def Programm18():  #(27.04.2026)
     canvas1.tag_bind(black_id, "<Button-1>", CCTb)
     canvas1.tag_bind(white_id, "<Button-1>", CCTW)
     window2.mainloop()
+
+def Programm19():  #(29.04.2026)
+    def Setup_minesweeper():
+        global gameOver, score, squaresLeft, minefield
+        gameOver = False
+        score = 0
+        squaresLeft = 0
+        minefield = []
+
+    def printfield(minefield):
+        for rowList in minefield:
+            print(rowList)
+
+    def create_minefield(minefield, window):
+
+        def generate_minefield(minefield):
+            global squaresLeft
+            for row in range(10):
+                rowList = []
+                for column in range(10):
+                    BombRN = random.randint(1,100)
+                    if BombRN <= 20:
+                        rowList.append(1)
+                    else:
+                        rowList.append(0)
+                        squaresLeft = squaresLeft + 1
+                minefield.append(rowList)
+
+        def set_Flag(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            currentText = square.cget("text")
+            if currentText == "    ":
+                square.config(bg= "yellow", text= ""+"B"+"")
+            if currentText == "B":
+                square.config(bg= "green", text= "    ")
+
+
+        def check_Bombs(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            row = int(square.grid_info()["row"])
+            column = int(square.grid_info()["column"])
+            currentText = square.cget("text")
+            if gameOver == False:
+                if minefield[row][column] == 1:
+                    gameOver = True
+                    square.config(bg= "red")
+                    print("Game over! You hit a bomb!")
+                    if PFQ == "Y":
+                        print("**Even with a cheat!!!**")
+                    print("Your score was:", score)
+                elif currentText == "    ":
+                    square.config(bg= "brown")
+                    totalBombs = 0
+                    if row < 9:
+                        if minefield[row+1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0:
+                        if minefield[row-1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column > 0:
+                        if minefield[row][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column < 9:
+                        if minefield[row][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column > 0:
+                        if minefield[row-1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column < 9:
+                        if minefield[row+1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column < 9:
+                        if minefield[row-1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column > 0:
+                        if minefield[row+1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    square.config(text= " "+str(totalBombs)+" ")
+                    score += 1
+                    squaresLeft -= 1
+                    if squaresLeft == 0:
+                        gameOver = True
+                        print("Well done!")
+                        print("Your score was:", score)
+
+        def layout_minefield(window, minefield):
+            global VipAccess
+            for rowNumber, rowList in enumerate(minefield):
+                for columnNumber, columnEntry in enumerate(rowList):
+                    RSC = random.randint(1,100)
+                    if RSC < 25:
+                        square = tkr.Label(window, text="    ", bg= "darkgreen")
+                    elif RSC > 75:
+                        square = tkr.Label(window, text="    ", bg= "seagreen")
+                    else:
+                        square = tkr.Label(window, text="    ", bg= "green")
+                    square.grid(row= rowNumber, column= columnNumber)
+                    square.bind("<Button-1>", check_Bombs)
+                    square.bind("<Button-3>", set_Flag)
+
+        generate_minefield(minefield)
+        layout_minefield(window, minefield)
+
+    def Play_minesweeper():
+        global VipAccess, minefield, PFQ
+        window3 = tkr.Tk()
+        create_minefield(minefield, window3)
+        if VipAccess == "T":
+            PFQ = input("Do you want a cheat?[Y/N] -- ").upper()
+            if PFQ == "Y":
+                printfield(minefield)
+        window3.mainloop()
+
+    Setup_minesweeper()
+    Play_minesweeper()
         
 def ProgrammP1():  #T1
 
@@ -544,6 +661,68 @@ def ProgrammP3():  #T4
     button1.bind("<ButtonRelease-1>", onClick)
     window.mainloop()
 
+def ProgrammP4():
+    print("HB-JS python port 0.0.1.0.00")
+    time.sleep(1)
+
+
+    def JSProgramm1(repeats):
+        for i in range(repeats):
+            print(str(i)+". =^.^=")
+
+    def JSProgramm2():
+        SecInMin = 60
+        MinInHour = 60
+        SecInHour = SecInMin * MinInHour
+        HourInDay = 24
+        SecInDay = SecInHour * HourInDay
+        MinInDay = MinInHour * HourInDay
+        DayInWeek = 7
+        SecInWeek = SecInDay * DayInWeek
+        MinInWeek = MinInDay * DayInWeek
+        HourInWeek = HourInDay * DayInWeek
+        DayInYear = 365
+        SecInYear = SecInDay * DayInYear
+        MinInYear = MinInDay * DayInYear
+        HourInYear = HourInDay * DayInYear
+        currentYear = 2026
+        print("There are " + str(SecInMin) + " seconds in a minute")
+        print("There are " + str(MinInHour) + " minutes in an hour")
+        print("There are " + str(SecInHour) + " seconds in an hour")
+        print("There are " + str(HourInDay) + " hours in a day")
+        print("There are " + str(SecInDay) + " seconds in a day")
+        print("There are " + str(MinInDay) + " minutes in a day")
+        print("There are " + str(DayInWeek) + " days in a week")
+        print("There are " + str(SecInWeek) + " seconds in a week")
+        print("There are " + str(MinInWeek) + " minutes in a week")
+        print("There are " + str(HourInWeek) + " hours in a week")
+        print("There are " + str(DayInYear) + " days in a year")
+        print("There are " + str(SecInYear) + " seconds in a year")
+        print("There are " + str(MinInYear) + " minutes in a year")
+        print("There are " + str(HourInYear) + " hours in a year")
+        print("I am aproximately " + str(((currentYear - 2014) * SecInYear)) + " seconds old")
+
+    def JSProgramm3():
+        HighFives = 0
+        print(HighFives+1)
+        print(HighFives+1)
+        print(HighFives-1)
+        print("Delayed:")
+        print(HighFives)
+        print(HighFives+1)
+        print(HighFives+1)
+        print(HighFives-1)
+
+    print("Programm1:")
+    JSProgramm1(10)
+    time.sleep(1)
+    print("Programm2:")
+    JSProgramm2()
+    time.sleep(1)
+    print("Programm3:")
+    JSProgramm3()
+    time.sleep(1)
+
 def CTNP():  #Mainline
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -575,6 +754,16 @@ def Start():
         pass
     else:
         ProgrammP2()
+        CTNP()
+        if Stop == 1:
+            pass
+        else:
+            ProgrammP3()
+            CTNP()
+            if Stop == 1:
+                pass
+            else:
+                ProgrammP4()
 
 def Code():
     global Stop, VipAccess
@@ -679,17 +868,32 @@ def Code():
                                                                 if Stop == 1:
                                                                     pass
                                                                 else:
-                                                                    ProgrammP1()
+                                                                    Programm18()
                                                                     CTNP()
                                                                     if Stop == 1:
                                                                         pass
                                                                     else:
-                                                                        ProgrammP2()
+                                                                        Programm19()
                                                                         CTNP()
                                                                         if Stop == 1:
                                                                             pass
                                                                         else:
-                                                                            ProgrammP3()
+                                                                            ProgrammP1()
+                                                                            CTNP()
+                                                                            if Stop == 1:
+                                                                                pass
+                                                                            else:
+                                                                                ProgrammP2()
+                                                                                CTNP()
+                                                                                if Stop == 1:
+                                                                                    pass
+                                                                                else:
+                                                                                    ProgrammP3()
+                                                                                    CTNP()
+                                                                                    if Stop == 1:
+                                                                                        pass
+                                                                                    else:
+                                                                                        ProgrammP4()
     else:
         pass
     print("")  #(16.03.2026)
@@ -770,6 +974,9 @@ def Restart():  #(16.03.2026)
             elif PrStart == "18":
                 Programm18()
                 Restart()
+            elif PrStart == "19":
+                Programm19()
+                Restart()
             elif PrStart == "P1":
                 ProgrammP1()
                 Restart()
@@ -778,6 +985,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "P3":
                 ProgrammP3()
+                Restart()
+            elif PrStart == "P4":
+                ProgrammP4()
                 Restart()
             else:
                 Code()

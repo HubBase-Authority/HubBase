@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5">
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.1 + v0.0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,12 +39,39 @@
     "Python.HubBase.executor": "Run",
     "Python.HubBaseB.executor": "Run",
     "Python.Main.executor": "Run",
+    "Python.Test5--Calc.executor": "Run",
+    "Python.Test7.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="HubBase" type="PythonConfigurationType" factoryName="Python">
+      <module name="HubBase" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.14 (HubBase)" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Trest\OneDrive\Рабочий стол\Марк\Python\HubBase" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="HubBase" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777568880207</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b4 + V-B ...-v0.0.1b4">
+      <option name="closed" value="true" />
+      <created>1777574028150</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777574028150</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +145,7 @@
     <MESSAGE value="V a10.0.1 + HBPE 0.0.1rc2.post2" />
     <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1" />
     <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5" />
+    <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b4 + V-B ...-v0.0.1b4" />
+    <option name="LAST_COMMIT_MESSAGE" value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b4 + V-B ...-v0.0.1b4" />
   </component>
 </project>

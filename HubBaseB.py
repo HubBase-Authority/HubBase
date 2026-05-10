@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "0.0.1b4"
+    VN = "0.0.1.0.00rc2"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 30 2026, 20:41:24) ---")
+    print("--- HubBase "+VN+" (default, May 02 2026, 21:04:43) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -427,6 +427,65 @@ def Programm19():  #(29.04.2026)
                         squaresLeft = squaresLeft + 1
                 minefield.append(rowList)
 
+        def set_Flag(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            currentText = square.cget("text")
+            if currentText == "    ":
+                square.config(bg= "yellow", text= ""+"B"+"")
+            if currentText == "B":
+                square.config(bg= "green", text= "    ")
+
+
+        def check_Bombs(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            row = int(square.grid_info()["row"])
+            column = int(square.grid_info()["column"])
+            currentText = square.cget("text")
+            if gameOver == False:
+                if minefield[row][column] == 1:
+                    gameOver = True
+                    square.config(bg= "red")
+                    print("Game over! You hit a bomb!")
+                    if PFQ == "Y":
+                        print("**Even with a cheat!!!**")
+                    print("Your score was:", score)
+                elif currentText == "    ":
+                    square.config(bg= "brown")
+                    totalBombs = 0
+                    if row < 9:
+                        if minefield[row+1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0:
+                        if minefield[row-1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column > 0:
+                        if minefield[row][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column < 9:
+                        if minefield[row][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column > 0:
+                        if minefield[row-1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column < 9:
+                        if minefield[row+1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column < 9:
+                        if minefield[row-1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column > 0:
+                        if minefield[row+1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    square.config(text= " "+str(totalBombs)+" ")
+                    score += 1
+                    squaresLeft -= 1
+                    if squaresLeft == 0:
+                        gameOver = True
+                        print("Well done!")
+                        print("Your score was:", score)
+
         def layout_minefield(window, minefield):
             global VipAccess
             for rowNumber, rowList in enumerate(minefield):
@@ -434,17 +493,19 @@ def Programm19():  #(29.04.2026)
                     RSC = random.randint(1,100)
                     if RSC < 25:
                         square = tkr.Label(window, text="    ", bg= "darkgreen")
-                    if RSC > 75:
+                    elif RSC > 75:
                         square = tkr.Label(window, text="    ", bg= "seagreen")
                     else:
                         square = tkr.Label(window, text="    ", bg= "green")
                     square.grid(row= rowNumber, column= columnNumber)
+                    square.bind("<Button-1>", check_Bombs)
+                    square.bind("<Button-3>", set_Flag)
 
         generate_minefield(minefield)
         layout_minefield(window, minefield)
 
     def Play_minesweeper():
-        global VipAccess, minefield
+        global VipAccess, minefield, PFQ
         window3 = tkr.Tk()
         create_minefield(minefield, window3)
         if VipAccess == "T":

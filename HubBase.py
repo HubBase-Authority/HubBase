@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "a10.0.2"
+    VN = "0.0.1.0.00"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, Apr 30 2026, 19:41:54) ---")
+    print("--- HubBase "+VN+" (default, May 10 2026, 10:56:54) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -408,8 +408,111 @@ def Programm19():  #(29.04.2026)
         squaresLeft = 0
         minefield = []
 
+    def printfield(minefield):
+        for rowList in minefield:
+            print(rowList)
+
+    def create_minefield(minefield, window):
+
+        def generate_minefield(minefield):
+            global squaresLeft
+            for row in range(10):
+                rowList = []
+                for column in range(10):
+                    BombRN = random.randint(1,100)
+                    if BombRN <= 20:
+                        rowList.append(1)
+                    else:
+                        rowList.append(0)
+                        squaresLeft = squaresLeft + 1
+                minefield.append(rowList)
+
+        def set_Flag(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            currentText = square.cget("text")
+            if currentText == "    ":
+                square.config(bg= "yellow", text= ""+"B"+"")
+            if currentText == "B":
+                square.config(bg= "green", text= "    ")
+
+
+        def check_Bombs(event):
+            global score, squaresLeft, gameOver, minefield, PFQ
+            square = event.widget
+            row = int(square.grid_info()["row"])
+            column = int(square.grid_info()["column"])
+            currentText = square.cget("text")
+            if gameOver == False:
+                if minefield[row][column] == 1:
+                    gameOver = True
+                    square.config(bg= "red")
+                    print("Game over! You hit a bomb!")
+                    if PFQ == "Y":
+                        print("**Even with a cheat!!!**")
+                    print("Your score was:", score)
+                elif currentText == "    ":
+                    square.config(bg= "brown")
+                    totalBombs = 0
+                    if row < 9:
+                        if minefield[row+1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0:
+                        if minefield[row-1][column]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column > 0:
+                        if minefield[row][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if column < 9:
+                        if minefield[row][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column > 0:
+                        if minefield[row-1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column < 9:
+                        if minefield[row+1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row > 0 and column < 9:
+                        if minefield[row-1][column+1]  == 1:
+                            totalBombs = totalBombs + 1
+                    if row < 9 and column > 0:
+                        if minefield[row+1][column-1]  == 1:
+                            totalBombs = totalBombs + 1
+                    square.config(text= " "+str(totalBombs)+" ")
+                    score += 1
+                    squaresLeft -= 1
+                    if squaresLeft == 0:
+                        gameOver = True
+                        print("Well done!")
+                        print("Your score was:", score)
+
+        def layout_minefield(window, minefield):
+            global VipAccess
+            for rowNumber, rowList in enumerate(minefield):
+                for columnNumber, columnEntry in enumerate(rowList):
+                    RSC = random.randint(1,100)
+                    if RSC < 25:
+                        square = tkr.Label(window, text="    ", bg= "darkgreen")
+                    elif RSC > 75:
+                        square = tkr.Label(window, text="    ", bg= "seagreen")
+                    else:
+                        square = tkr.Label(window, text="    ", bg= "green")
+                    square.grid(row= rowNumber, column= columnNumber)
+                    square.bind("<Button-1>", check_Bombs)
+                    square.bind("<Button-3>", set_Flag)
+
+        generate_minefield(minefield)
+        layout_minefield(window, minefield)
+
     def Play_minesweeper():
-        pass
+        global VipAccess, minefield, PFQ
+        window3 = tkr.Tk()
+        create_minefield(minefield, window3)
+        if VipAccess == "T":
+            PFQ = input("Do you want a cheat?[Y/N] -- ").upper()
+            if PFQ == "Y":
+                printfield(minefield)
+        window3.mainloop()
 
     Setup_minesweeper()
     Play_minesweeper()
@@ -441,7 +544,7 @@ def PStop():  #(15.03.2026)
 #CodeBase
 def Code():
     global Stop, VipAccess, PlPr
-    PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1rc1.post1)[Y/N] -- ").upper()
+    PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1)[Y/N] -- ").upper()
     if PlPr == "Y":
         from HubBasePE import Main
     TAEstate = "N"  #(15.03.2026)
@@ -540,23 +643,33 @@ def Code():
                                                                 pass
                                                             else:
                                                                 Programm18()
-                                                                print("PE programms next! (If you chose N then they won`t load!)")
                                                                 CTNP()
                                                                 if Stop == 1:
                                                                     pass
                                                                 else:
-                                                                    if PlPr == "Y":
-                                                                        Main.ProgrammP1()
-                                                                        CTNP()  #(22.04.2026)
-                                                                        if Stop == 1:
-                                                                            pass
-                                                                        else:
-                                                                            Main.ProgrammP2()
-                                                                            CTNP()  # (22.04.2026)
+                                                                    Programm19()
+                                                                    print("PE programms next! (If you chose N then they won`t load!)")
+                                                                    CTNP()
+                                                                    if Stop == 1:
+                                                                        pass
+                                                                    else:
+                                                                        if PlPr == "Y":
+                                                                            Main.ProgrammP1()
+                                                                            CTNP()  #(22.04.2026)
                                                                             if Stop == 1:
                                                                                 pass
                                                                             else:
-                                                                                Main.ProgrammP3()
+                                                                                Main.ProgrammP2()
+                                                                                CTNP()
+                                                                                if Stop == 1:
+                                                                                    pass
+                                                                                else:
+                                                                                    Main.ProgrammP3()
+                                                                                    CTNP()
+                                                                                    if Stop == 1:
+                                                                                        pass
+                                                                                    else:
+                                                                                        Main.ProgrammP4()
     else:
         pass
     print("")  #(16.03.2026)
@@ -641,7 +754,7 @@ def Restart():  #(16.03.2026)
                 Programm18()
                 Restart()
             elif PrStart == "19":
-                print("Ha! You thought there was a leak!")
+                Programm19()
                 Restart()
             elif PrStart == "P1":
                 Main.ProgrammP1()
@@ -651,6 +764,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "P3":
                 Main.ProgrammP3()
+                Restart()
+            elif PrStart == "P4":
+                Main.ProgrammP4()
                 Restart()
             else:
                 Code()

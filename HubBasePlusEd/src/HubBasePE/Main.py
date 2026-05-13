@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "0.0.1.0.00"
+    VN = "0.0.1.0.10"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase (base - "+VN+") (plus, Apr 10 2026, 16:27:52) ---")
+    print("--- HubBase (base - "+VN+") (plus, May 13 2026, 20:19:31) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -607,8 +607,8 @@ def ProgrammP2():  #T3
     print(CESP)
 
 def ProgrammP3():  #T4
-    window = tkinter.Tk()
-    button1 = tkinter.Button(window, text="Do not press this button", width=40)
+    window = tkr.Tk()
+    button1 = tkr.Button(window, text="Do not press this button", width=40)
     button1.pack(padx=50, pady=20)
     global clicks1
     clicks1 = 0
@@ -723,6 +723,43 @@ def ProgrammP4():
     JSProgramm3()
     time.sleep(1)
 
+def ProgrammP5():
+    def Ttt(sys, n):
+        if sys == "tw":
+            t = 0
+            r = 0
+            for i in n:
+                o = int(i) * (2 ** r)
+                t += o
+                r += 1
+            print(t)
+        elif sys == "te":
+            u = int(n)
+            x = 0
+            while 2 ** x < int(n):
+                x += 1
+            t = ""
+            r = 0
+            for i in range(x):
+                o = str(int(u) % 2)
+                t = t + o
+                r += 1
+                u = u / 2
+            if int(n) == 2 ** x:
+                t = t + "1"
+            RL = []
+            u = str(t)
+            t = ""
+            for i in u:
+                RL.append(i)
+            RL.reverse()
+            for element in RL:
+                t = t + element
+            print(t)
+
+    n = input("Number -- ")
+    Ttt("te", n)
+
 def CTNP():  #Mainline
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
@@ -764,6 +801,11 @@ def Start():
                 pass
             else:
                 ProgrammP4()
+                CTNP()
+                if Stop == 1:
+                    pass
+                else:
+                    ProgrammP5()
 
 def Code():
     global Stop, VipAccess
@@ -894,6 +936,12 @@ def Code():
                                                                                         pass
                                                                                     else:
                                                                                         ProgrammP4()
+                                                                                        CTNP()
+                                                                                        if Stop == 1:
+                                                                                            pass
+                                                                                        else:
+                                                                                            ProgrammP5()
+
     else:
         pass
     print("")  #(16.03.2026)
@@ -988,6 +1036,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "P4":
                 ProgrammP4()
+                Restart()
+            elif PrStart == "P5":
+                ProgrammP5()
                 Restart()
             else:
                 Code()

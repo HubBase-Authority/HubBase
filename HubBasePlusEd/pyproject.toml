@@ -1,12 +1,12 @@
 [project]
 name = "HubBasePE"
-version = "0.0.1.0.00"
+version = "0.0.1.0.10"
 authors = [
   { name="Voice659", email="E.R.Fahretdinov@yandex.ru" },
 ]
-description = "HubBasePE – 3 new programs + all the original!!"
+description = "HubBasePE – 4 new programs + all the original!!"
 readme = "README.md"
-requires-python = ">=3.5, != 3.5.0"
+requires-python = ">=3.5"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",

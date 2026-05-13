@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "0.0.1.0.00"
+    VN = "0.0.1.0.10"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
     Password = str(1041)
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 10 2026, 10:56:54) ---")
+    print("--- HubBase "+VN+" (default, May 13 2026, 20:19:52) ---")
     while PassGuess != Password:
         Num = input("Number = ")
         Num2 = input("Number2 = ")
@@ -670,6 +670,11 @@ def Code():
                                                                                         pass
                                                                                     else:
                                                                                         Main.ProgrammP4()
+                                                                                        CTNP()
+                                                                                        if Stop == 1:
+                                                                                            pass
+                                                                                        else:
+                                                                                            Main.ProgrammP5()
     else:
         pass
     print("")  #(16.03.2026)
@@ -767,6 +772,9 @@ def Restart():  #(16.03.2026)
                 Restart()
             elif PrStart == "P4":
                 Main.ProgrammP4()
+                Restart()
+            elif PrStart == "P4":
+                Main.ProgrammP5()
                 Restart()
             else:
                 Code()

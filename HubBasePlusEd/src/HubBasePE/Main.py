@@ -4,29 +4,21 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    VN = "0.0.1.0.10"
+    Vips = ["voice659"]
+    VN = "0.0.1.1.00"
     global VipAccess, PassGuess, AdminAccess
     VipAccess = "F"
-    Password = str(1041)
     PassGuess = 0
-    print("--- HubBase (base - "+VN+") (plus, May 13 2026, 20:19:31) ---")
-    while PassGuess != Password:
-        Num = input("Number = ")
-        Num2 = input("Number2 = ")
-        PassGuess = Num + Num2
-        if PassGuess == str(5280):
-            print("--Vip level access awarded--")
-            print("Pass = 1041")
-            VipAccess = "T"
-            PassGuess = str(1041)
-        if PassGuess == "A52-80A":
-            print("--Welcome, Mark--")
-            VipAccess = "T"
-            AdminAccess = "T"
-            PassGuess = str(1041)
-        if PassGuess != Password:
-            print("Incorrect")
-    print("Correct")
+    print("--- HubBase " + VN + " (default, May 23 2026, 22:07:41) ---")
+    Login = input("Login (If <vip level then press enter): ").lower()
+    if Login in Vips:
+        Password = str(5280)
+        while PassGuess != Password:
+            PassGuess = input("Password for " + Login+": ")
+            if PassGuess != Password:
+                print("Incorrect")
+        VipAccess = "T"
+    print("Login successful!")
     if VipAccess == "T":
         PassGuess = str(5280)
 

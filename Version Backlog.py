@@ -882,6 +882,16 @@ elif LogVersion == "2":
                         print("Addition №5!")
                         print("Changes:")
                         print("    - Added HubBasePE v0.0.1.0.10 support!")
+                    else:
+                        print("Such release does not exist or isn`t documented")
+                if D5 == "1.00":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.1.1.00 (default, May 23 2026, 22:06:12) ---")
+                        print("Addition №6!")
+                        print("Changes:")
+                        print("    - Added advanced login system!")
+                    else:
+                        print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:

@@ -892,6 +892,14 @@ elif LogVersion == "2":
                         print("    - Added advanced login system!")
                     else:
                         print("Such release does not exist or isn`t documented")
+                if D5 == "2.00":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.1.2.00 (default, May 24 2026, 12:56:45) ---")
+                        print("Addition №7!")
+                        print("Changes:")
+                        print("    - Added dev console!")
+                    else:
+                        print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:

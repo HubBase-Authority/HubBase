@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  #(13.03.2026)
-    Vips = ["voice659"]
-    VN = "0.0.1.1.00"
-    global VipAccess, PassGuess, AdminAccess
+    Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
+    VN = "0.0.1.2.00"
+    global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 23 2026, 22:06:12) ---")
+    print("--- HubBase "+VN+" (default, May 24 2026, 12:56:45) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -765,7 +765,7 @@ def Restart():  #(16.03.2026)
             elif PrStart == "P4":
                 Main.ProgrammP4()
                 Restart()
-            elif PrStart == "P4":
+            elif PrStart == "P5":
                 Main.ProgrammP5()
                 Restart()
             else:
@@ -773,8 +773,93 @@ def Restart():  #(16.03.2026)
         else:
             pass
 
+def dev_console():
+    global RA, VipAccess, Login
+    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "P1", "P2", "P3", "P4", "P5"]
+    if VipAccess == "T":
+        print("Developer console for 0.0.1.2.00")
+        line = ""
+        while line != "stop":
+            line = input(Login+" >>> ").lower()
+            if line in SpCm:
+                PrStart = line
+                if PrStart == "2":
+                    Programm2()
+                    Restart()
+                elif PrStart == "3":
+                    Programm3()
+                    Restart()
+                elif PrStart == "4":
+                    Programm4()
+                    Restart()
+                elif PrStart == "5":
+                    Programm5()
+                    Restart()
+                elif PrStart == "6":
+                    Programm6()
+                    Restart()
+                elif PrStart == "7":
+                    Programm7()
+                    Restart()
+                elif PrStart == "8":
+                    Programm8()
+                    Restart()
+                elif PrStart == "9":
+                    Programm9()
+                    Restart()
+                elif PrStart == "10":
+                    Programm10()
+                    Restart()
+                elif PrStart == "11":
+                    Programm11()
+                    Restart()
+                elif PrStart == "12":
+                    Programm12()
+                    Restart()
+                elif PrStart == "13":
+                    Programm13()
+                    Restart()
+                elif PrStart == "14":
+                    Programm14()
+                    Restart()
+                elif PrStart == "15":
+                    Programm15()
+                    Restart()
+                elif PrStart == "16":
+                    Programm16()
+                    Restart()
+                elif PrStart == "17":
+                    Programm17()
+                    Restart()
+                elif PrStart == "18":
+                    Programm18()
+                    Restart()
+                elif PrStart == "19":
+                    Programm19()
+                    Restart()
+                elif PrStart == "P1":
+                    Main.ProgrammP1()
+                    Restart()
+                elif PrStart == "P2":
+                    Main.ProgrammP2()
+                    Restart()
+                elif PrStart == "P3":
+                    Main.ProgrammP3()
+                    Restart()
+                elif PrStart == "P4":
+                    Main.ProgrammP4()
+                    Restart()
+                elif PrStart == "P5":
+                    Main.ProgrammP5()
+                    Restart()
+                else:
+                    Code()
+            elif line != "stop":
+                print(exec(line))
+
 #(16.03.2026)
-global RA
+global RA, VipAccess
 RA = 0
 Enter()
 Code()
+dev_console()

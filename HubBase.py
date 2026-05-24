@@ -5,11 +5,11 @@ import tkinter as tkr
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.1.2.01"
+    VN = "0.0.2.0.00b1"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 24 2026, 14:03:54) ---")
+    print("--- HubBase "+VN+" (default, May 24 2026, 22:03:41) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -18,6 +18,8 @@ def Enter():  #(13.03.2026)
             if PassGuess != Password:
                 print("Incorrect")
         VipAccess = "T"
+    if Login == "":
+        Login = "usr"
     print("Login successful!")
     if VipAccess == "T":
         PassGuess = str(5280)
@@ -440,8 +442,9 @@ def Programm19():  #(29.04.2026)
                     gameOver = True
                     square.config(bg= "red")
                     print("Game over! You hit a bomb!")
-                    if PFQ == "Y":
-                        print("**Even with a cheat!!!**")
+                    if VipAccess == "T":
+                        if PFQ == "Y":
+                            print("**Even with a cheat!!!**")
                     print("Your score was:", score)
                 elif currentText == "    ":
                     square.config(bg= "brown")
@@ -508,6 +511,9 @@ def Programm19():  #(29.04.2026)
 
     Setup_minesweeper()
     Play_minesweeper()
+
+def Programm20():
+    print("No leaks!")
 
 def CTNP():  #(15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
@@ -640,33 +646,38 @@ def Code():
                                                                     pass
                                                                 else:
                                                                     Programm19()
-                                                                    print("PE programms next! (If you chose N then they won`t load!)")
                                                                     CTNP()
                                                                     if Stop == 1:
                                                                         pass
                                                                     else:
-                                                                        if PlPr == "Y":
-                                                                            Main.ProgrammP1()
-                                                                            CTNP()  #(22.04.2026)
-                                                                            if Stop == 1:
-                                                                                pass
-                                                                            else:
-                                                                                Main.ProgrammP2()
-                                                                                CTNP()
+                                                                        Programm20()
+                                                                        print("PE programms next! (If you chose N then they won`t load!)")
+                                                                        CTNP()
+                                                                        if Stop == 1:
+                                                                            pass
+                                                                        else:
+                                                                            if PlPr == "Y":
+                                                                                Main.ProgrammP1()
+                                                                                CTNP()  #(22.04.2026)
                                                                                 if Stop == 1:
                                                                                     pass
                                                                                 else:
-                                                                                    Main.ProgrammP3()
+                                                                                    Main.ProgrammP2()
                                                                                     CTNP()
                                                                                     if Stop == 1:
                                                                                         pass
                                                                                     else:
-                                                                                        Main.ProgrammP4()
+                                                                                        Main.ProgrammP3()
                                                                                         CTNP()
                                                                                         if Stop == 1:
                                                                                             pass
                                                                                         else:
-                                                                                            Main.ProgrammP5()
+                                                                                            Main.ProgrammP4()
+                                                                                            CTNP()
+                                                                                            if Stop == 1:
+                                                                                                pass
+                                                                                            else:
+                                                                                                Main.ProgrammP5()
     else:
         pass
     print("")  #(16.03.2026)
@@ -753,6 +764,9 @@ def Restart():  #(16.03.2026)
             elif PrStart == "19":
                 Programm19()
                 Restart()
+            elif PrStart == "20":
+                Programm20()
+                Restart()
             elif PrStart == "P1":
                 Main.ProgrammP1()
                 Restart()
@@ -777,7 +791,7 @@ def dev_console():
     global RA, VipAccess, Login
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for 0.0.1.2.01")
+        print("Developer console for 0.0.2.0.00")
         line = ""
         while line != "stop":
             line = input(Login+" >>> ").lower()
@@ -835,6 +849,9 @@ def dev_console():
                     Programm18()
                     Restart()
                 elif PrStart == "19":
+                    Programm19()
+                    Restart()
+                elif PrStart == "20":
                     Programm19()
                     Restart()
                 elif PrStart == "P1":

@@ -2,10 +2,11 @@ import time  #(16.03.2026)
 import random
 from turtle import *
 import tkinter as tkr
+import sys
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.1.2.01"
+    VN = "0.0.2.0.00b1"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
@@ -18,6 +19,8 @@ def Enter():  #(13.03.2026)
             if PassGuess != Password:
                 print("Incorrect")
         VipAccess = "T"
+    if Login == "":
+        Login = "usr"
     print("Login successful!")
     if VipAccess == "T":
         PassGuess = str(5280)
@@ -440,8 +443,9 @@ def Programm19():  #(29.04.2026)
                     gameOver = True
                     square.config(bg= "red")
                     print("Game over! You hit a bomb!")
-                    if PFQ == "Y":
-                        print("**Even with a cheat!!!**")
+                    if VipAccess == "T":
+                        if PFQ == "Y":
+                            print("**Even with a cheat!!!**")
                     print("Your score was:", score)
                 elif currentText == "    ":
                     square.config(bg= "brown")
@@ -508,6 +512,28 @@ def Programm19():  #(29.04.2026)
 
     Setup_minesweeper()
     Play_minesweeper()
+
+def Programm20():
+
+    def setup_Tennis():
+        global bat, ball, windowOpen
+        canvasWidth = 750
+        canvasHeight = 500
+        window4 = tkr.Tk()
+        canvas2 = tkr.Canvas(window4, width=canvasWidth, height=canvasHeight, bg="dodgerblue4")
+        canvas2.pack()
+        bat = canvas2.create_rectangle(0, 0, 40, 10, fill="dark turquoise")
+        ball = canvas2.create_oval(0, 0, 10, 10, fill="deep pink")
+        windowOpen = True
+
+    def play_Tennis():
+        global windowOpen
+        while windowOpen == True:
+            print("For later (by the way there is code here!)")
+            windowOpen = False
+
+    setup_Tennis()
+    play_Tennis()
         
 def ProgrammP1():  #T1
 
@@ -912,27 +938,32 @@ def Code():
                                                                         if Stop == 1:
                                                                             pass
                                                                         else:
-                                                                            ProgrammP1()
+                                                                            Programm20()
                                                                             CTNP()
                                                                             if Stop == 1:
                                                                                 pass
                                                                             else:
-                                                                                ProgrammP2()
+                                                                                ProgrammP1()
                                                                                 CTNP()
                                                                                 if Stop == 1:
                                                                                     pass
                                                                                 else:
-                                                                                    ProgrammP3()
+                                                                                    ProgrammP2()
                                                                                     CTNP()
                                                                                     if Stop == 1:
                                                                                         pass
                                                                                     else:
-                                                                                        ProgrammP4()
+                                                                                        ProgrammP3()
                                                                                         CTNP()
                                                                                         if Stop == 1:
                                                                                             pass
                                                                                         else:
-                                                                                            ProgrammP5()
+                                                                                            ProgrammP4()
+                                                                                            CTNP()
+                                                                                            if Stop == 1:
+                                                                                                pass
+                                                                                            else:
+                                                                                                ProgrammP5()
 
     else:
         pass
@@ -1017,6 +1048,9 @@ def Restart():  #(16.03.2026)
             elif PrStart == "19":
                 Programm19()
                 Restart()
+            elif PrStart == "20":
+                Programm20()
+                Restart()
             elif PrStart == "P1":
                 ProgrammP1()
                 Restart()
@@ -1100,6 +1134,9 @@ def dev_console():
                     Restart()
                 elif PrStart == "19":
                     Programm19()
+                    Restart()
+                elif PrStart == "20":
+                    Programm20()
                     Restart()
                 elif PrStart == "P1":
                     ProgrammP1()

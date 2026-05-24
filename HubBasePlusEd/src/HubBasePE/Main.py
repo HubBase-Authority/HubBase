@@ -9,7 +9,7 @@ def Enter():  #(13.03.2026)
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 23 2026, 12:57:14) ---")
+    print("--- HubBase "+VN+" (plus, May 24 2026, 12:57:14) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)

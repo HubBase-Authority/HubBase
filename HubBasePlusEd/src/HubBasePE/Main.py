@@ -5,11 +5,11 @@ import tkinter as tkr
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.1.2.00"
+    VN = "0.0.1.2.01"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (plus, May 24 2026, 12:57:14) ---")
+    print("--- HubBase "+VN+" (plus, May 24 2026, 14:04:05) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -1041,7 +1041,7 @@ def dev_console():
     global RA, VipAccess, Login
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for 0.0.1.2.00")
+        print("Developer console for 0.0.1.2.01")
         line = ""
         while line != "stop":
             line = input(Login+" >>> ").lower()
@@ -1102,21 +1102,21 @@ def dev_console():
                     Programm19()
                     Restart()
                 elif PrStart == "P1":
-                    Main.ProgrammP1()
+                    ProgrammP1()
                     Restart()
                 elif PrStart == "P2":
-                    Main.ProgrammP2()
+                    ProgrammP2()
                     Restart()
                 elif PrStart == "P3":
-                    Main.ProgrammP3()
+                    ProgrammP3()
                     Restart()
                 elif PrStart == "P4":
-                    Main.ProgrammP4()
+                    ProgrammP4()
                     Restart()
                 elif PrStart == "P5":
-                    Main.ProgrammP5()
+                    ProgrammP5()
                     Restart()
                 else:
                     Code()
             elif line != "stop":
-                print(exec(line))
+                print(eval(line))

@@ -900,6 +900,14 @@ elif LogVersion == "2":
                         print("    - Added dev console!")
                     else:
                         print("Such release does not exist or isn`t documented")
+                if D5 == "2.01":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.1.2.01 (default, May 24 2026, 14:03:54) ---")
+                        print("Bugfix №10!")
+                        print("Changes:")
+                        print("    - Fixed dev console!")
+                    else:
+                        print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:
@@ -911,4 +919,3 @@ elif LogVersion == "2":
 else:
     print("Such Log does not exist.")
 s = input("")
-

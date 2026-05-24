@@ -5,11 +5,11 @@ import tkinter as tkr
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.1.2.00"
+    VN = "0.0.1.2.01"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 24 2026, 12:56:45) ---")
+    print("--- HubBase "+VN+" (default, May 24 2026, 14:03:54) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -777,7 +777,7 @@ def dev_console():
     global RA, VipAccess, Login
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for 0.0.1.2.00")
+        print("Developer console for 0.0.1.2.01")
         line = ""
         while line != "stop":
             line = input(Login+" >>> ").lower()
@@ -855,7 +855,7 @@ def dev_console():
                 else:
                     Code()
             elif line != "stop":
-                print(exec(line))
+                print(eval(line))
 
 #(16.03.2026)
 global RA, VipAccess

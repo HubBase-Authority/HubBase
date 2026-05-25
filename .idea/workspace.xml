@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.2.0.00b1 + v0.0.2.0.00b1">
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.2.0.00b2 + v0.0.2.0.00b2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779649098392</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="HBPE 0.0.2.0.00b2 + v0.0.2.0.00b2">
+      <option name="closed" value="true" />
+      <created>1779732450408</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779732450408</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +256,7 @@
     <MESSAGE value="HBPE 0.0.1.2.00 + v0.0.1.2.00" />
     <MESSAGE value="HBPE 0.0.1.2.01 + v0.0.1.2.01" />
     <MESSAGE value="HBPE 0.0.2.0.00b1 + v0.0.2.0.00b1" />
-    <option name="LAST_COMMIT_MESSAGE" value="HBPE 0.0.2.0.00b1 + v0.0.2.0.00b1" />
+    <MESSAGE value="HBPE 0.0.2.0.00b2 + v0.0.2.0.00b2" />
+    <option name="LAST_COMMIT_MESSAGE" value="HBPE 0.0.2.0.00b2 + v0.0.2.0.00b2" />
   </component>
 </project>

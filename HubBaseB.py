@@ -586,7 +586,7 @@ def Programm20():
             window4.update()
             time.sleep(0.02)
             if windowOpen == True:
-                print("Placeholder")
+                check_game_over()
 
     setup_Tennis()
     play_Tennis()

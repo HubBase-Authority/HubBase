@@ -6,11 +6,11 @@ import sys
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.00b1"
+    VN = "0.0.2.0.00b2"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (plus, May 24 2026, 14:04:05) ---")
+    print("--- HubBase "+VN+" (plus, May 25 2026, 21:06:59) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -514,9 +514,34 @@ def Programm19():  #(29.04.2026)
     Play_minesweeper()
 
 def Programm20():
+    def move_tennisObject(object):
+        global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY
+        if object == "bat":
+            batMove = batSpeed * rightPressed - batSpeed * leftPressed
+            (batLeft, batTop, batRight, batBottom) = canvas2.coords(bat)
+            if (batLeft > 0 or batMove > 0) and (batRight < canvasWidth or batMove < 0):
+                canvas2.move(bat, batMove, 0)
+        elif object == "ball":
+            (ballLeft, ballTop, ballRight, ballBottom) = canvas2.coords(ball)
+            if ballMoveX > 0 and ballRight > canvasWidth:
+                ballMoveX = -ballMoveX
+            if ballMoveX < 0 and ballLeft < 0:
+                ballMoveX = -ballMoveX
+            if ballMoveY < 0 and ballTop < 0:
+                ballMoveY = -ballMoveY
+        else:
+            print("Such object does not exist")
+
+    def close():
+        global windowOpen, window4
+        windowOpen = False
+        window4.destroy()
+
+    def check_game_over():
+        pass
 
     def setup_Tennis():
-        global bat, ball, windowOpen
+        global bat, ball, windowOpen, batSpeed, rightPressed, leftPressed, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, window4
         canvasWidth = 750
         canvasHeight = 500
         window4 = tkr.Tk()
@@ -525,12 +550,23 @@ def Programm20():
         bat = canvas2.create_rectangle(0, 0, 40, 10, fill="dark turquoise")
         ball = canvas2.create_oval(0, 0, 10, 10, fill="deep pink")
         windowOpen = True
+        batSpeed = 6
+        rightPressed = 0
+        leftPressed = 0
+        ballMoveX = 4
+        ballMoveY = -4
+        setBatTop = canvasHeight - 40
+        setBatBottom = canvasHeight - 30
 
     def play_Tennis():
-        global windowOpen
+        global windowOpen, window4
         while windowOpen == True:
-            print("For later (by the way there is code here!)")
-            windowOpen = False
+            move_tennisObject("bat")
+            move_tennisObject("ball")
+            window4.update()
+            time.sleep(0.02)
+            if windowOpen == True:
+                print("Placeholder")
 
     setup_Tennis()
     play_Tennis()

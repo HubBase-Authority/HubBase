@@ -910,7 +910,7 @@ elif LogVersion == "2":
                         print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
-            if D3 == "1":
+            elif D3 == "2":
                 if D5 == "0.00":
                     if D4 == "b1":
                         print("--- HubBase 0.0.2.0.00b1 (default, May 24 2026, 22:03:41) ---")
@@ -918,10 +918,15 @@ elif LogVersion == "2":
                         print("Addition:")
                         print("    - Added 'Tennis'(Pr20)(Pt1)!")
                     elif D4 == "b2":
-                        print("--- HubBase 0.0.2.0.00b2 (default, May 25 2026, 22:03:41) ---")
+                        print("--- HubBase 0.0.2.0.00b2 (default, May 25 2026, 21:06:54) ---")
                         print("The second GIGANTIC update(in beta)!!")
                         print("Addition:")
                         print("    - Added 'Tennis'(Pr20)(Pt2)!")
+                    elif D4 == "rc1":
+                        print("--- HubBase 0.0.2.0.00rc1 (default, May 27 2026, 21:24:41) ---")
+                        print("The second GIGANTIC update(not done)!!")
+                        print("Addition:")
+                        print("    - Added 'Tennis'(Pr20)(Pt3)!")
                     else:
                         print("Such release does not exist or isn`t documented")
             else:

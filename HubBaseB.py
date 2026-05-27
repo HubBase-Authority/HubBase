@@ -1,17 +1,16 @@
 import time  # (16.03.2026)
 import random
-from itertools import batched
 from turtle import *
 import tkinter as tkr
 
 
 def Enter():  # (13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.00b2"
+    VN = "0.0.2.0.00rc1"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 25 2026, 21:06:54) ---")
+    print("--- HubBase "+VN+" (default, May 27 2026, 21:24:41) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -535,7 +534,7 @@ def Programm19():  # (29.04.2026)
 def Programm20():
 
     def move_tennisObject(object):
-        global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY
+        global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop
         if object == "bat":
             batMove = batSpeed * rightPressed - batSpeed * leftPressed
             (batLeft,batTop,batRight,batBottom) = canvas2.coords(bat)
@@ -549,6 +548,11 @@ def Programm20():
                 ballMoveX = -ballMoveX
             if ballMoveY < 0 and ballTop < 0:
                 ballMoveY = -ballMoveY
+            if ballMoveY > 0 and ballBottom > setBatTop and ballBottom < setBatBottom:
+                (batLeft,batTop,batRight,batBottom) = canvas2.coords(bat)
+                if ballRight > batLeft and ballLeft < batRight:
+                    ballMoveY = -ballMoveY
+            canvas2.move(ball, ballMoveX, ballMoveY)
         else:
             print("Such object does not exist")
 
@@ -558,10 +562,31 @@ def Programm20():
         window4.destroy()
 
     def check_game_over():
-        pass
+        global canvasHeight
+        (ballLeft, ballTop, ballRight, ballBottom) = canvas2.coords(ball)
+        if ballTop > canvasHeight:
+            PlayAgain = tkr.messagebox.askyesno(message="Play again?")
+            if PlayAgain == True:
+                reset()
+            else:
+                close()
+
+    def on_key_press(event):
+        global rightPressed, leftPressed
+        if event.keysym == "Left":
+            leftPressed = 1
+        if event.keysym == "Right":
+            rightPressed = 1
+
+    def on_key_release(event):
+        global rightPressed, leftPressed
+        if event.keysym == "Left":
+            leftPressed = 0
+        if event.keysym == "Right":
+            rightPressed = 0
 
     def setup_Tennis():
-        global bat, ball, windowOpen, batSpeed, rightPressed, leftPressed, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, window4
+        global bat, ball, windowOpen, batSpeed, rightPressed, leftPressed, canvas2, canvasWidth, canvasHeight, ballMoveX, ballMoveY, setBatBottom, setBatTop, window4
         canvasWidth = 750
         canvasHeight = 500
         window4 = tkr.Tk()
@@ -577,6 +602,20 @@ def Programm20():
         ballMoveY = -4
         setBatTop = canvasHeight-40
         setBatBottom = canvasHeight-30
+        window4.protocol("WM_DELETE_WINDOW", close)
+        window4.bind("<KeyPress>", on_key_press)
+        window4.bind("<KeyRelease>", on_key_release)
+        canvas2.coords(bat, 10, setBatTop, 50, setBatBottom)
+        canvas2.coords(ball, 20, setBatTop - 10, 30, setBatTop)
+
+    def reset():
+        global bat, ball, windowOpen, batSpeed, rightPressed, leftPressed, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, window4
+        leftPressed = 0
+        rightPressed = 0
+        ballMoveX = 4
+        ballMoveY = -4
+        canvas2.coords(bat, 10, setBatTop, 50, setBatBottom)
+        canvas2.coords(ball, 20, setBatTop-10, 30, setBatTop)
 
     def play_Tennis():
         global windowOpen, window4
@@ -876,7 +915,7 @@ def dev_console():
     if VipAccess == "T":
         print("Developer console for 0.0.2.0.00")
         line = ""
-        while line != "stop":
+        while line != "stop" and line != "close":
             line = input(Login + " >>> ").lower()
             if line in SpCm:
                 PrStart = line
@@ -954,7 +993,7 @@ def dev_console():
                     Restart()
                 else:
                     Code()
-            elif line != "stop":
+            elif line != "stop" and line != "close":
                 print(eval(line))
 
 

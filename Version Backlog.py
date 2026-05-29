@@ -876,7 +876,7 @@ elif LogVersion == "2":
                         print("    - Added HubBasePE v0.0.1.0.00 support!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "0.10":
+                elif D5 == "0.10":
                     if D4 == "r":
                         print("--- HubBase 0.0.1.0.10 (default, May 13 2026, 20:19:52) ---")
                         print("Addition №5!")
@@ -884,7 +884,7 @@ elif LogVersion == "2":
                         print("    - Added HubBasePE v0.0.1.0.10 support!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "1.00":
+                elif D5 == "1.00":
                     if D4 == "r":
                         print("--- HubBase 0.0.1.1.00 (default, May 23 2026, 22:06:12) ---")
                         print("Addition №6!")
@@ -892,7 +892,7 @@ elif LogVersion == "2":
                         print("    - Added advanced login system!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "2.00":
+                elif D5 == "2.00":
                     if D4 == "r":
                         print("--- HubBase 0.0.1.2.00 (default, May 24 2026, 12:56:45) ---")
                         print("Addition №7!")
@@ -900,7 +900,7 @@ elif LogVersion == "2":
                         print("    - Added dev console!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "2.01":
+                elif D5 == "2.01":
                     if D4 == "r":
                         print("--- HubBase 0.0.1.2.01 (default, May 24 2026, 14:03:54) ---")
                         print("Bugfix №10!")
@@ -934,6 +934,16 @@ elif LogVersion == "2":
                         print("    - Added 'Tennis'(Pr20)(Extentions)!")
                     else:
                         print("Such release does not exist or isn`t documented")
+                if D5 == "2.01":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.2.0.01 (default, May 29 2026, 13:30:11) ---")
+                        print("Bugfix №11!")
+                        print("Changes:")
+                        print("    - Fixed ball faze!")
+                    else:
+                        print("Such release does not exist or isn`t documented")
+                else:
+                    print("Such release does not exist or isn`t documented")
             else:
                 print("Such release does not exist or isn`t documented")
         else:

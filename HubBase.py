@@ -5,11 +5,11 @@ import tkinter as tkr
 
 def Enter():  # (13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.00"
+    VN = "0.0.2.0.01"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 29 2026, 21:24:41) ---")
+    print("--- HubBase "+VN+" (default, May 29 2026, 13:30:11) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -522,6 +522,7 @@ def Programm20():
             if (batLeft > 0 or batMove > 0) and (batRight < canvasWidth or batMove < 0):
                 canvas2.move(bat, batMove, 0)
         elif object == "ball":
+            (batLeft, batTop, batRight, batBottom) = canvas2.coords(bat)
             (ballLeft, ballTop, ballRight, ballBottom) = canvas2.coords(ball)
             if ballMoveX > 0 and ballRight > canvasWidth:
                 ballMoveX = -ballMoveX
@@ -529,7 +530,7 @@ def Programm20():
                 ballMoveX = -ballMoveX
             if ballMoveY < 0 and ballTop < 0:
                 ballMoveY = -ballMoveY
-            if ballMoveY > 0 and ballBottom > setBatTop and ballBottom < setBatBottom:
+            if (ballMoveX > 0 and (ballRight+ballMoveX > batLeft and ballLeft < batRight) or ballMoveX < 0 and (ballRight > batLeft and ballLeft + ballMoveX < batRight)):
                 (batLeft,batTop,batRight,batBottom) = canvas2.coords(bat)
                 if ballRight > batLeft and ballLeft < batRight:
                     ballMoveY = -ballMoveY

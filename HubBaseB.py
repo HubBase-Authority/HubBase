@@ -3,14 +3,13 @@ import random
 from turtle import *
 import tkinter as tkr
 
-
 def Enter():  # (13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.00rc1"
+    VN = "0.0.2.0.00PRV"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 27 2026, 21:24:41) ---")
+    print("--- HubBase "+VN+" (default, May 28 2026, 21:24:41) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -25,10 +24,8 @@ def Enter():  # (13.03.2026)
     if VipAccess == "T":
         PassGuess = str(5280)
 
-
 def Programm1():  # (15.03.2026)
     print("Hello world")
-
 
 def Programm2():  # (15.03.2026)
     Num = input("Number = ")
@@ -43,12 +40,10 @@ def Programm2():  # (15.03.2026)
     print(num // num2)
     print(num % num2)
 
-
 def Programm3():  # (15.03.2026)
     Bananas = input("Bananas = ")
     BananasEaten = input("Bananas Eaten = ")
     print(int(Bananas) - int(BananasEaten))
-
 
 def Programm4():  # (15.03.2026)
     Uname = input("What is your name? -- ")
@@ -62,7 +57,6 @@ def Programm4():  # (15.03.2026)
     print("Powers:", Cpower)
     print("Weaknesses:", Cweak)
     print('"' + "Thanks for creating me,", Uname + '"', "- says", Cname)
-
 
 def Programm5():  # (15.03.2026)
     User_reply = input("Do you like robots? -- ").upper()
@@ -84,7 +78,6 @@ def Programm5():  # (15.03.2026)
         print("Make up your mind, human")
     else:
         print("Print('input(something sensible)')")
-
 
 def Programm6():  # (16.03.2026)
     print("You are in a castle of a dragon.")
@@ -121,7 +114,6 @@ def Programm6():  # (16.03.2026)
         else:
             print("The sphinx traps you.")
             print("You lose!")
-
 
 def Programm7():  # (17.03.2026)
     aliens = 2
@@ -163,7 +155,6 @@ def Programm7():  # (17.03.2026)
         else:
             print("No! The aliens have out numbered us!")
 
-
 def Programm8():  # (18.03.2026)
     GNum = str(random.randint(1, 20))
     if VipAccess == "T":
@@ -189,7 +180,6 @@ def Programm8():  # (18.03.2026)
             GGuess = input("Can you guess my number. It is inbetween 1 to 20 -- ")
         print("Correct!")
 
-
 def Programm9():  # (18.03.2026)
     Num = input("Number = ")
     Num2 = input("Number2 = ")
@@ -198,13 +188,11 @@ def Programm9():  # (18.03.2026)
     for Cyc1 in range(num, num2):
         print(Cyc1)
 
-
 def Programm10():  # (18.03.2026)
     TTMN = int(input("What number to muitiply by -- "))
     TTEN = int(input("The final number -- ")) + 1
     for Cyc2 in range(1, TTEN):
         print(Cyc2, "x", TTMN, "=", Cyc2 * TTMN)
-
 
 def Programm11():  # (18.03.2026)
     for Cyc3 in range(1, 5):
@@ -212,7 +200,6 @@ def Programm11():  # (18.03.2026)
         for Cyc4 in range(1, 5):
             print("Bloop")
         print("Bzzzt")
-
 
 def Programm12():  # (24.03.2026)
     print("Create a list with 4 elements")
@@ -242,7 +229,6 @@ def Programm12():  # (24.03.2026)
     for Cyc5 in List1:
         print(Cyc5)
 
-
 def Programm13():  # (11.04.2026)
     print("Create a list with 2 elements and 2 keys")
     print("")
@@ -265,7 +251,6 @@ def Programm13():  # (11.04.2026)
     for Cyc6 in List1:
         print(Cyc6)
 
-
 def Programm14():  # (12.04.2026)
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alphabet = alphabet * 2
@@ -281,7 +266,6 @@ def Programm14():  # (12.04.2026)
             ES = ES + x
     print("The message is:", ES)
 
-
 def Programm15():  # (13.04.2026)
     color("blue")
     shape("turtle")
@@ -292,7 +276,6 @@ def Programm15():  # (13.04.2026)
     for Cyc7 in range(NoA):
         forward(50)
         right(Angle)
-
 
 def Programm16():  # (15.04.2026)
 
@@ -336,7 +319,6 @@ def Programm16():  # (15.04.2026)
         pendown()
         Snowflake(size)
 
-
 def Programm17():  # (24.04.2026)
     window1 = tkr.Tk()
     button1 = tkr.Button(window1, text="Do not press this button", width=40)
@@ -359,7 +341,6 @@ def Programm17():  # (24.04.2026)
 
     button1.bind("<ButtonRelease-1>", onClick)
     window1.mainloop()
-
 
 def Programm18():  # (27.04.2026)
     print("To draw, use LMB.")
@@ -412,7 +393,6 @@ def Programm18():  # (27.04.2026)
     canvas1.tag_bind(black_id, "<Button-1>", CCTb)
     canvas1.tag_bind(white_id, "<Button-1>", CCTW)
     window2.mainloop()
-
 
 def Programm19():  # (29.04.2026)
     def Setup_minesweeper():
@@ -645,17 +625,14 @@ def CTNP():  # (15.03.2026)
         print("Bye")
         PStop()
 
-
 def Advance():  # (15.03.2026)
     Adv = 1
     global Stop
     Stop = 0
 
-
 def PStop():  # (15.03.2026)
     global Stop
     Stop = 1
-
 
 # CodeBase
 def Code():
@@ -818,7 +795,6 @@ def Code():
         print("Restart №" + str(RA), "initializing")
         Restart()
 
-
 def Restart():  # (16.03.2026)
     global PlPr
     if PlPr == "Y":
@@ -907,7 +883,6 @@ def Restart():  # (16.03.2026)
         else:
             pass
 
-
 def dev_console():
     global RA, VipAccess, Login
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
@@ -995,7 +970,6 @@ def dev_console():
                     Code()
             elif line != "stop" and line != "close":
                 print(eval(line))
-
 
 # (16.03.2026)
 global RA, VipAccess

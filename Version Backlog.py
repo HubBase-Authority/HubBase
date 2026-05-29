@@ -927,6 +927,11 @@ elif LogVersion == "2":
                         print("The second GIGANTIC update(not done)!!")
                         print("Addition:")
                         print("    - Added 'Tennis'(Pr20)(Pt3)!")
+                    elif D4 == "r":
+                        print("--- HubBase 0.0.2.0.00 (default, May 29 2026, 21:24:41) ---")
+                        print("The second GIGANTIC update!!")
+                        print("Addition:")
+                        print("    - Added 'Tennis'(Pr20)(Extentions)!")
                     else:
                         print("Such release does not exist or isn`t documented")
             else:

@@ -2,15 +2,14 @@ import time  #(16.03.2026)
 import random
 from turtle import *
 import tkinter as tkr
-import sys
 
 def Enter():  #(13.03.2026)
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.00rc1"
+    VN = "0.0.2.0.00"
     global VipAccess, PassGuess, Login
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (plus, May 27 2026, 21:29:57) ---")
+    print("--- HubBase "+VN+" (plus, May 29 2026, 21:29:57) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)

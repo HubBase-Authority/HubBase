@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.2.0.00rc1 + v0.0.2.0.00rc1">
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.2.0.00 + v0.0.2.0.00(.gitignore)">
+      <change beforePath="$PROJECT_DIR$/.idea/HubBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HubBase.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
@@ -251,7 +251,31 @@
       <option name="project" value="LOCAL" />
       <updated>1779906599513</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="HBPE 0.0.2.0.00 + v0.0.2.0.00">
+      <option name="closed" value="true" />
+      <created>1780046096941</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780046096941</updated>
+    </task>
+    <task id="LOCAL-00019" summary="HBPE 0.0.2.0.00 + v0.0.2.0.00(.gitignore)">
+      <option name="closed" value="true" />
+      <created>1780046825531</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780046825531</updated>
+    </task>
+    <task id="LOCAL-00020" summary="HBPE 0.0.2.0.00 + v0.0.2.0.00(.gitignore)">
+      <option name="closed" value="true" />
+      <created>1780046876408</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1780046876408</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,6 +302,8 @@
     <MESSAGE value="HBPE 0.0.2.0.00b1 + v0.0.2.0.00b1" />
     <MESSAGE value="HBPE 0.0.2.0.00b2 + v0.0.2.0.00b2" />
     <MESSAGE value="HBPE 0.0.2.0.00rc1 + v0.0.2.0.00rc1" />
-    <option name="LAST_COMMIT_MESSAGE" value="HBPE 0.0.2.0.00rc1 + v0.0.2.0.00rc1" />
+    <MESSAGE value="HBPE 0.0.2.0.00 + v0.0.2.0.00" />
+    <MESSAGE value="HBPE 0.0.2.0.00 + v0.0.2.0.00(.gitignore)" />
+    <option name="LAST_COMMIT_MESSAGE" value="HBPE 0.0.2.0.00 + v0.0.2.0.00(.gitignore)" />
   </component>
 </project>

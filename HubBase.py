@@ -3,13 +3,14 @@ import random
 from turtle import *
 import tkinter as tkr
 
+
 def Enter():  # (13.03.2026)
     global VipAccess, PassGuess, Login, VN
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
     VN = "0.0.2.0.02"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 31 2026, 15:06:54) ---")
+    print("--- HubBase " + VN + " (default, May 31 2026, 15:06:54) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -24,8 +25,10 @@ def Enter():  # (13.03.2026)
     if VipAccess == "T":
         PassGuess = str(5280)
 
+
 def Programm1():  # (15.03.2026)
     print("Hello world")
+
 
 def Programm2():  # (15.03.2026)
     Num = input("Number = ")
@@ -40,10 +43,12 @@ def Programm2():  # (15.03.2026)
     print(num // num2)
     print(num % num2)
 
+
 def Programm3():  # (15.03.2026)
     Bananas = input("Bananas = ")
     BananasEaten = input("Bananas Eaten = ")
     print(int(Bananas) - int(BananasEaten))
+
 
 def Programm4():  # (15.03.2026)
     Uname = input("What is your name? -- ")
@@ -57,6 +62,7 @@ def Programm4():  # (15.03.2026)
     print("Powers:", Cpower)
     print("Weaknesses:", Cweak)
     print('"' + "Thanks for creating me,", Uname + '"', "- says", Cname)
+
 
 def Programm5():  # (15.03.2026)
     User_reply = input("Do you like robots? -- ").upper()
@@ -78,6 +84,7 @@ def Programm5():  # (15.03.2026)
         print("Make up your mind, human")
     else:
         print("Print('input(something sensible)')")
+
 
 def Programm6():  # (16.03.2026)
     print("You are in a castle of a dragon.")
@@ -114,6 +121,7 @@ def Programm6():  # (16.03.2026)
         else:
             print("The sphinx traps you.")
             print("You lose!")
+
 
 def Programm7():  # (17.03.2026)
     aliens = 2
@@ -155,6 +163,7 @@ def Programm7():  # (17.03.2026)
         else:
             print("No! The aliens have out numbered us!")
 
+
 def Programm8():  # (18.03.2026)
     GNum = str(random.randint(1, 20))
     if VipAccess == "T":
@@ -180,6 +189,7 @@ def Programm8():  # (18.03.2026)
             GGuess = input("Can you guess my number. It is inbetween 1 to 20 -- ")
         print("Correct!")
 
+
 def Programm9():  # (18.03.2026)
     Num = input("Number = ")
     Num2 = input("Number2 = ")
@@ -188,11 +198,13 @@ def Programm9():  # (18.03.2026)
     for Cyc1 in range(num, num2):
         print(Cyc1)
 
+
 def Programm10():  # (18.03.2026)
     TTMN = int(input("What number to muitiply by -- "))
     TTEN = int(input("The final number -- ")) + 1
     for Cyc2 in range(1, TTEN):
         print(Cyc2, "x", TTMN, "=", Cyc2 * TTMN)
+
 
 def Programm11():  # (18.03.2026)
     for Cyc3 in range(1, 5):
@@ -200,6 +212,7 @@ def Programm11():  # (18.03.2026)
         for Cyc4 in range(1, 5):
             print("Bloop")
         print("Bzzzt")
+
 
 def Programm12():  # (24.03.2026)
     print("Create a list with 4 elements")
@@ -229,6 +242,7 @@ def Programm12():  # (24.03.2026)
     for Cyc5 in List1:
         print(Cyc5)
 
+
 def Programm13():  # (11.04.2026)
     print("Create a list with 2 elements and 2 keys")
     print("")
@@ -251,6 +265,7 @@ def Programm13():  # (11.04.2026)
     for Cyc6 in List1:
         print(Cyc6)
 
+
 def Programm14():  # (12.04.2026)
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alphabet = alphabet * 2
@@ -266,6 +281,7 @@ def Programm14():  # (12.04.2026)
             ES = ES + x
     print("The message is:", ES)
 
+
 def Programm15():  # (13.04.2026)
     color("blue")
     shape("turtle")
@@ -276,6 +292,7 @@ def Programm15():  # (13.04.2026)
     for Cyc7 in range(NoA):
         forward(50)
         right(Angle)
+
 
 def Programm16():  # (15.04.2026)
 
@@ -319,6 +336,7 @@ def Programm16():  # (15.04.2026)
         pendown()
         Snowflake(size)
 
+
 def Programm17():  # (24.04.2026)
     window1 = tkr.Tk()
     button1 = tkr.Button(window1, text="Do not press this button", width=40)
@@ -341,6 +359,7 @@ def Programm17():  # (24.04.2026)
 
     button1.bind("<ButtonRelease-1>", onClick)
     window1.mainloop()
+
 
 def Programm18():  # (27.04.2026)
     print("To draw, use LMB.")
@@ -393,6 +412,7 @@ def Programm18():  # (27.04.2026)
     canvas1.tag_bind(black_id, "<Button-1>", CCTb)
     canvas1.tag_bind(white_id, "<Button-1>", CCTW)
     window2.mainloop()
+
 
 def Programm19():  # (29.04.2026)
     def Setup_minesweeper():
@@ -512,8 +532,8 @@ def Programm19():  # (29.04.2026)
     Setup_minesweeper()
     Play_minesweeper()
 
-def Programm20():
 
+def Programm20():
     def move_tennisObject(object):
         global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, score, bounceCount
         if object == "bat":
@@ -594,8 +614,8 @@ def Programm20():
         leftPressed = 0
         ballMoveX = 4
         ballMoveY = -4
-        setBatTop = canvasHeight-40
-        setBatBottom = canvasHeight-30
+        setBatTop = canvasHeight - 40
+        setBatBottom = canvasHeight - 30
         score = 0
         bounceCount = 0
         window4.protocol("WM_DELETE_WINDOW", close)
@@ -613,7 +633,7 @@ def Programm20():
         score = 0
         bounceCount = 0
         canvas2.coords(bat, 10, setBatTop, 50, setBatBottom)
-        canvas2.coords(ball, 20, setBatTop-10, 30, setBatTop)
+        canvas2.coords(ball, 20, setBatTop - 10, 30, setBatTop)
 
     def play_Tennis():
         global windowOpen, window4
@@ -628,7 +648,8 @@ def Programm20():
     setup_Tennis()
     play_Tennis()
 
-def CTNP():  #(15.03.2026)
+
+def CTNP():  # (15.03.2026)
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
         Cstate = 1
@@ -643,22 +664,25 @@ def CTNP():  #(15.03.2026)
         print("Bye")
         PStop()
 
-def Advance():  #(15.03.2026)
+
+def Advance():  # (15.03.2026)
     Adv = 1
     global Stop
     Stop = 0
 
-def PStop():  #(15.03.2026)
+
+def PStop():  # (15.03.2026)
     global Stop
     Stop = 1
 
-#CodeBase
+
+# CodeBase
 def Code():
     global Stop, VipAccess, PlPr
     PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1.0.10)[Y/N] -- ").upper()
     if PlPr == "Y":
         from HubBasePE import Main
-    TAEstate = "N"  #(15.03.2026)
+    TAEstate = "N"  # (15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
         TAEstate = input("Skip procedure[Y/N] -- ").upper()
@@ -685,21 +709,21 @@ def Code():
                     else:
                         Programm5()
                         CTNP()
-                        if Stop == 1:  #(16.03.2026)
+                        if Stop == 1:  # (16.03.2026)
                             pass
                         else:
                             Programm6()
                             CTNP()
-                            if Stop == 1:  #(17.03.2026)
+                            if Stop == 1:  # (17.03.2026)
                                 pass
                             else:
                                 Programm7()
                                 CTNP()
-                                if Stop == 1:  #(18.03.2026)
+                                if Stop == 1:  # (18.03.2026)
                                     pass
                                 else:
                                     Programm8()
-                                    if VipAccess == "T":  #(20.03.2026)
+                                    if VipAccess == "T":  # (20.03.2026)
                                         EPstate = input("Skip programms 9-11[Y/N] -- ").upper()
                                     if EPstate != "Y":
                                         CTNP()
@@ -719,22 +743,22 @@ def Code():
                                                     Programm11()
                                     else:
                                         pass
-                                    CTNP()  #(24.03.2026)
+                                    CTNP()  # (24.03.2026)
                                     if Stop == 1:
                                         pass
                                     else:
                                         Programm12()
-                                        CTNP()  #(11.04.2026)
+                                        CTNP()  # (11.04.2026)
                                         if Stop == 1:
                                             pass
                                         else:
                                             Programm13()
-                                            CTNP()  #(12.04.2026)
+                                            CTNP()  # (12.04.2026)
                                             if Stop == 1:
                                                 pass
                                             else:
                                                 Programm14()
-                                                CTNP()  #(15.04.2026)
+                                                CTNP()  # (15.04.2026)
                                                 if Stop == 1:
                                                     pass
                                                 else:
@@ -764,14 +788,15 @@ def Code():
                                                                         pass
                                                                     else:
                                                                         Programm20()
-                                                                        print("PE programms next! (If you chose N then they won`t load!)")
+                                                                        print(
+                                                                            "PE programms next! (If you chose N then they won`t load!)")
                                                                         CTNP()
                                                                         if Stop == 1:
                                                                             pass
                                                                         else:
                                                                             if PlPr == "Y":
                                                                                 Main.ProgrammP1()
-                                                                                CTNP()  #(22.04.2026)
+                                                                                CTNP()  # (22.04.2026)
                                                                                 if Stop == 1:
                                                                                     pass
                                                                                 else:
@@ -793,7 +818,7 @@ def Code():
                                                                                                 Main.ProgrammP5()
     else:
         pass
-    print("")  #(16.03.2026)
+    print("")  # (16.03.2026)
     print("Stop!")
     print("")
     print("------------------")
@@ -809,10 +834,11 @@ def Code():
         print("You shall not pass")
         global RA
         RestartAttempt = RestAtt = RA = int(RA) + 1
-        print("Restart №"+str(RA),"initializing")
+        print("Restart №" + str(RA), "initializing")
         Restart()
 
-def Restart():  #(16.03.2026)
+
+def Restart():  # (16.03.2026)
     global PlPr
     if PlPr == "Y":
         from HubBasePE import Main
@@ -900,11 +926,13 @@ def Restart():  #(16.03.2026)
         else:
             pass
 
+
 def dev_console():
     global RA, VipAccess, Login, VN
-    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "P1", "P2", "P3", "P4", "P5"]
+    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+            "20", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for "+VN)
+        print("Developer console for " + VN)
         line = ""
         while line != "stop" and line != "close":
             line = input(Login + " >>> ").lower()
@@ -986,6 +1014,7 @@ def dev_console():
                     Code()
             elif line != "stop" and line != "close":
                 print(eval(line))
+
 
 # (16.03.2026)
 global RA, VipAccess

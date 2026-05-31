@@ -1,4 +1,5 @@
 import time
+
 print("Log v0 - Core")
 print("Available: v1, v1.5, v2")
 LogVersion = input("Which version(formula) to use? -- ")

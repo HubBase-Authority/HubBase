@@ -1,20 +1,21 @@
-import time  #(16.03.2026)
+import time  # (16.03.2026)
 import random
 from turtle import *
 import tkinter as tkr
 
-def Enter():  #(13.03.2026)
+
+def Enter():  # (13.03.2026)
     global VipAccess, PassGuess, Login, VN
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
     VN = "0.0.2.0.0.2"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (plus, May 29 2026, 13:37:54) ---")
+    print("--- HubBase " + VN + " (plus, May 29 2026, 13:37:54) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
         while PassGuess != Password:
-            PassGuess = input("Password for "+Login+": ")
+            PassGuess = input("Password for " + Login + ": ")
             if PassGuess != Password:
                 print("Incorrect")
         VipAccess = "T"
@@ -24,28 +25,32 @@ def Enter():  #(13.03.2026)
     if VipAccess == "T":
         PassGuess = str(5280)
 
-def Programm1():  #(15.03.2026)
+
+def Programm1():  # (15.03.2026)
     print("Hello world")
 
-def Programm2():  #(15.03.2026)
+
+def Programm2():  # (15.03.2026)
     Num = input("Number = ")
     Num2 = input("Number2 = ")
     num = int(Num)
     num2 = int(Num2)
-    print(num+num2)
-    print(num-num2)
-    print(num*num2)
-    print(num**num2)
-    print(num/num2)
-    print(num//num2)
-    print(num%num2)
+    print(num + num2)
+    print(num - num2)
+    print(num * num2)
+    print(num ** num2)
+    print(num / num2)
+    print(num // num2)
+    print(num % num2)
 
-def Programm3():  #(15.03.2026)
+
+def Programm3():  # (15.03.2026)
     Bananas = input("Bananas = ")
     BananasEaten = input("Bananas Eaten = ")
-    print(int(Bananas)-int(BananasEaten))
+    print(int(Bananas) - int(BananasEaten))
 
-def Programm4():  #(15.03.2026)
+
+def Programm4():  # (15.03.2026)
     Uname = input("What is your name? -- ")
     print("Create a character")
     Cname = input("What is his name? -- ")
@@ -56,9 +61,10 @@ def Programm4():  #(15.03.2026)
     print("He is", Cage, "years old")
     print("Powers:", Cpower)
     print("Weaknesses:", Cweak)
-    print('"'+"Thanks for creating me,", Uname+'"',"- says", Cname)
+    print('"' + "Thanks for creating me,", Uname + '"', "- says", Cname)
 
-def Programm5():  #(15.03.2026)
+
+def Programm5():  # (15.03.2026)
     User_reply = input("Do you like robots? -- ").upper()
     if User_reply == "YES":
         User_reply = "Y"
@@ -79,12 +85,13 @@ def Programm5():  #(15.03.2026)
     else:
         print("Print('input(something sensible)')")
 
-def Programm6():  #(16.03.2026)
+
+def Programm6():  # (16.03.2026)
     print("You are in a castle of a dragon.")
     DoorChoice = input("There are four doors. Which one do you enter? -- ")
     if DoorChoice == "1":
         print("You found a treasure")
-        VipTreasure = random.randint(1,100)
+        VipTreasure = random.randint(1, 100)
         if VipTreasure > 95:
             print("A Vip password was in it")
             print("It is 5-2-8-0")
@@ -106,7 +113,7 @@ def Programm6():  #(16.03.2026)
             print("You lose!")
     elif DoorChoice == "4":
         print("You see a sphinx.")
-        SPass = str(random.randint(1,10))
+        SPass = str(random.randint(1, 10))
         SGuess = input("Can you guess my number.It is inbetween 1 to 10 -- ")
         if SGuess == SPass:
             print("You are freed.")
@@ -115,7 +122,8 @@ def Programm6():  #(16.03.2026)
             print("The sphinx traps you.")
             print("You lose!")
 
-def Programm7():  #(17.03.2026)
+
+def Programm7():  # (17.03.2026)
     aliens = 2
     APass = "ALIENS"
     print("Aliens are invading the earth!")
@@ -134,7 +142,7 @@ def Programm7():  #(17.03.2026)
     if VipAccess == "T":
         print("VipAccess = 'T'")
         print("--Access granted--")
-        print("Password =",APass)
+        print("Password =", APass)
     else:
         print("VipAccess = 'F'")
         APassGuess = input("Please enter the password -- ").upper()
@@ -155,8 +163,9 @@ def Programm7():  #(17.03.2026)
         else:
             print("No! The aliens have out numbered us!")
 
-def Programm8():  #(18.03.2026)
-    GNum = str(random.randint(1,20))
+
+def Programm8():  # (18.03.2026)
+    GNum = str(random.randint(1, 20))
     if VipAccess == "T":
         GPstate = input("Learn correct answer(skips programm)[Y/N] -- ").upper()
         if GPstate != "Y":
@@ -180,28 +189,32 @@ def Programm8():  #(18.03.2026)
             GGuess = input("Can you guess my number. It is inbetween 1 to 20 -- ")
         print("Correct!")
 
-def Programm9():  #(18.03.2026)
+
+def Programm9():  # (18.03.2026)
     Num = input("Number = ")
     Num2 = input("Number2 = ")
     num = int(Num)
     num2 = int(Num2)
-    for Cyc1 in range(num,num2):
+    for Cyc1 in range(num, num2):
         print(Cyc1)
 
-def Programm10():  #(18.03.2026)
+
+def Programm10():  # (18.03.2026)
     TTMN = int(input("What number to muitiply by -- "))
     TTEN = int(input("The final number -- ")) + 1
-    for Cyc2 in range(1,TTEN):
-        print(Cyc2, "x", TTMN, "=", Cyc2*TTMN)
+    for Cyc2 in range(1, TTEN):
+        print(Cyc2, "x", TTMN, "=", Cyc2 * TTMN)
 
-def Programm11():  #(18.03.2026)
-    for Cyc3 in range(1,5):
+
+def Programm11():  # (18.03.2026)
+    for Cyc3 in range(1, 5):
         print("Bleep")
-        for Cyc4 in range(1,5):
+        for Cyc4 in range(1, 5):
             print("Bloop")
         print("Bzzzt")
 
-def Programm12():  #(24.03.2026)
+
+def Programm12():  # (24.03.2026)
     print("Create a list with 4 elements")
     print("")
     El1 = input("Element 1 -- ")
@@ -210,8 +223,8 @@ def Programm12():  #(24.03.2026)
     El4 = input("Element 4 -- ")
     print("")
     print("The list will now change")
-    List1 = [El1,El2,El3,El4]
-    List1E = [El1,El2,El3,El4]
+    List1 = [El1, El2, El3, El4]
+    List1E = [El1, El2, El3, El4]
     print(List1)
     List1[0] = "Change?"
     print(List1)
@@ -219,17 +232,18 @@ def Programm12():  #(24.03.2026)
     print(List1)
     List1.append("Change!")
     print(List1)
-    Num = random.randint(0,3)
-    Num2 = random.randint(1,3)
-    Num3 = random.randint(0,2)
-    List2 = [List1E[Num],List1E[Num3],List1E[Num2]]
+    Num = random.randint(0, 3)
+    Num2 = random.randint(1, 3)
+    Num3 = random.randint(0, 2)
+    List2 = [List1E[Num], List1E[Num3], List1E[Num2]]
     List1 = List2 + List1
     print(List1)
     print('')
     for Cyc5 in List1:
         print(Cyc5)
 
-def Programm13():  #(11.04.2026)
+
+def Programm13():  # (11.04.2026)
     print("Create a list with 2 elements and 2 keys")
     print("")
     El1 = input("Element 1 -- ")
@@ -251,7 +265,8 @@ def Programm13():  #(11.04.2026)
     for Cyc6 in List1:
         print(Cyc6)
 
-def Programm14():  #(12.04.2026)
+
+def Programm14():  # (12.04.2026)
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     alphabet = alphabet * 2
     STE = input("The string that you want to encrypt -- ").upper()
@@ -266,7 +281,8 @@ def Programm14():  #(12.04.2026)
             ES = ES + x
     print("The message is:", ES)
 
-def Programm15():  #(13.04.2026)
+
+def Programm15():  # (13.04.2026)
     color("blue")
     shape("turtle")
     speed(10)
@@ -277,7 +293,8 @@ def Programm15():  #(13.04.2026)
         forward(50)
         right(Angle)
 
-def Programm16():  #(15.04.2026)
+
+def Programm16():  # (15.04.2026)
 
     def VShape(size):
         right(25)
@@ -289,10 +306,10 @@ def Programm16():  #(15.04.2026)
         right(25)
 
     def SnowflakeArm(size):
-        for Cyc8 in  range(4):
+        for Cyc8 in range(4):
             forward(size)
             VShape(size)
-        backward(size*4)
+        backward(size * 4)
 
     def Snowflake(size):
         color(random.choice(colors))
@@ -300,8 +317,8 @@ def Programm16():  #(15.04.2026)
             SnowflakeArm(size)
             right(Angle)
 
-    colors = ["white","blue","cyan","purple","green","white","white"]
-    goto(0,0)
+    colors = ["white", "blue", "cyan", "purple", "green", "white", "white"]
+    goto(0, 0)
     shape("turtle")
     speed(10)
     pensize(6)
@@ -311,15 +328,16 @@ def Programm16():  #(15.04.2026)
     NoS = int(input("How many snowflakes do you want? -- "))
     Angle = 360 / NoA
     for Cyc9 in range(NoS):
-        size = random.randint(5,30)
+        size = random.randint(5, 30)
         x = random.randint(-400, 400)
         y = random.randint(-400, 400)
         penup()
-        goto(x,y)
+        goto(x, y)
         pendown()
         Snowflake(size)
 
-def Programm17():  #(24.04.2026)
+
+def Programm17():  # (24.04.2026)
     window1 = tkr.Tk()
     button1 = tkr.Button(window1, text="Do not press this button", width=40)
     button1.pack(padx=10, pady=10)
@@ -342,21 +360,22 @@ def Programm17():  #(24.04.2026)
     button1.bind("<ButtonRelease-1>", onClick)
     window1.mainloop()
 
-def Programm18():  #(27.04.2026)
+
+def Programm18():  # (27.04.2026)
     print("To draw, use LMB.")
     window2 = tkr.Tk()
     canvas1 = tkr.Canvas(window2, bg="white", width=750, height=500)
     canvas1.pack()
     global lastX, lastY
-    lastX, lastY = 0,0
+    lastX, lastY = 0, 0
     global Scolor
     Scolor = "black"
     width = int(input("How wide do you want your pencil? -- "))
-    red_id = canvas1.create_rectangle(10,10,30,30, fill="red")
-    blue_id = canvas1.create_rectangle(10,35,30,55, fill="blue")
-    black_id = canvas1.create_rectangle(10,60,30,80, fill="black")
-    white_id = canvas1.create_rectangle(10,85,30,105, fill="white")
-    
+    red_id = canvas1.create_rectangle(10, 10, 30, 30, fill="red")
+    blue_id = canvas1.create_rectangle(10, 35, 30, 55, fill="blue")
+    black_id = canvas1.create_rectangle(10, 60, 30, 80, fill="black")
+    white_id = canvas1.create_rectangle(10, 85, 30, 105, fill="white")
+
     def StoreNewPos(event):
         global lastX, lastY
         lastX = event.x
@@ -367,7 +386,7 @@ def Programm18():  #(27.04.2026)
 
     def onDrag(event):
         global Scolor
-        canvas1.create_line(lastX, lastY, event.x, event.y, fill=Scolor,width=width)
+        canvas1.create_line(lastX, lastY, event.x, event.y, fill=Scolor, width=width)
         StoreNewPos(event)
 
     def CCTR(event):
@@ -394,7 +413,8 @@ def Programm18():  #(27.04.2026)
     canvas1.tag_bind(white_id, "<Button-1>", CCTW)
     window2.mainloop()
 
-def Programm19():  #(29.04.2026)
+
+def Programm19():  # (29.04.2026)
     def Setup_minesweeper():
         global gameOver, score, squaresLeft, minefield
         gameOver = False
@@ -413,7 +433,7 @@ def Programm19():  #(29.04.2026)
             for row in range(10):
                 rowList = []
                 for column in range(10):
-                    BombRN = random.randint(1,100)
+                    BombRN = random.randint(1, 100)
                     if BombRN <= 20:
                         rowList.append(1)
                     else:
@@ -426,10 +446,9 @@ def Programm19():  #(29.04.2026)
             square = event.widget
             currentText = square.cget("text")
             if currentText == "    ":
-                square.config(bg= "yellow", text= ""+"B"+"")
+                square.config(bg="yellow", text="" + "B" + "")
             if currentText == "B":
-                square.config(bg= "green", text= "    ")
-
+                square.config(bg="green", text="    ")
 
         def check_Bombs(event):
             global score, squaresLeft, gameOver, minefield, PFQ
@@ -440,40 +459,40 @@ def Programm19():  #(29.04.2026)
             if gameOver == False:
                 if minefield[row][column] == 1:
                     gameOver = True
-                    square.config(bg= "red")
+                    square.config(bg="red")
                     print("Game over! You hit a bomb!")
                     if VipAccess == "T":
                         if PFQ == "Y":
                             print("**Even with a cheat!!!**")
                     print("Your score was:", score)
                 elif currentText == "    ":
-                    square.config(bg= "brown")
+                    square.config(bg="brown")
                     totalBombs = 0
                     if row < 9:
-                        if minefield[row+1][column]  == 1:
+                        if minefield[row + 1][column] == 1:
                             totalBombs = totalBombs + 1
                     if row > 0:
-                        if minefield[row-1][column]  == 1:
+                        if minefield[row - 1][column] == 1:
                             totalBombs = totalBombs + 1
                     if column > 0:
-                        if minefield[row][column-1]  == 1:
+                        if minefield[row][column - 1] == 1:
                             totalBombs = totalBombs + 1
                     if column < 9:
-                        if minefield[row][column+1]  == 1:
+                        if minefield[row][column + 1] == 1:
                             totalBombs = totalBombs + 1
                     if row > 0 and column > 0:
-                        if minefield[row-1][column-1]  == 1:
+                        if minefield[row - 1][column - 1] == 1:
                             totalBombs = totalBombs + 1
                     if row < 9 and column < 9:
-                        if minefield[row+1][column+1]  == 1:
+                        if minefield[row + 1][column + 1] == 1:
                             totalBombs = totalBombs + 1
                     if row > 0 and column < 9:
-                        if minefield[row-1][column+1]  == 1:
+                        if minefield[row - 1][column + 1] == 1:
                             totalBombs = totalBombs + 1
                     if row < 9 and column > 0:
-                        if minefield[row+1][column-1]  == 1:
+                        if minefield[row + 1][column - 1] == 1:
                             totalBombs = totalBombs + 1
-                    square.config(text= " "+str(totalBombs)+" ")
+                    square.config(text=" " + str(totalBombs) + " ")
                     score += 1
                     squaresLeft -= 1
                     if squaresLeft == 0:
@@ -485,14 +504,14 @@ def Programm19():  #(29.04.2026)
             global VipAccess
             for rowNumber, rowList in enumerate(minefield):
                 for columnNumber, columnEntry in enumerate(rowList):
-                    RSC = random.randint(1,100)
+                    RSC = random.randint(1, 100)
                     if RSC < 25:
-                        square = tkr.Label(window, text="    ", bg= "darkgreen")
+                        square = tkr.Label(window, text="    ", bg="darkgreen")
                     elif RSC > 75:
-                        square = tkr.Label(window, text="    ", bg= "seagreen")
+                        square = tkr.Label(window, text="    ", bg="seagreen")
                     else:
-                        square = tkr.Label(window, text="    ", bg= "green")
-                    square.grid(row= rowNumber, column= columnNumber)
+                        square = tkr.Label(window, text="    ", bg="green")
+                    square.grid(row=rowNumber, column=columnNumber)
                     square.bind("<Button-1>", check_Bombs)
                     square.bind("<Button-3>", set_Flag)
 
@@ -512,8 +531,8 @@ def Programm19():  #(29.04.2026)
     Setup_minesweeper()
     Play_minesweeper()
 
-def Programm20():
 
+def Programm20():
     def move_tennisObject(object):
         global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, score, bounceCount
         if object == "bat":
@@ -593,8 +612,8 @@ def Programm20():
         leftPressed = 0
         ballMoveX = 4
         ballMoveY = -4
-        setBatTop = canvasHeight-40
-        setBatBottom = canvasHeight-30
+        setBatTop = canvasHeight - 40
+        setBatBottom = canvasHeight - 30
         window4.protocol("WM_DELETE_WINDOW", close)
         window4.bind("<KeyPress>", on_key_press)
         window4.bind("<KeyRelease>", on_key_release)
@@ -608,7 +627,7 @@ def Programm20():
         ballMoveX = 4
         ballMoveY = -4
         canvas2.coords(bat, 10, setBatTop, 50, setBatBottom)
-        canvas2.coords(ball, 20, setBatTop-10, 30, setBatTop)
+        canvas2.coords(ball, 20, setBatTop - 10, 30, setBatTop)
 
     def play_Tennis():
         global windowOpen, window4
@@ -622,28 +641,29 @@ def Programm20():
 
     setup_Tennis()
     play_Tennis()
-        
-def ProgrammP1():  #T1
 
-    def Drift():  #(19.03.2026)
+
+def ProgrammP1():  # T1
+
+    def Drift():  # (19.03.2026)
         global x, y, z, a
-        a = max((y-y*2)*2,z)
-        y = random.randint(min(a,y*2),max(a,y*2))
+        a = max((y - y * 2) * 2, z)
+        y = random.randint(min(a, y * 2), max(a, y * 2))
         if y == 0:
             y = 1
         x = x + y
 
-    def Drift2():  #(19.03.2026)
+    def Drift2():  # (19.03.2026)
         global i, o, r, p
-        p = max((o-o*2)*2,r)
-        o = random.randint(min(p,o*2),max(p,o*2))
+        p = max((o - o * 2) * 2, r)
+        o = random.randint(min(p, o * 2), max(p, o * 2))
         if o == 0:
             o = 1
         i = i + o
 
-    def ProgrammP1E1():  #(19.03.2026)
+    def ProgrammP1E1():  # (19.03.2026)
         global x, y, i, o, z, r
-        Goal =  float(input("Set a goal -- "))
+        Goal = float(input("Set a goal -- "))
         x = int(input("First S.N. -- "))
         y = int(input("First D.N. -- "))
         i = int(input("Second S.N. -- "))
@@ -658,15 +678,15 @@ def ProgrammP1():  #T1
             print(i)
             if x > Goal or i > Goal:
                 if x > Goal:
-                    z = -random.randint(1,max(1,y))
+                    z = -random.randint(1, max(1, y))
                 if i > Goal:
-                    r = -random.randint(1,max(1,o))
+                    r = -random.randint(1, max(1, o))
             if x < Goal or i < Goal:
                 if x < Goal:
-                    z = random.randint(1,max(1,y))
+                    z = random.randint(1, max(1, y))
                 if i < Goal:
-                    r = random.randint(1,max(1,o))
-            if x == Goal or i == Goal:  #(20.03.2026)
+                    r = random.randint(1, max(1, o))
+            if x == Goal or i == Goal:  # (20.03.2026)
                 if x == Goal:
                     print("First D reached the goal")
                 if i == Goal:
@@ -677,9 +697,10 @@ def ProgrammP1():  #T1
                 print("Fail")
                 break
 
-    ProgrammP1E1()  #(19.03.2026)
+    ProgrammP1E1()  # (19.03.2026)
 
-def ProgrammP2():  #T3
+
+def ProgrammP2():  # T3
     WordLib = ["hi"]
     ES = input("The string that you want to encrypt -- ").split()
     if WordLib != []:
@@ -712,7 +733,8 @@ def ProgrammP2():  #T3
         CESP = CESP + l + " "
     print(CESP)
 
-def ProgrammP3():  #T4
+
+def ProgrammP3():  # T4
     window = tkr.Tk()
     button1 = tkr.Button(window, text="Do not press this button", width=40)
     button1.pack(padx=50, pady=20)
@@ -767,14 +789,14 @@ def ProgrammP3():  #T4
     button1.bind("<ButtonRelease-1>", onClick)
     window.mainloop()
 
+
 def ProgrammP4():
     print("HB-JS python port 0.0.1.0.00")
     time.sleep(1)
 
-
     def JSProgramm1(repeats):
         for i in range(repeats):
-            print(str(i)+". =^.^=")
+            print(str(i) + ". =^.^=")
 
     def JSProgramm2():
         SecInMin = 60
@@ -810,14 +832,14 @@ def ProgrammP4():
 
     def JSProgramm3():
         HighFives = 0
-        print(HighFives+1)
-        print(HighFives+1)
-        print(HighFives-1)
+        print(HighFives + 1)
+        print(HighFives + 1)
+        print(HighFives - 1)
         print("Delayed:")
         print(HighFives)
-        print(HighFives+1)
-        print(HighFives+1)
-        print(HighFives-1)
+        print(HighFives + 1)
+        print(HighFives + 1)
+        print(HighFives - 1)
 
     print("Programm1:")
     JSProgramm1(10)
@@ -828,6 +850,7 @@ def ProgrammP4():
     print("Programm3:")
     JSProgramm3()
     time.sleep(1)
+
 
 def ProgrammP5():
     def Ttt(sys, n):
@@ -866,7 +889,8 @@ def ProgrammP5():
     n = input("Number -- ")
     Ttt("te", n)
 
-def CTNP():  #Mainline
+
+def CTNP():  # Mainline
     Cstate = input("Continue[Y/N]").upper()
     if Cstate == "Y":
         Cstate = 1
@@ -881,14 +905,17 @@ def CTNP():  #Mainline
         print("Bye")
         PStop()
 
-def Advance():  #Mainline
+
+def Advance():  # Mainline
     Adv = 1
     global Stop
     Stop = 0
 
-def PStop():  #Mainline
+
+def PStop():  # Mainline
     global Stop
     Stop = 1
+
 
 def Start():
     ProgrammP1()
@@ -913,10 +940,11 @@ def Start():
                 else:
                     ProgrammP5()
 
+
 def Code():
     global Stop, VipAccess
     print("PE programms are enabled on default!")
-    TAEstate = "N"  #(15.03.2026)
+    TAEstate = "N"  # (15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
         TAEstate = input("Skip procedure[Y/N] -- ").upper()
@@ -943,21 +971,21 @@ def Code():
                     else:
                         Programm5()
                         CTNP()
-                        if Stop == 1:  #(16.03.2026)
+                        if Stop == 1:  # (16.03.2026)
                             pass
                         else:
                             Programm6()
                             CTNP()
-                            if Stop == 1:  #(17.03.2026)
+                            if Stop == 1:  # (17.03.2026)
                                 pass
                             else:
                                 Programm7()
                                 CTNP()
-                                if Stop == 1:  #(18.03.2026)
+                                if Stop == 1:  # (18.03.2026)
                                     pass
                                 else:
                                     Programm8()
-                                    if VipAccess == "T":  #(20.03.2026)
+                                    if VipAccess == "T":  # (20.03.2026)
                                         EPstate = input("Skip programms 9-11[Y/N] -- ").upper()
                                     if EPstate != "Y":
                                         CTNP()
@@ -977,22 +1005,22 @@ def Code():
                                                     Programm11()
                                     else:
                                         pass
-                                    CTNP()  #(24.03.2026)
+                                    CTNP()  # (24.03.2026)
                                     if Stop == 1:
                                         pass
                                     else:
                                         Programm12()
-                                        CTNP()  #(11.04.2026)
+                                        CTNP()  # (11.04.2026)
                                         if Stop == 1:
                                             pass
                                         else:
                                             Programm13()
-                                            CTNP()  #(12.04.2026)
+                                            CTNP()  # (12.04.2026)
                                             if Stop == 1:
                                                 pass
                                             else:
                                                 Programm14()
-                                                CTNP()  #(15.04.2026)
+                                                CTNP()  # (15.04.2026)
                                                 if Stop == 1:
                                                     pass
                                                 else:
@@ -1049,7 +1077,7 @@ def Code():
                                                                                             ProgrammP5()
     else:
         pass
-    print("")  #(16.03.2026)
+    print("")  # (16.03.2026)
     print("Stop!")
     print("")
     print("------------------")
@@ -1065,10 +1093,11 @@ def Code():
         print("You shall not pass")
         global RA
         RestartAttempt = RestAtt = RA = int(RA) + 1
-        print("Restart №"+str(RA),"initialaizing")
+        print("Restart №" + str(RA), "initialaizing")
         Restart()
 
-def Restart():  #(16.03.2026)
+
+def Restart():  # (16.03.2026)
     global E_C
     if VipAccess == "F":
         Code()
@@ -1153,14 +1182,16 @@ def Restart():  #(16.03.2026)
         else:
             pass
 
+
 def dev_console():
     global RA, VipAccess, Login, VN
-    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "P1", "P2", "P3", "P4", "P5"]
+    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+            "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for "+VN)
+        print("Developer console for " + VN)
         line = ""
         while line != "stop":
-            line = input(Login+" >>> ").lower()
+            line = input(Login + " >>> ").lower()
             if line in SpCm:
                 PrStart = line
                 if PrStart == "2":

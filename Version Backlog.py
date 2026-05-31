@@ -942,6 +942,15 @@ elif LogVersion == "2":
                         print("    - Fixed ball faze!")
                     else:
                         print("Such release does not exist or isn`t documented")
+                if D5 == "2.02":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.2.0.02 (default, May 31 2026, 15:06:54) ---")
+                        print("Bugfix №12!")
+                        print("Changes:")
+                        print("    - Fixed 'Programm20()' funky ball bug")
+                        print("    - Fixed other fake info stuff")
+                    else:
+                        print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:

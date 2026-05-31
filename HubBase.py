@@ -4,12 +4,12 @@ from turtle import *
 import tkinter as tkr
 
 def Enter():  # (13.03.2026)
+    global VipAccess, PassGuess, Login, VN
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.01"
-    global VipAccess, PassGuess, Login
+    VN = "0.0.2.0.02"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase "+VN+" (default, May 29 2026, 13:30:11) ---")
+    print("--- HubBase "+VN+" (default, May 31 2026, 15:06:54) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -104,7 +104,7 @@ def Programm6():  # (16.03.2026)
         else:
             print("The dragon wakes up and eats you.")
             print("You lose!")
-    if DoorChoice == "4":
+    elif DoorChoice == "4":
         print("You see a sphinx.")
         SPass = str(random.randint(1, 10))
         SGuess = input("Can you guess my number.It is inbetween 1 to 10 -- ")
@@ -518,7 +518,7 @@ def Programm20():
         global batSpeed, bat, rightPressed, leftPressed, ball, canvas2, canvasWidth, ballMoveX, ballMoveY, setBatBottom, setBatTop, score, bounceCount
         if object == "bat":
             batMove = batSpeed * rightPressed - batSpeed * leftPressed
-            (batLeft,batTop,batRight,batBottom) = canvas2.coords(bat)
+            (batLeft, batTop, batRight, batBottom) = canvas2.coords(bat)
             if (batLeft > 0 or batMove > 0) and (batRight < canvasWidth or batMove < 0):
                 canvas2.move(bat, batMove, 0)
         elif object == "ball":
@@ -530,9 +530,10 @@ def Programm20():
                 ballMoveX = -ballMoveX
             if ballMoveY < 0 and ballTop < 0:
                 ballMoveY = -ballMoveY
-            if (ballMoveX > 0 and (ballRight+ballMoveX > batLeft and ballLeft < batRight) or ballMoveX < 0 and (ballRight > batLeft and ballLeft + ballMoveX < batRight)):
-                (batLeft,batTop,batRight,batBottom) = canvas2.coords(bat)
-                if ballRight > batLeft and ballLeft < batRight:
+            if ballMoveY > 0 and ballBottom > setBatTop and ballBottom < setBatBottom:
+                (batLeft, batTop, batRight, batBottom) = canvas2.coords(bat)
+                if (ballMoveX > 0 and (ballRight + ballMoveX > batLeft and ballLeft < batRight) or ballMoveX < 0 and (
+                        ballRight > batLeft and ballLeft + ballMoveX < batRight)):
                     ballMoveY = -ballMoveY
                     score += 1
                     bounceCount += 1
@@ -900,11 +901,10 @@ def Restart():  #(16.03.2026)
             pass
 
 def dev_console():
-    global RA, VipAccess, Login
-    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
-            "P1", "P2", "P3", "P4", "P5"]
+    global RA, VipAccess, Login, VN
+    SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for 0.0.2.0.00")
+        print("Developer console for "+VN)
         line = ""
         while line != "stop" and line != "close":
             line = input(Login + " >>> ").lower()

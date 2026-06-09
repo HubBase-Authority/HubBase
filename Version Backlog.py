@@ -562,6 +562,7 @@ elif LogVersion == "1.5":
                     print("Addition:")
                     print("    - Added 'Minesweeper'(Pr19) fully!")
                     print("    - Added HubBasePE v0.0.1 support!")
+                    print("The last update of the v1.5 log")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:
@@ -935,7 +936,7 @@ elif LogVersion == "2":
                         print("    - Added 'Tennis'(Pr20)(Extentions)!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "2.01":
+                elif D5 == "0.01":
                     if D4 == "r":
                         print("--- HubBase 0.0.2.0.01 (default, May 29 2026, 13:30:11) ---")
                         print("Bugfix №11!")
@@ -943,13 +944,21 @@ elif LogVersion == "2":
                         print("    - Fixed ball faze!")
                     else:
                         print("Such release does not exist or isn`t documented")
-                if D5 == "2.02":
+                elif D5 == "0.02":
                     if D4 == "r":
                         print("--- HubBase 0.0.2.0.02 (default, May 31 2026, 15:06:54) ---")
                         print("Bugfix №12!")
                         print("Changes:")
                         print("    - Fixed 'Programm20()' funky ball bug")
                         print("    - Fixed other fake info stuff")
+                    else:
+                        print("Such release does not exist or isn`t documented")
+                elif D5 == "0.02":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.2.0.03 (default, June 09 2026, 17:16:14) ---")
+                        print("Bugfix №12!")
+                        print("Changes:")
+                        print("    - Added 'Auto HubBasePE' and dev_console 'Syntax check'")
                     else:
                         print("Such release does not exist or isn`t documented")
                 else:

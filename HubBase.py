@@ -2,15 +2,24 @@ import time  # (16.03.2026)
 import random
 from turtle import *
 import tkinter as tkr
+import subprocess
+import sys
+try:
+    from HubBasePE import Main
+except ImportError:
+    print("Error: HubBasePE not installed.")
+    hbpeInstall = input("Do you want to install HubBasePE?[Y/N] -- ").upper()
+    if hbpeInstall == "Y":
+        subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE"])
 
 
 def Enter():  # (13.03.2026)
     global VipAccess, PassGuess, Login, VN
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.02"
+    VN = "0.0.2.0.03"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase " + VN + " (default, May 31 2026, 15:06:54) ---")
+    print("--- HubBase " + VN + " (default, June 09 2026, 17:16:14) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -678,10 +687,7 @@ def PStop():  # (15.03.2026)
 
 # CodeBase
 def Code():
-    global Stop, VipAccess, PlPr
-    PlPr = input("Do you want to enable PE programms?(requires HubBasePE => 0.0.1.0.10)[Y/N] -- ").upper()
-    if PlPr == "Y":
-        from HubBasePE import Main
+    global Stop, VipAccess
     TAEstate = "N"  # (15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
@@ -1013,7 +1019,10 @@ def dev_console():
                 else:
                     Code()
             elif line != "stop" and line != "close":
-                print(eval(line))
+                try:
+                    print(eval(line))
+                except SyntaxError:
+                    print("Error: The syntax is not correct.")
 
 
 # (16.03.2026)

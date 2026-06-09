@@ -7,10 +7,10 @@ import tkinter as tkr
 def Enter():  # (13.03.2026)
     global VipAccess, PassGuess, Login, VN
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.0.2"
+    VN = "0.0.2.0.03"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase " + VN + " (plus, May 29 2026, 13:37:54) ---")
+    print("--- HubBase " + VN + " (plus, June 09 2026, 17:22:17) ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -1269,4 +1269,7 @@ def dev_console():
                 else:
                     Code()
             elif line != "stop":
-                print(eval(line))
+                try:
+                    print(eval(line))
+                except SyntaxError:
+                    print("Error: The syntax is not correct.")

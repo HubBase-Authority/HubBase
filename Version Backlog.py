@@ -953,12 +953,20 @@ elif LogVersion == "2":
                         print("    - Fixed other fake info stuff")
                     else:
                         print("Such release does not exist or isn`t documented")
-                elif D5 == "0.02":
+                elif D5 == "0.03":
                     if D4 == "r":
                         print("--- HubBase 0.0.2.0.03 (default, June 09 2026, 17:16:14) ---")
-                        print("Bugfix №12!")
+                        print("Bugfix №13!")
                         print("Changes:")
                         print("    - Added 'Auto HubBasePE' and dev_console 'Syntax check'")
+                    else:
+                        print("Such release does not exist or isn`t documented")
+                elif D5 == "0.04":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.2.0.04 (default, June 10 2026, 17:35:54) ---")
+                        print("Bugfix №14!")
+                        print("Changes:")
+                        print("    - Added 'Auto HubBasePE 2.0' and changed versioning(__version__)")
                     else:
                         print("Such release does not exist or isn`t documented")
                 else:

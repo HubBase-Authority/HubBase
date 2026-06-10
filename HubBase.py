@@ -4,22 +4,46 @@ from turtle import *
 import tkinter as tkr
 import subprocess
 import sys
+__version__ = "0.0.2.0.04"
+PlPr = "N"
+__parameters__ = "(default, June 10 2026, 17:35:54)"
 try:
     from HubBasePE import Main
+    try:
+        PE__version__ = Main.__version__
+        print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
+        if PE__version__ == __version__:
+            print("All checks pass")
+        elif PE__version__ > __version__:
+            print("Warning: You are using an outdated(to HubBasePE) version of HubBase. This may cause bugs.")
+        else:
+            print("Warning: HubBasePE is outdated")
+            print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
+            hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
+            if hbpeInstall == "Y":
+                subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE>=0.0.2.0.0.4"])
+                PlPr = "Y"
+    except AttributeError:
+        print("Warning: HubBasePE is outdated")
+        print(f"Your HubBase version: {__version__}, your HubBasePE version: Unknown (< 0.0.2.0.04)")
+        hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
+        if hbpeInstall == "Y":
+            subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE>=0.0.2.0.0.4"])
+            PlPr = "Y"
 except ImportError:
     print("Error: HubBasePE not installed.")
     hbpeInstall = input("Do you want to install HubBasePE?[Y/N] -- ").upper()
     if hbpeInstall == "Y":
         subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE"])
+        PlPr = "Y"
 
 
 def Enter():  # (13.03.2026)
-    global VipAccess, PassGuess, Login, VN
+    global VipAccess, PassGuess, Login
     Vips = ["voice659", "vhba", "vipuser", 'hbaofficial', "vvoice", "voice", "v", "vip1"]
-    VN = "0.0.2.0.03"
     VipAccess = "F"
     PassGuess = 0
-    print("--- HubBase " + VN + " (default, June 09 2026, 17:16:14) ---")
+    print(f"--- HubBase {__version__} {__parameters__} ---")
     Login = input("Login (If <vip level then press enter): ").lower()
     if Login in Vips:
         Password = str(5280)
@@ -938,7 +962,7 @@ def dev_console():
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
             "20", "P1", "P2", "P3", "P4", "P5"]
     if VipAccess == "T":
-        print("Developer console for " + VN)
+        print("Developer console for " + __version__)
         line = ""
         while line != "stop" and line != "close":
             line = input(Login + " >>> ").lower()

@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBPE 0.0.2.0.02 + v0.0.2.0.02">
-      <changelist_data name="Voice659" email="e.r.fahretdinov@yandex.ru" automatic="false" />
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment=".md fix">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBaseB.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.2.0.0.3-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.2.0.0.3.tar.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hbinstaller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/№1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/№2.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +31,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Voice659&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HubBase-Authority/HubBasePC_--_Github&quot;,
+    &quot;accountId&quot;: &quot;3b124460-7cc2-46a1-bd7e-e48b59dea2ab&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -51,6 +54,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.AI.executor&quot;: &quot;Run&quot;,
     &quot;Python.HubBase.executor&quot;: &quot;Run&quot;,
     &quot;Python.HubBaseB.executor&quot;: &quot;Run&quot;,
     &quot;Python.Main.executor&quot;: &quot;Run&quot;,
@@ -61,10 +65,10 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;memory.settings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.HubBase">
+  <component name="RunManager">
     <configuration name="HubBase" type="PythonConfigurationType" factoryName="Python">
       <module name="HubBase" />
       <option name="ENV_FILES" value="" />
@@ -315,7 +319,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780252348958</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="v0.0.2.0.03 + Reorganisation &#10;Now on GitHub.">
+      <option name="closed" value="true" />
+      <created>1781017021777</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1781017021777</updated>
+    </task>
+    <task id="LOCAL-00025" summary=".md fix">
+      <option name="closed" value="true" />
+      <created>1781018040582</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1781018040582</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +367,8 @@
     <MESSAGE value="HBPE 0.0.2.0.01 + v0.0.2.0.01" />
     <MESSAGE value="HBPE 0.0.2.0.02 + v0.0.2.0.02" />
     <MESSAGE value="PEP8" />
-    <option name="LAST_COMMIT_MESSAGE" value="PEP8" />
+    <MESSAGE value="v0.0.2.0.03 + Reorganisation &#10;Now on GitHub." />
+    <MESSAGE value=".md fix" />
+    <option name="LAST_COMMIT_MESSAGE" value=".md fix" />
   </component>
 </project>

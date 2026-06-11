@@ -774,7 +774,7 @@ def Code():
     if VipAccess == "T":
         TAEstate = input("Skip procedure[Y/N] -- ").upper()
     if TAEstate != "Y":
-        HubBaseUtility.RawFunc.ProgrammCycle(prNum, prList, CTNP, [])
+        ProgrammCycle(prNum, prList, CTNP, [])
     else:
         pass
     print("")  # (16.03.2026)

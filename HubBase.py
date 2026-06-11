@@ -4,38 +4,11 @@ from turtle import *
 import tkinter as tkr
 import subprocess
 import sys
-__version__ = "0.0.2.0.04"
+
+__version__ = "0.0.2.0.05"
+__version2__ = "0.0.2.0.0.5"
+__parameters__ = "(default, June 11 2026, 22:00:10)"
 PlPr = "N"
-__parameters__ = "(default, June 10 2026, 17:35:54)"
-try:
-    from HubBasePE import Main
-    try:
-        PE__version__ = Main.__version__
-        print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
-        if PE__version__ == __version__:
-            print("All checks pass")
-        elif PE__version__ > __version__:
-            print("Warning: You are using an outdated(to HubBasePE) version of HubBase. This may cause bugs.")
-        else:
-            print("Warning: HubBasePE is outdated")
-            print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
-            hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
-            if hbpeInstall == "Y":
-                subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE>=0.0.2.0.0.4"])
-                PlPr = "Y"
-    except AttributeError:
-        print("Warning: HubBasePE is outdated")
-        print(f"Your HubBase version: {__version__}, your HubBasePE version: Unknown (< 0.0.2.0.04)")
-        hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
-        if hbpeInstall == "Y":
-            subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE>=0.0.2.0.0.4"])
-            PlPr = "Y"
-except ImportError:
-    print("Error: HubBasePE not installed.")
-    hbpeInstall = input("Do you want to install HubBasePE?[Y/N] -- ").upper()
-    if hbpeInstall == "Y":
-        subprocess.run([sys.executable, "-m", "pip", "install", "HubBasePE"])
-        PlPr = "Y"
 
 
 def Enter():  # (13.03.2026)
@@ -57,6 +30,90 @@ def Enter():  # (13.03.2026)
     print("Login successful!")
     if VipAccess == "T":
         PassGuess = str(5280)
+
+
+def ProgrammCycle(ProgrammNumber: int, programmList: dict, TransitionMethod, TransitionMethodargs: list):
+    for programm in range(1, ProgrammNumber + 1):
+        print(f"Programm №{programm} launching")
+        try:
+            programmList[programm]()
+            TransitionMethod(*TransitionMethodargs)
+        except KeyError:
+            print(f"KeyError: Key {programm} is out of reach")
+            break
+
+
+try:  # HBPE automator
+    from HubBasePE import Main
+
+    try:
+        PE__version__ = Main.__version__
+        print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
+        if PE__version__ > __version__:
+            print("Warning: You are using an outdated(to HubBasePE) version of HubBase. This may cause bugs.")
+        if PE__version__ < __version__:
+            print("Warning: HubBasePE is outdated")
+            print(f"Your HubBase version: {__version__}, your HubBasePE version: {PE__version__}")
+            hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
+            if hbpeInstall == "Y":
+                subprocess.run([sys.executable, "-m", "pip", "install", f"HubBasePE=={__version2__}"])
+                PlPr = "Y"
+        try:
+            import HubBaseUtility
+            from HubBaseUtility import RawCode
+        except ImportError:
+            print("Error: HubBaseUtility not installed.")
+            print("HubBase cannot function without HubBaseUtility")
+            hbutInstall = input("Do you want to install HubBaseUtility?[Y/N] -- ").upper()
+            if hbutInstall == "Y":
+                subprocess.run([sys.executable, "-m", "pip", "install", "--upgrade", "HubBaseUtility"])
+            else:
+                sys.exit(1)
+        if PE__version__ == __version__:
+            print("All checks pass")
+    except AttributeError:
+        print("Warning: HubBasePE is outdated")
+        print(f"Your HubBase version: {__version__}, your HubBasePE version: Unknown (< 0.0.2.0.04)")
+        hbpeInstall = input("Do you want to upgrade HubBasePE?[Y/N] -- ").upper()
+        if hbpeInstall == "Y":
+            subprocess.run([sys.executable, "-m", "pip", "install", f"HubBasePE=={__version2__}"])
+            PlPr = "Y"
+except ImportError:
+    print("Error: HubBasePE not installed.")
+    hbpeInstall = input("Do you want to install HubBasePE?[Y/N] -- ").upper()
+    if hbpeInstall == "Y":
+        subprocess.run([sys.executable, "-m", "pip", "install", f"HubBasePE=={__version2__}"])
+        PlPr = "Y"
+try:
+    import HubBaseUtility
+    from HubBaseUtility import RawCode
+except ImportError:
+    print("Error: HubBaseUtility not installed.")
+    print("HubBase cannot function without HubBaseUtility")
+    hbutInstall = input("Do you want to install HubBaseUtility?[Y/N] -- ").upper()
+    if hbutInstall == "Y":
+        subprocess.run([sys.executable, "-m", "pip", "install", "--upgrade", "HubBaseUtility"])
+    else:
+        sys.exit(1)
+
+
+def Setup_HubBase():  # (11.06.2026)
+    global RA, VipAccess, prList, prNum
+    RA = 0
+    prList = {1: Programm1, 2: Programm2, 3: Programm3, 4: Programm4, 5: Programm5, 6: Programm6, 7: Programm7,
+              8: Programm8, 9: Programm9, 10: Programm10, 11: Programm11, 12: Programm12, 13: Programm13,
+              14: Programm14, 15: Programm15, 16: Programm16, 17: Programm17, 18: Programm18, 19: Programm19,
+              20: Programm20}
+    prNum = 20
+    try:
+        prList = {1: Programm1, 2: Programm2, 3: Programm3, 4: Programm4, 5: Programm5, 6: Programm6, 7: Programm7,
+                  8: Programm8, 9: Programm9, 10: Programm10, 11: Programm11, 12: Programm12, 13: Programm13,
+                  14: Programm14, 15: Programm15, 16: Programm16, 17: Programm17, 18: Programm18, 19: Programm19,
+                  20: Programm20, 21: Main.ProgrammP1, 22: Main.ProgrammP2, 23: Main.ProgrammP3, 24: Main.ProgrammP4,
+                  25: Main.ProgrammP5}
+        prNum = 25
+    except:
+        pass
 
 
 def Programm1():  # (15.03.2026)
@@ -683,7 +740,7 @@ def Programm20():
 
 
 def CTNP():  # (15.03.2026)
-    Cstate = input("Continue[Y/N]").upper()
+    Cstate = input("Continue[Y/N] -- ").upper()
     if Cstate == "Y":
         Cstate = 1
     elif Cstate == "N":
@@ -711,141 +768,13 @@ def PStop():  # (15.03.2026)
 
 # CodeBase
 def Code():
-    global Stop, VipAccess
+    global Stop, VipAccess, prList, prNum
     TAEstate = "N"  # (15.03.2026)
     EPstate = "N"
     if VipAccess == "T":
         TAEstate = input("Skip procedure[Y/N] -- ").upper()
     if TAEstate != "Y":
-        Programm1()
-        CTNP()
-        if Stop == 1:
-            pass
-        else:
-            Programm2()
-            CTNP()
-            if Stop == 1:
-                pass
-            else:
-                Programm3()
-                CTNP()
-                if Stop == 1:
-                    pass
-                else:
-                    Programm4()
-                    CTNP()
-                    if Stop == 1:
-                        pass
-                    else:
-                        Programm5()
-                        CTNP()
-                        if Stop == 1:  # (16.03.2026)
-                            pass
-                        else:
-                            Programm6()
-                            CTNP()
-                            if Stop == 1:  # (17.03.2026)
-                                pass
-                            else:
-                                Programm7()
-                                CTNP()
-                                if Stop == 1:  # (18.03.2026)
-                                    pass
-                                else:
-                                    Programm8()
-                                    if VipAccess == "T":  # (20.03.2026)
-                                        EPstate = input("Skip programms 9-11[Y/N] -- ").upper()
-                                    if EPstate != "Y":
-                                        CTNP()
-                                        if Stop == 1:
-                                            pass
-                                        else:
-                                            Programm9()
-                                            CTNP()
-                                            if Stop == 1:
-                                                pass
-                                            else:
-                                                Programm10()
-                                                CTNP()
-                                                if Stop == 1:
-                                                    pass
-                                                else:
-                                                    Programm11()
-                                    else:
-                                        pass
-                                    CTNP()  # (24.03.2026)
-                                    if Stop == 1:
-                                        pass
-                                    else:
-                                        Programm12()
-                                        CTNP()  # (11.04.2026)
-                                        if Stop == 1:
-                                            pass
-                                        else:
-                                            Programm13()
-                                            CTNP()  # (12.04.2026)
-                                            if Stop == 1:
-                                                pass
-                                            else:
-                                                Programm14()
-                                                CTNP()  # (15.04.2026)
-                                                if Stop == 1:
-                                                    pass
-                                                else:
-                                                    Programm15()
-                                                    CTNP()
-                                                    if Stop == 1:
-                                                        pass
-                                                    else:
-                                                        Programm16()
-                                                        CTNP()
-                                                        if Stop == 1:
-                                                            pass
-                                                        else:
-                                                            Programm17()
-                                                            CTNP()
-                                                            if Stop == 1:
-                                                                pass
-                                                            else:
-                                                                Programm18()
-                                                                CTNP()
-                                                                if Stop == 1:
-                                                                    pass
-                                                                else:
-                                                                    Programm19()
-                                                                    CTNP()
-                                                                    if Stop == 1:
-                                                                        pass
-                                                                    else:
-                                                                        Programm20()
-                                                                        print(
-                                                                            "PE programms next! (If you chose N then they won`t load!)")
-                                                                        CTNP()
-                                                                        if Stop == 1:
-                                                                            pass
-                                                                        else:
-                                                                            if PlPr == "Y":
-                                                                                Main.ProgrammP1()
-                                                                                CTNP()  # (22.04.2026)
-                                                                                if Stop == 1:
-                                                                                    pass
-                                                                                else:
-                                                                                    Main.ProgrammP2()
-                                                                                    CTNP()
-                                                                                    if Stop == 1:
-                                                                                        pass
-                                                                                    else:
-                                                                                        Main.ProgrammP3()
-                                                                                        CTNP()
-                                                                                        if Stop == 1:
-                                                                                            pass
-                                                                                        else:
-                                                                                            Main.ProgrammP4()
-                                                                                            CTNP()
-                                                                                            if Stop == 1:
-                                                                                                pass
-                                                                                            else:
-                                                                                                Main.ProgrammP5()
+        HubBaseUtility.RawFunc.ProgrammCycle(prNum, prList, CTNP, [])
     else:
         pass
     print("")  # (16.03.2026)
@@ -869,7 +798,7 @@ def Code():
 
 
 def Restart():  # (16.03.2026)
-    global PlPr
+    global PlPr, RA
     if PlPr == "Y":
         from HubBasePE import Main
     global E_C
@@ -960,7 +889,7 @@ def Restart():  # (16.03.2026)
 def dev_console():
     global RA, VipAccess, Login, VN
     SpCm = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
-            "20", "P1", "P2", "P3", "P4", "P5"]
+            "20", "p1", "p2", "p3", "p4", "p5"]
     if VipAccess == "T":
         print("Developer console for " + __version__)
         line = ""
@@ -1050,8 +979,7 @@ def dev_console():
 
 
 # (16.03.2026)
-global RA, VipAccess
-RA = 0
+Setup_HubBase()
 Enter()
 Code()
 dev_console()

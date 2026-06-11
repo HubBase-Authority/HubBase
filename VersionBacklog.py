@@ -969,6 +969,14 @@ elif LogVersion == "2":
                         print("    - Added 'Auto HubBasePE 2.0' and changed versioning(__version__)")
                     else:
                         print("Such release does not exist or isn`t documented")
+                elif D5 == "0.05":
+                    if D4 == "r":
+                        print("--- HubBase 0.0.2.0.05 (default, June 11 2026, 22:00:10) ---")
+                        print("Bugfix №15!")
+                        print("Changes:")
+                        print("    - Added 'ProgrammCycle()' to optimise Code()")
+                    else:
+                        print("Such release does not exist or isn`t documented")
                 else:
                     print("Such release does not exist or isn`t documented")
             else:

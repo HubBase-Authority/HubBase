@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment=".md fix">
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="HBUtil v0.0.0.0.20 is out!">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HubBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HubBase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.2.0.0.3-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/dist/hubbasepe-0.0.2.0.0.3.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Version Backlog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Version Backlog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBasePlusEd/src/HubBasePE/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HubBaseUtil/src/HubBaseUtility/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseUtil/src/HubBaseUtility/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VersionBacklog.py" beforeDir="false" afterPath="$PROJECT_DIR$/VersionBacklog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,23 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.AI.executor&quot;: &quot;Run&quot;,
-    &quot;Python.HubBase.executor&quot;: &quot;Run&quot;,
-    &quot;Python.HubBaseB.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test5--Calc.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test7.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Version Backlog.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.AI.executor": "Run",
+    "Python.HubBase.executor": "Run",
+    "Python.HubBaseB.executor": "Run",
+    "Python.Main.executor": "Run",
+    "Python.RawCode.executor": "Run",
+    "Python.Test5--Calc.executor": "Run",
+    "Python.Test7.executor": "Run",
+    "Python.Version Backlog.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="HubBase" type="PythonConfigurationType" factoryName="Python">
       <module name="HubBase" />
@@ -123,7 +128,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-02acdf704d18-cbfc7b97e6b2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.28539.27" />
+        <option value="bundled-python-sdk-5781019d23a5-cbfc7b97e6b2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.28539.58" />
       </set>
     </attachedChunks>
   </component>
@@ -335,7 +340,55 @@
       <option name="project" value="LOCAL" />
       <updated>1781018040582</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="v0.0.2.0.04">
+      <option name="closed" value="true" />
+      <created>1781100741188</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1781100741188</updated>
+    </task>
+    <task id="LOCAL-00027" summary="v0.0.2.0.04">
+      <option name="closed" value="true" />
+      <created>1781102321545</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1781102321545</updated>
+    </task>
+    <task id="LOCAL-00028" summary="VB fix">
+      <option name="closed" value="true" />
+      <created>1781107598711</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1781107598711</updated>
+    </task>
+    <task id="LOCAL-00029" summary="HBUtil is out!">
+      <option name="closed" value="true" />
+      <created>1781109465300</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1781109465300</updated>
+    </task>
+    <task id="LOCAL-00030" summary="HBUtil 0.0.0.0.11 is out!">
+      <option name="closed" value="true" />
+      <created>1781190184072</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1781190184072</updated>
+    </task>
+    <task id="LOCAL-00031" summary="HBUtil v0.0.0.0.20 is out!">
+      <option name="closed" value="true" />
+      <created>1781193318594</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1781193318594</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,6 +422,11 @@
     <MESSAGE value="PEP8" />
     <MESSAGE value="v0.0.2.0.03 + Reorganisation &#10;Now on GitHub." />
     <MESSAGE value=".md fix" />
-    <option name="LAST_COMMIT_MESSAGE" value=".md fix" />
+    <MESSAGE value="v0.0.2.0.04" />
+    <MESSAGE value="VB fix" />
+    <MESSAGE value="HBUtil is out!" />
+    <MESSAGE value="HBUtil 0.0.0.0.11 is out!" />
+    <MESSAGE value="HBUtil v0.0.0.0.20 is out!" />
+    <option name="LAST_COMMIT_MESSAGE" value="HBUtil v0.0.0.0.20 is out!" />
   </component>
 </project>

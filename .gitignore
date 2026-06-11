@@ -1,7 +1,10 @@
 .venv/
 .venv1/
 .idea/
+*.xml
+*.iml
 __pycache__/
 HubBasePlusEdpy2/
 Installer/
 HubBasePlusEd/
+HubBaseUtil/

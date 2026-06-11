@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="v0.0.2.0.05 is out!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubBaseUtil/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseUtil/pyproject.toml" afterDir="false" />
+    <list default="true" id="51013b34-1430-4263-869e-754051df3440" name="Changes" comment="v0.0.2.0.05 fix - HBUtil is not used because of inconvenience">
+      <change beforePath="$PROJECT_DIR$/HubBaseUtil" beforeDir="false" afterPath="$PROJECT_DIR$/HubBaseUtil" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
         <entry key="$PROJECT_DIR$" value="test" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/HubBaseUtil" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -396,7 +395,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781204710006</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="v0.0.2.0.05 fix - HBUtil is not used because of inconvenience">
+      <option name="closed" value="true" />
+      <created>1781205587471</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1781205587471</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1" />
     <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b1 + V-B v(f)1.5" />
     <MESSAGE value="V a10.0.2 + HBPE 0.0.1rc2.post2 + v0.0.1b4 + V-B ...-v0.0.1b4" />
     <MESSAGE value="HBPE 0.0.1.0.00 + v0.0.1.0.00" />
@@ -436,6 +442,7 @@
     <MESSAGE value="HBUtil v0.0.0.0.20 is out!" />
     <MESSAGE value="HBUtil v0.0.0.0.30 is out!" />
     <MESSAGE value="v0.0.2.0.05 is out!" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.0.2.0.05 is out!" />
+    <MESSAGE value="v0.0.2.0.05 fix - HBUtil is not used because of inconvenience" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.0.2.0.05 fix - HBUtil is not used because of inconvenience" />
   </component>
 </project>

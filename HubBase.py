@@ -58,17 +58,6 @@ try:  # HBPE automator
             if hbpeInstall == "Y":
                 subprocess.run([sys.executable, "-m", "pip", "install", f"HubBasePE=={__version2__}"])
                 PlPr = "Y"
-        try:
-            import HubBaseUtility
-            from HubBaseUtility import RawCode
-        except ImportError:
-            print("Error: HubBaseUtility not installed.")
-            print("HubBase cannot function without HubBaseUtility")
-            hbutInstall = input("Do you want to install HubBaseUtility?[Y/N] -- ").upper()
-            if hbutInstall == "Y":
-                subprocess.run([sys.executable, "-m", "pip", "install", "--upgrade", "HubBaseUtility"])
-            else:
-                sys.exit(1)
         if PE__version__ == __version__:
             print("All checks pass")
     except AttributeError:
@@ -84,17 +73,6 @@ except ImportError:
     if hbpeInstall == "Y":
         subprocess.run([sys.executable, "-m", "pip", "install", f"HubBasePE=={__version2__}"])
         PlPr = "Y"
-try:
-    import HubBaseUtility
-    from HubBaseUtility import RawCode
-except ImportError:
-    print("Error: HubBaseUtility not installed.")
-    print("HubBase cannot function without HubBaseUtility")
-    hbutInstall = input("Do you want to install HubBaseUtility?[Y/N] -- ").upper()
-    if hbutInstall == "Y":
-        subprocess.run([sys.executable, "-m", "pip", "install", "--upgrade", "HubBaseUtility"])
-    else:
-        sys.exit(1)
 
 
 def Setup_HubBase():  # (11.06.2026)

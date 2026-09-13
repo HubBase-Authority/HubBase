@@ -8,9 +8,9 @@ import sys
 import importlib
 import inspect
 
-__version__ = "0.0.2.1.00"
+__version__ = "0.0.2.1.01"
 __version2__ = "0.0.2.1.0.0"
-__parameters__ = "(default, Aug 24 2026, 16:59:45)"
+__parameters__ = "(default, Sep 11 2026, 19:15:51)"
 
 PlPr = False
 RA = 0

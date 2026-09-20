@@ -2,7 +2,7 @@
 // Inno Setup 7
 
 #define MyAppName = "HubBase"
-#define MyAppVersion = "0.0.3.0.00b2.dev2"
+#define MyAppVersion = "0.0.3.0.00b2"
 
 [Setup]
 AppName = {#MyAppName}
@@ -35,7 +35,9 @@ Source: "..\__init__.py"; DestDir: "{app}"; Components: core; Flags: ignoreversi
 Source: "..\Database.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\requirements.txt"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\LICENSE"; DestDir: "{app}"; Components: core; Flags: ignoreversion
-Source: "..\Programs\*"; DestDir: "{app}\Programs"; Components: core; Flags: ignoreversion
-Source: "..\Docs\*"; DestDir: "{app}\Docs"; Components: core; Flags: ignoreversion
-Source: "..\Data\*"; DestDir: "{app}\Data"; Components: core; Flags: ignoreversion
-Source: "..\Changelog.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
+Source: "..\Programs\*"; DestDir: "{app}\Programs"; Components: core; Flags: ignoreversion recursesubdirs
+Source: "..\Docs\*"; DestDir: "{app}\Docs"; Components: Documentation; Flags: ignoreversion
+Source: "..\Data\*"; DestDir: "{app}\Data"; Components: Documentation; Flags: ignoreversion
+Source: "..\Changelog.py"; DestDir: "{app}"; Components: Documentation; Flags: ignoreversion
+Source: "..\Test\*"; DestDir: "{app}\Test"; Components: Extras; Flags: ignoreversion
+Source: "..\.gitignore"; DestDir: "{app}"; Components: Extras; Flags: ignoreversion

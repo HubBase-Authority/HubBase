@@ -187,5 +187,12 @@
     "features": [
       "Added a login system with VIP`s"
     ]
+  },
+  "0.0.3.0.00b2": {
+    "params": "(default, Sep 20 2026, 19:54:56)",
+    "features": [
+      "Better documentation",
+      "Added .exe installs"
+    ]
   }
 }

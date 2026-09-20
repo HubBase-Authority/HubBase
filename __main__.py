@@ -2,7 +2,7 @@ from . import all_programs
 from .Programs.Manager import Program
 from .Changelog import find_version_info
 from .Database import User
-__version__ = "0.0.3.0.00b1"
+__version__ = "0.0.3.0.00b2"
 
 
 def main():

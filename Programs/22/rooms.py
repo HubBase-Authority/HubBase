@@ -79,7 +79,7 @@ class Room:  # class Room
                     used = True
                     print(f"Unlocked {adj_room.name}. ")
         if not used:
-            print("There are no locked rooms")
+            print("There are no locked rooms nearby.")
         return used
 
     def find_adjacent_room(self, dir: str, type: str) -> Room | None:
@@ -134,10 +134,10 @@ class Room:  # class Room
     def info(self):
         text = f"\n=== {self.name.upper()} === \n {self.description} \n"
         if self.items:
-            items = ", ".join(item.name for item in self.items)
+            items = ", ".join(item.name.lower() for item in self.items)
             text += f"You notice: {items} \n"
         if self.creature_alive:
-            text += f"DANGER: {self.creature} lurks here! \n"
+            text += f"DANGER: {self.creature.name} lurks here! \n"
         text += f"Exits: {", ".join(self.exits.keys())}"
         return text
 

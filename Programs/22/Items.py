@@ -67,6 +67,7 @@ class Item:
             return
         self.taken = True
         player.inventory.append(self)
+        player.fullinventory.append(self)
 
     def info(self) -> str:
         text = f"{self.name} - {self.description} "
@@ -76,7 +77,7 @@ class Item:
                 text += f"{self.onuse["HealAmount"]}" if self.onuse["HealAmount"] < 0 else f"+{self.onuse["HealAmount"]}"
                 text += "hp \n"
             if self.onuse["Target"]:
-                text += f"This item targets the {self.onuse["Target"]}. \n"
+                text += f"This item targets the {self.onuse["Target"].lower()}. \n"
             if self.onuse["special_use_conditions"]:
                 if isinstance(self.onuse["special_use_conditions"], list):
                     for condition in self.onuse["special_use_conditions"]:

@@ -48,12 +48,31 @@ def GuardedCalculateDamage(DamageType: str = str(DefaultDamage(False))) -> int:
         return DefaultDamage()
 
 
-def gen_stats(Game):
-    pass # Inspect Game state
-    # set current_room, inventory, health, drank_punch, area, quit from inspected game state
+def gen_stats(Game) -> dict[str, Any]:
+    drank = False
+    for item in Game.player.inventory:
+        if item.name == "Punch": break
+    else:
+        for item in Game.player.fullinventory:
+            if item.name == "Punch":
+                drank = True
+                break
+    stats = {
+        "area": "Dungeon" if Game.indungeon else "Party",
+        "in_dungeon": Game.indungeon,
+        "current_room": Game.info.get("current_room"),
+        "final_room": Game.info.get("current_room"),
+        "prefinal_room": Game.info.get("prev_room"),
+        "drank_punch": drank,
+        "quit": Game.info.get("quit", True),
+        "escaped": Game.info.get("current_room").startswith("Exit ") or Game.info.get("current_room") == "Transition 1",
+        "health": Game.player.health,
+        "move": Game.info.get("move", 0)
+    }
+    return stats
 
 
-def getvalidcmd() -> dict[str, dict[str, Any] | list[Any]]:
+def getvalidcmd() -> dict[str, dict[str, Any]]:
     return {"go": {"description": "Go to the specified direction, if it exists"},
             "inventory": {"description": "Look at inventory"},
             "take": {"description": "Take the specified item, if it exists"},
@@ -61,7 +80,8 @@ def getvalidcmd() -> dict[str, dict[str, Any] | list[Any]]:
             "help": {"description": "See the help message"},
             "look": {"description": "See the details of the room"},
             "quit": {"description": "Quit the game"},
-            "fight": {"description": "Fight the specified creature, if it exists"},
+            "fight": {"description": "Fight the creature in the room, if it exists"},
+            "health": {"description": "See health"},
             }
 
 
@@ -70,13 +90,12 @@ def help_cmd():
     str_cmd = ""
     for name, descriptiondict in cmds.items():
         description = descriptiondict.get('description')
-        str_cmd += f"{name} - {description if description else '[BLANK]'}"
+        str_cmd += f"{name} - {description if description else '[BLANK]'} \n"
     return str_cmd
 
 
 def isvalidcmd(cmd: str) -> bool:
-    return (cmd in getvalidcmd().keys() or cmd.startswith("go ") or cmd.startswith("take ") or cmd.startswith("use ")
-            or cmd.startswith("fight "))
+    return cmd in getvalidcmd().keys() or cmd.startswith("go ") or cmd.startswith("take ") or cmd.startswith("use ")
 
 
 def cmdinput(prompt: object = ">>> ") -> str:
@@ -107,3 +126,18 @@ def find_room_by_type(type: str, rooms: dict[str, Any] | None):
         if room.type == type:
             return room
     return None
+
+def get_code(stats: dict):
+    code = 0 if stats.get("in_dungeon") else 1000
+    if stats.get("drank_punch"): code += 10
+    if stats.get("escaped"):
+        if stats.get("drank_punch"):
+            code -= 10
+        code += 1
+        if stats.get("final_room") == "Exit 1" and stats.get("area") == "Party":
+            code += 10
+            if stats.get("drank_punch"): code += 1
+    else:
+        if stats.get("quit"): code += 2
+        elif stats.get("health", 0) <= 0: code += 3
+    return code

@@ -194,5 +194,11 @@
       "Better documentation",
       "Added .exe installs"
     ]
+  },
+  "0.0.3.0.00b3": {
+    "params": "(default, Sep 20 2026, 19:54:56)",
+    "features": [
+      "Added Program 22: Watishere Main as a snippet"
+    ]
   }
 }

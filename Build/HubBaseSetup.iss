@@ -2,16 +2,17 @@
 // Inno Setup 7
 
 #define MyAppName = "HubBase"
-#define MyAppVersion = "0.0.3.0.00b2"
+#define MyAppVersion = "0.0.3.0.00b3"
+#define MyAppSecureVersion = "0_0_3_0_00b3"
 
 [Setup]
 AppName = {#MyAppName}
 AppVersion={#MyAppVersion}
-DefaultDirName={autopf}\{#MyAppName}_v{#MyAppVersion}
-DefaultGroupName={#MyAppName}_v{#MyAppVersion}
+DefaultDirName={autopf}\{#MyAppName}_v{#MyAppSecureVersion}
+DefaultGroupName={#MyAppName}_v{#MyAppSecureVersion}
 AllowNoIcons=yes
 OutputDir=exe
-OutputBaseFilename={#MyAppName}_Setup
+OutputBaseFilename={#MyAppName}_v{#MyAppVersion}_Setup
 Compression=lzma2
 SolidCompression=yes
 PrivilegesRequired=admin

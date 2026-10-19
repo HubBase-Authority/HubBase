@@ -1,29 +1,7 @@
 from pathlib import Path
-from .Database import User
+from .Database import JsonUser
 from .Programs.Manager import Program
-import importlib, sys, json
-
-
-class JsonUser(User):
-    def __init__(self, login: str = "", password: str = "1041", vip: bool = False):
-        super().__init__(login, password)
-        self.VipAccess = vip
-
-    def save(self, path: Path):
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(self.__dict__, f)
-
-    def load(self, path: Path):
-        with open(path, "r", encoding="utf-8") as f:
-            try:
-                user: dict = json.load(f)
-            except json.JSONDecodeError:
-                return
-            for key in self.__dict__:
-                try:
-                    self.__dict__[key] = user[key]
-                except KeyError:
-                     continue
+import importlib, sys
 
 
 def get_all_progs() -> list:

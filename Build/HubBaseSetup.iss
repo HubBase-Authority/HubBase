@@ -2,8 +2,8 @@
 // Inno Setup 7
 
 #define MyAppName = "HubBase"
-#define MyAppVersion = "0.0.3.0.00rc1"
-#define MyAppSecureVersion = "0_0_3_0_00rc1"
+#define MyAppVersion = "0.0.3.0.00rc2"
+#define MyAppSecureVersion = "0_0_3_0_00rc2"
 
 [Setup]
 AppName = {#MyAppName}
@@ -26,7 +26,7 @@ ChangesAssociations=yes
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Components]
-Name: "core"; Description: "LICENSE, requirements.txt, __main__.py, __init__.py, Database.py and Programs/*"; Types: full compact custom; Flags: fixed
+Name: "core"; Description: "HubBase Essentials"; Types: full compact custom; Flags: fixed
 Name: "Documentation"; Description: "Docs/*, Data/*, Changelog.py"; Types: full custom
 Name: "Test_suite"; Description: "Test/* - Beta test suite"; Types: full custom
 Name: "Extras"; Description: "Test/legacy/*, .gitignore"; Types: full custom
@@ -35,6 +35,7 @@ Name: "Extras"; Description: "Test/legacy/*, .gitignore"; Types: full custom
 Source: "..\__main__.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\__init__.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\Database.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
+Source: "..\api.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\requirements.txt"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\LICENSE"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\Programs\*"; DestDir: "{app}\Programs"; Components: core; Flags: ignoreversion recursesubdirs; Excludes: "__pycache__\*";

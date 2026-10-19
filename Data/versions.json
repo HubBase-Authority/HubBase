@@ -206,5 +206,12 @@
     "features": [
       "Added Program 22: Whatishere Main fully"
     ]
+  },
+  "0.0.3.0.00rc2": {
+    "params": "(default, Oct ?? 2026, ??:??:??)",
+    "features": [
+      "Added HubBaseCLI support",
+      "Fixed many discovery/load/run bugs"
+    ]
   }
 }

@@ -24,7 +24,8 @@ all_programs = sorted(
     key=lambda x: (not x.isdigit(), int(x) if x.isdigit() else x)
 )
 
-def add_deps(all_programsl: list[str | int]):
+def add_deps(all_programsl: list[str | int]) -> list[str | int]:
+    all_programsl = list[str | int](all_programsl)
     for module in load_deps():
         try:
             module_obj = importlib.import_module(module)

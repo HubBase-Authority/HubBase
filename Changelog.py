@@ -1,6 +1,5 @@
-import json
+import json, time
 from pathlib import Path
-import time
 
 
 class HubBaseParams:
@@ -63,9 +62,37 @@ class HubBaseVersion:
         else:
             return self.features
 
-
     def __str__(self) -> str:
-        return f"{self.str_to_list(self.version, reverse=True)} {str(self.params)}"
+        return f"{self.rawversion} {str(self.params)}"
+
+    def __int__(self) -> int:
+        before_tag = "".join(self.version[0:5])
+        try: tag = {"a": "0", "b": "1", "rc": "2", "": "3"}[self.version[5]]
+        except KeyError: tag = "3"
+        after_tag = self.version[6] or '0'
+        try: after_tag += self.version[7].removeprefix("post")
+        except IndexError: after_tag += "0"
+        try: return int(before_tag + tag + after_tag)
+        except ValueError: return -1
+
+    def __eq__(self, value: object, /) -> bool:
+        if hasattr(value, "version"): return self.version == value.version
+        else: return NotImplemented
+
+    def __ne__(self, value: object, /) -> bool:
+        if hasattr(value, "version"): return not (self == value)
+        else: return NotImplemented
+
+    def __gt__(self, other):
+        if hasattr(other, "__int__"): return int(self) > int(other)
+        else: return NotImplemented
+
+    def __lt__(self, other):
+        if hasattr(other, "__int__"): return int(self) < int(other)
+        else: return NotImplemented
+
+    def __getitem__(self, item: int):
+        return self.version[item]
 
 
 versions = []
@@ -88,7 +115,7 @@ def view_log():
     searchfor = f"{D1}.{D2}.{D3}.{D4}{D5}"
     try:
         print(find_version_info(fullstr=searchfor, addfeatures=True))
-    except NotImplementedError:
+    except LookupError:
         print(f"Version {searchfor} does not exist, or is not documented.")
 
 
@@ -98,10 +125,10 @@ def find_version_info(D1 = None, D2 = None, D3 = None, D4 = None, D5 = None, *, 
     else:
         searchfor = fullstr
     for version in versions:
-        if version.str_to_list(version.version, reverse=True) == searchfor:
+        if version.rawversion == searchfor:
             if addfeatures: return f"=== HubBase v{version} {version.params} === \n{version.getfeatures(True)}"
             else: return f"=== HubBase v{version} {version.params} === "
-    raise NotImplementedError(f"Version {searchfor} does not exist, or is not documented.")
+    raise LookupError(f"Version {searchfor} does not exist, or is not documented.")
 
 
 if __name__ == '__main__':

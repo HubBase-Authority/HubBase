@@ -20,5 +20,5 @@ class VersionSearchTest(unittest.TestCase):
         try:
             version = find_version_info(fullstr="__version__")
             self.assertTrue(False)
-        except NotImplementedError:
+        except LookupError:
             self.assertTrue(True)

@@ -31,6 +31,7 @@ Name: "core"; Description: "HubBase Essentials"; Types: full compact custom; Fla
 Name: "Documentation"; Description: "Documentation"; Types: full custom
 Name: "Test_suite"; Description: "Test/* - Beta test suite"; Types: full custom
 Name: "Extras"; Description: "Test/legacy/*, .gitignore"; Types: full custom
+Name: "dev_tools"; Description: "Tools for HubBase development"; Types: full custom
 
 [Files]
 Source: "..\__main__.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
@@ -40,9 +41,10 @@ Source: "..\api.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\requirements.txt"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\LICENSE"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\Programs\*"; DestDir: "{app}\Programs"; Components: core; Flags: ignoreversion recursesubdirs; Excludes: "__pycache__\*";
-Source: "..\Data\*"; DestDir: "{app}\Data"; Components: core; Flags: ignoreversion; Excludes: "__pycache__\*";
+Source: "..\Data\*"; DestDir: "{app}\Data"; Components: core; Flags: ignoreversion; Excludes: "__pycache__\* user.json";
 Source: "..\Changelog.py"; DestDir: "{app}"; Components: core; Flags: ignoreversion
 Source: "..\Test\*"; DestDir: "{app}\Test"; Components: Test_suite; Flags: ignoreversion recursesubdirs; Excludes: "legacy\*, __pycache__\*";
 Source: "..\Docs\*"; DestDir: "{app}\Docs"; Components: Documentation; Flags: ignoreversion; Excludes: "__pycache__\*";
 Source: "..\Test\legacy\*"; DestDir: "{app}\Test\legacy"; Components: Extras; Flags: ignoreversion; Excludes: "__pycache__\*";
-Source: "..\.gitignore"; DestDir: "{app}"; Components: Extras; Flags: ignoreversion;
+Source: "..\.gitignore"; DestDir: "{app}"; Components: dev_tools; Flags: ignoreversion;
+Source: "HubBaseSetup.iss"; DestDir: "{app}\Build"; Components: dev_tools; Flags: ignoreversion;

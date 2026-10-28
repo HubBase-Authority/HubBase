@@ -8,11 +8,11 @@ import importlib, sys
 def get_all_progs() -> list:
     return list(all_programs)
 
-def get_all_progsdata() -> dict[Path, dict]:
-    programs_dir = (Path(__file__).resolve().parent / "Programs")
+def get_all_progsdata(source: Path | None = None) -> dict[Path, dict]:
+    project_root = source or Path(__file__).resolve().parent
+    programs_dir = project_root / "Programs"
     all_programs = programs_dir.iterdir()
     all_programsd = {}
-    project_root = Path(__file__).resolve().parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
 
@@ -23,7 +23,7 @@ def get_all_progsdata() -> dict[Path, dict]:
             try:
                 md_module = importlib.import_module(md_module_name)
                 metadata = md_module.ProgramInfo
-            except (ImportError, AttributeError):
+            except Exception:
                 pass
             all_programsd[item] = metadata
 
@@ -32,7 +32,7 @@ def get_all_progsdata() -> dict[Path, dict]:
 
 def run(id: int | str, user: User, *, name: str = "", source: Path | None = None, to_print: bool = False) -> tuple[bool, dict]:
     if name:
-        for path, prog_md in get_all_progsdata().items():
+        for path, prog_md in get_all_progsdata(source).items():
             if prog_md.get("Name", "").lower().replace(" ", "-") == name.lower().replace(" ", "-"):
                 id = path.name
                 break

@@ -94,6 +94,9 @@ class HubBaseVersion:
     def __getitem__(self, item: int):
         return self.version[item]
 
+    def __len__(self) -> int:
+        return len(self.version)
+
 
 versions = []
 with open(Path(__file__).resolve().parent / "Data" / "versions.json", "r", encoding="utf-8") as f:
@@ -126,8 +129,8 @@ def find_version_info(D1 = None, D2 = None, D3 = None, D4 = None, D5 = None, *, 
         searchfor = fullstr
     for version in versions:
         if version.rawversion == searchfor:
-            if addfeatures: return f"=== HubBase v{version} {version.params} === \n{version.getfeatures(True)}"
-            else: return f"=== HubBase v{version} {version.params} === "
+            if addfeatures: return f"=== HubBase v{version} === \n{version.getfeatures(True)}"
+            else: return f"=== HubBase v{version} === "
     raise LookupError(f"Version {searchfor} does not exist, or is not documented.")
 
 

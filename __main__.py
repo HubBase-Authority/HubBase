@@ -4,7 +4,7 @@ from .Programs import add_deps
 from .Programs.Manager import Program
 from .Changelog import find_version_info
 from .Database import JsonUser, User
-__version__ = "0.0.3.0.00rc2" # In-dev build 11.
+__version__ = "0.0.3.0.00rc2"
 self_path = Path(__file__)
 
 
@@ -16,7 +16,7 @@ def default_entrance(intr: bool = True, user_e: JsonUser | None = None):
             print(find_version_info(fullstr=__version__))
         except LookupError:
             print("Warning: You are running an undocumented version of HubBase.")
-        user = JsonUser()
+        user = user_e
         upath = self_path.parent / "Data" / "user.json"
         if upath.is_file(): user.login(upath, load=True)
         else: user.login()

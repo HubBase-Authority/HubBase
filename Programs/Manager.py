@@ -65,7 +65,7 @@ class Program:
             ind: str = ' ' * indent
             return (f"{p}rogram №{self.id}: \n" +
                 f"{ind}Name - {metadata.get('Name', '')} " +
-                f"v{metadata.get('Version', '')} \n" if metadata.get("Version") is not None else "\n" +
+                (f"v{metadata.get('Version', '')} \n" if metadata.get("Version") else "\n") +
                 f"{ind}Built on v{metadata.get('Build', '')}")
         else:
             return f"{p}rogram №{self.id} - {metadata.get('Name', '')}"

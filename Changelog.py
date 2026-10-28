@@ -1,10 +1,26 @@
-import json
+import json, time
 from pathlib import Path
-import time
+
+
+class HubBaseParams:
+    def __init__(self, paramsstr: str):
+        self.params = self.str_to_list(paramsstr)
+
+    @staticmethod
+    def str_to_list(value: str | list, *, reverse: bool = False) -> str | list[str]:
+        if reverse:
+            return f"({', '.join(list[str](value))})"
+        else:
+            value = str(value).removeprefix("(").removesuffix(")").split(", ")
+            return value
+
+    def __str__(self) -> str:
+        return str(self.str_to_list(self.params, reverse=True))
 
 
 class HubBaseVersion:
     def __init__(self, version: str | list, params: HubBaseParams, *, Features: list[str] | str = ""):
+        self.rawversion: str = str(version)
         if isinstance(version, str):
             version = self.str_to_list(version)
         if len(version) in (7, 8):
@@ -14,15 +30,9 @@ class HubBaseVersion:
         self.params = params
         self.features = list[str](Features)
 
-    @staticmethod
-    def str_to_list(value: str | list, *, reverse: bool = False) -> str | list[str | int]:
+    def str_to_list(self, value: str | list, *, reverse: bool = False) -> str | list[str | int]:
         if reverse:
-            value = list[str](value)
-            if len(value) not in (7, 8):
-                raise TypeError("Expected 7/8-part version list.")
-            elif len(value) == 7:
-                value.append("")
-            value = f"{value[0]}.{value[1]}.{value[2]}.{value[3]}.{value[4]}{value[5]}{value[6]}{'.' + value[7] if value[7] else ''}"
+            value = self.rawversion
         else:
             value = str(value).split(".")
             if len(value) not in (5, 6):
@@ -34,7 +44,7 @@ class HubBaseVersion:
                     ndvp[-1] if len(ndvp) > 2 else ""
                 ]
             try:
-                extras = value[5]
+                extras = value[4]
                 value.remove(extras)
                 ndvp.append(extras)
             except IndexError:
@@ -52,25 +62,40 @@ class HubBaseVersion:
         else:
             return self.features
 
-
     def __str__(self) -> str:
-        return f"{self.str_to_list(self.version, reverse=True)} {str(self.params)}"
+        return f"{self.rawversion} {str(self.params)}"
 
+    def __int__(self) -> int:
+        before_tag = "".join(self.version[0:5])
+        try: tag = {"a": "0", "b": "1", "rc": "2", "": "3"}[self.version[5]]
+        except KeyError: tag = "3"
+        after_tag = self.version[6] or '0'
+        try: after_tag += self.version[7].removeprefix("post")
+        except IndexError: after_tag += "0"
+        try: return int(before_tag + tag + after_tag)
+        except ValueError: return -1
 
-class HubBaseParams:
-    def __init__(self, paramsstr: str):
-        self.params = self.str_to_list(paramsstr)
+    def __eq__(self, value: object, /) -> bool:
+        if hasattr(value, "version"): return self.version == value.version
+        else: return NotImplemented
 
-    @staticmethod
-    def str_to_list(value: str | list, *, reverse: bool = False) -> str | list[str]:
-        if reverse:
-            return f"({', '.join(list[str](value))})"
-        else:
-            value = str(value).removeprefix("(").removesuffix(")").split(", ")
-            return value
+    def __ne__(self, value: object, /) -> bool:
+        if hasattr(value, "version"): return not (self == value)
+        else: return NotImplemented
 
-    def __str__(self) -> str:
-        return str(self.str_to_list(self.params, reverse=True))
+    def __gt__(self, other):
+        if hasattr(other, "__int__"): return int(self) > int(other)
+        else: return NotImplemented
+
+    def __lt__(self, other):
+        if hasattr(other, "__int__"): return int(self) < int(other)
+        else: return NotImplemented
+
+    def __getitem__(self, item: int):
+        return self.version[item]
+
+    def __len__(self) -> int:
+        return len(self.version)
 
 
 versions = []
@@ -91,23 +116,22 @@ def view_log():
     print("The security updates are exclusive to the wiki!")
     print("")
     searchfor = f"{D1}.{D2}.{D3}.{D4}{D5}"
-    for version in versions:
-        if version.str_to_list(version.version, reverse=True) == searchfor:
-            print(f"=== HubBase v{version} {version.params} === \n{version.getfeatures(True)}")
-            break
-    else:
+    try:
+        print(find_version_info(fullstr=searchfor, addfeatures=True))
+    except LookupError:
         print(f"Version {searchfor} does not exist, or is not documented.")
 
 
-def find_version_info(D1 = None, D2 = None, D3 = None, D4 = None, D5 = None, *, fullstr: str | None = None) -> str:
+def find_version_info(D1 = None, D2 = None, D3 = None, D4 = None, D5 = None, *, fullstr: str | None = None, addfeatures: bool = False) -> str:
     if fullstr is None:
         searchfor = f"{D1}.{D2}.{D3}.{D4}{D5}"
     else:
         searchfor = fullstr
     for version in versions:
-        if version.str_to_list(version.version, reverse=True) == searchfor:
-            return f"=== HubBase v{version} {version.params} === "
-    raise NotImplementedError(f"Version {searchfor} does not exist, or is not documented.")
+        if version.rawversion == searchfor:
+            if addfeatures: return f"=== HubBase v{version} === \n{version.getfeatures(True)}"
+            else: return f"=== HubBase v{version} === "
+    raise LookupError(f"Version {searchfor} does not exist, or is not documented.")
 
 
 if __name__ == '__main__':
